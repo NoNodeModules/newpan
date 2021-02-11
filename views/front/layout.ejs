@@ -21,7 +21,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" />
-
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Francois+One&display=swap" rel="stylesheet">
+    <style>
+        @media screen and (max-width: 600px) {
+            #son {
+                display: none;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -35,16 +43,17 @@
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M3 4h18v2H3V4zm0 7h12v2H3v-2zm0 7h18v2H3v-2z" fill="currentColor"></path></svg>
                         </span> -->
 
-                        <div id="logo" style="padding-left: 4vw;">
+                        <div id="logo" style="padding-left: 4vw; font-family: 'Francois One', sans-serif;">
                             <a href="/">
                                 <img src="../../../panpan.png" alt="">
                                 <img src="../../../panpan.png" class="logo_mobile" alt="">
+
                             </a>
                         </div>
                     </div>
 
                     <!-- search icon for mobile -->
-                    <div class="header-search-icon" uk-toggle="target: #wrapper ; cls: show-searchbox"> </div>
+                    <div style="margin-left: 100px;" class="header-search-icon" uk-toggle="target: #wrapper ; cls: show-searchbox"> </div>
                     <div class="header_search">
                         <input value="" type="text" class="form-control" placeholder="Konu ara" autocomplete="off">
                         <i class="uil-search-alt"></i>
@@ -76,18 +85,14 @@
                             </ul>
                         </div>
                     </div> -->
-
                     <div class="right_side" style="margin-right: -15vw;">
                         <div class="header_widgets">
                             <a href="#" class="is_link">  Anasayfa  </a>
                             <a href="#" class="is_link">  Abdullah Bektaş </a>
-
                             <a href="#">
                                 <img src="../../../front/images/avatars/avatar-2.jpg" class="is_avatar" alt="">
                             </a>
-
                             <div uk-drop="mode: click;offset:5" class="header_dropdown profile_dropdown">
-
                                 <a href="timeline.html" class="user">
                                     <div class="user_avatar">
                                         <img src="../../../front/images/avatars/avatar-2.jpg" alt="">
@@ -105,32 +110,26 @@
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
                                     </svg> Çıkış Yap
                                 </a>
-
-
                             </div>
                             <a href="#" class="is_icon">
                                 <svg id="Layer_1" enable-background="new 0 0 512 512" height="512" viewBox="0 0 512 512" width="512" xmlns="http://www.w3.org/2000/svg"><g><path d="m475.219 310.52h-80.35l112.547-109.708c4.089-3.985 5.561-9.946 3.796-15.376s-6.458-9.388-12.108-10.209l-158.698-23.06-70.972-143.806c-2.528-5.119-7.741-8.361-13.451-8.361s-10.924 3.241-13.451 8.361l-70.973 143.806-158.698 23.06c-5.65.821-10.344 4.779-12.108 10.209s-.293 11.391 3.796 15.376l114.835 111.937-27.11 158.057c-.965 5.627 1.349 11.315 5.968 14.671 2.613 1.899 5.707 2.865 8.818 2.865 2.387 0 4.784-.569 6.979-1.723l141.946-74.625 54.518 28.645v34.598c0 20.271 16.492 36.764 36.764 36.764h127.953c20.271 0 36.764-16.492 36.764-36.764v-127.954c-.001-20.271-16.494-36.763-36.765-36.763zm-212.259 71.249c-4.37-2.295-9.59-2.294-13.958.002l-122.022 64.15 23.305-135.874c.835-4.866-.778-9.831-4.313-13.277l-98.719-96.227 136.425-19.823c4.886-.71 9.108-3.779 11.294-8.206l61.012-123.623 61.011 123.623c2.185 4.427 6.408 7.496 11.294 8.206l136.425 19.823-98.718 96.227c-3.52 3.43-5.135 8.366-4.325 13.213l.089.536h-14.493c-20.271 0-36.764 16.492-36.764 36.764v59.466zm219.023 93.467c0 3.729-3.034 6.764-6.764 6.764h-127.953c-3.729 0-6.764-3.034-6.764-6.764v-127.953c0-3.729 3.034-6.764 6.764-6.764h127.953c3.729 0 6.764 3.034 6.764 6.764z"/><path d="m447.838 396.159h-21.391v-18.283c0-8.284-6.716-15-15-15s-15 6.716-15 15v18.283h-19.949c-8.284 0-15 6.716-15 15s6.716 15 15 15h19.949v23.058c0 8.284 6.716 15 15 15s15-6.716 15-15v-23.058h21.391c8.284 0 15-6.716 15-15s-6.716-15-15-15z"/></g></svg>
                             </a>
-
-
-                            <!-- Message -->
                             <a href="#" class="is_icon hidden-xl hidden-lg" uk-toggle="target: #create-post-modal">
                                 <img src="../../../color-pencil.png" height="30px">
 
                             </a>
                             <a href="#" class="is_icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
-                                </svg>
-                                <!-- <span>4</span> -->
-                            </a>
-
-                            <a href="#" class="is_icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
                                 </svg>
                                 <span>3</span>
+                            </a>
+                            <a href="#" class="is_icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
+                                </svg>
+                                <!-- <span>4</span> -->
                             </a>
 
                         </div>
@@ -146,12 +145,6 @@
 
 
 
-    <!-- open chat box -->
-    <div uk-toggle="target: #create-post-modal" class="start-chat">
-        <svg class="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path>
-        </svg>
-    </div>
 
     <div id="offcanvas-chat" uk-offcanvas="flip: true; overlay: true">
         <div class="uk-offcanvas-bar bg-white p-0 w-full lg:w-80">
