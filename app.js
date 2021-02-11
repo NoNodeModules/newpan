@@ -8,7 +8,7 @@ const mongoose = require("mongoose")
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 
-mongoose.connect("mongodb+srv://xox:Q1w2e3r4.@cluster0.uxiuf.mongodb.net/panipal?retryWrites=true&w=majority", { useUnifiedTopology: true }, (err, data) => {
+mongoose.connect("mongodb+srv://xox:Q1w2e3r4.@cluster0.uxiuf.mongodb.net/panipal?retryWrites=true&w=majority", (err, data) => {
     if (!err) {
         console.log("Başarılı")
     }
