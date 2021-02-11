@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from demo.foxthemes.net/socialitev2.1/feed.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 09 Feb 2021 19:15:35 GMT -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon -->
+    <link href="../../../front/images/favicon.png" rel="icon" type="image/png">
+    <title>PANİPAL SÖZLÜK</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Socialite is - Professional A unique and beautiful collection of UI elements">
+    <link rel="stylesheet" href="../../../front/scss/icons.html">
+    <link rel="stylesheet" href="../../../front/css/uikit.css">
+    <link rel="stylesheet" href="../../../front/css/style.css">
+    <link rel="stylesheet" href="../../../front/css/icons.css">
+    <link rel="stylesheet" href="../../../front/css/tailwind.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" />
+
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <div class="header_wrap">
+                <div class="header_inner mcontainer">
+                    <div class="left_side">
+
+                        <!-- <span class="slide_menu" uk-toggle="target: #wrapper ; cls: is-collapse is-active">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M3 4h18v2H3V4zm0 7h12v2H3v-2zm0 7h18v2H3v-2z" fill="currentColor"></path></svg>
+                        </span> -->
+
+                        <div id="logo">
+                            <a href="/">
+                                <img src="../../../panpan.png" alt="">
+                                <img src="../../../panpan.png" class="logo_mobile" alt="">
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- search icon for mobile -->
+                    <div class="header-search-icon" uk-toggle="target: #wrapper ; cls: show-searchbox"> </div>
+                    <div class="header_search">
+                        <input value="" type="text" class="form-control" placeholder="Konu ara" autocomplete="off">
+                        <i class="uil-search-alt"></i>
+                    </div>
+                    <!-- <div uk-drop="mode: click" class="hidden md:w-1/3 w-11/12 shadow-lg rounded-md -mt-2 bg-white">
+                        <div class="-mt-2 p-3">
+                            <h4 class="font-semibold mb-1 mt-2 px-2.5 text-lg"> Recently </h4>
+                            <ul>
+                                <li>
+                                    <a href="#" class="flex items-center space-x-2 p-2 hover:bg-gray-100 rounded-md">
+                                        <img src="../../../front/images/avatars/avatar-4.jpg" alt="" class="border mr-3 rounded-full shadow-sm w-8"> Erica Jones
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="flex items-center space-x-2 p-2 hover:bg-gray-100 rounded-md">
+                                        <img src="../../../front/images/group/group-2.jpg" alt="" class="border mr-3 rounded-full shadow-sm w-8"> Coffee Addicts
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="flex items-center space-x-2 p-2 hover:bg-gray-100 rounded-md">
+                                        <img src="../../../front/images/group/group-4.jpg" alt="" class="border mr-3 rounded-full shadow-sm w-8"> Mountain Riders
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="flex items-center space-x-2 p-2 hover:bg-gray-100 rounded-md">
+                                        <img src="../../../front/images/group/group-5.jpg" alt="" class="border mr-3 rounded-full shadow-sm w-8"> Property Rent And Sale
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div> -->
+
+                    <div class="right_side" style="margin-right: -15vw;">
+                        <div class="header_widgets">
+                            <a href="#" class="is_link">  Anasayfa  </a>
+                            <a href="#" class="is_link">  Abdullah Bektaş </a>
+
+                            <a href="#">
+                                <img src="../../../front/images/avatars/avatar-2.jpg" class="is_avatar" alt="">
+                            </a>
+                            <div uk-drop="mode: click;offset:5" class="header_dropdown profile_dropdown">
+
+                                <a href="timeline.html" class="user">
+                                    <div class="user_avatar">
+                                        <img src="../../../front/images/avatars/avatar-2.jpg" alt="">
+                                    </div>
+                                    <div class="user_name">
+                                        <div> Abdullah Bektaş </div>
+                                    </div>
+                                </a>
+                                <hr class="border-gray-100">
+                                <a href="page-setting.html">
+                                    <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"></path></svg>Hesabım
+                                </a>
+                                <a href="/users/logout">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
+                                    </svg> Çıkış Yap
+                                </a>
+
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <%- body %>
+
+    </div>
+
+
+
+    <!-- open chat box -->
+    <div uk-toggle="target: #create-post-modal" class="start-chat">
+        <svg class="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path>
+        </svg>
+    </div>
+
+    <div id="offcanvas-chat" uk-offcanvas="flip: true; overlay: true">
+        <div class="uk-offcanvas-bar bg-white p-0 w-full lg:w-80">
+
+
+            <div class="relative pt-5 px-4">
+
+                <h3 class="text-2xl font-bold mb-2"> Chats </h3>
+
+                <div class="absolute right-3 top-4 flex items-center">
+
+                    <button class="uk-offcanvas-close  px-2 -mt-1 relative rounded-full inset-0 lg:hidden blcok" type="button" uk-close></button>
+
+                    <a href="#" uk-toggle="target: #search;animation: uk-animation-slide-top-small">
+                        <ion-icon name="search" class="text-2xl hover:bg-gray-100 p-1 rounded-full"></ion-icon>
+                    </a>
+                    <a href="#">
+                        <ion-icon name="cog" class="text-2xl hover:bg-gray-100 p-1 rounded-full"></ion-icon>
+                    </a>
+                    <a href="#">
+                        <ion-icon name="ellipsis-vertical" class="text-2xl hover:bg-gray-100 p-1 rounded-full"></ion-icon>
+                    </a>
+
+                </div>
+
+
+            </div>
+
+            <div class="absolute bg-white z-10 w-full -mt-5 lg:mt-0 transform translate-y-1.5 py-2 border-b items-center flex" id="search" hidden>
+                <input type="text" placeholder="Search.." class="flex-1">
+                <ion-icon name="close-outline" class="text-2xl hover:bg-gray-100 p-1 rounded-full mr-4 cursor-pointer" uk-toggle="target: #search;animation: uk-animation-slide-top-small"></ion-icon>
+            </div>
+
+            <nav class="cd-secondary-nav border-b extanded mb-2">
+                <ul uk-switcher="connect: #chats-tab; animation: uk-animation-fade">
+                    <li class="uk-active"><a class="active" href="#0"> Friends </a></li>
+                    <li><a href="#0">Groups <span> 10 </span> </a></li>
+                </ul>
+            </nav>
+
+            <div class="contact-list px-2 uk-switcher" id="chats-tab">
+
+                <div>
+
+                    <a href="timeline.html">
+                        <div class="contact-avatar">
+                            <img src="../../../front/images/avatars/avatar-1.jpg" alt="">
+                            <span class="user_status status_online"></span>
+                        </div>
+                        <div class="contact-username"> Dennis Han</div>
+                    </a>
+                    <a href="timeline.html">
+                        <div class="contact-avatar">
+                            <img src="../../../front/images/avatars/avatar-2.jpg" alt="">
+                            <span class="user_status"></span>
+                        </div>
+                        <div class="contact-username"> Erica Jones</div>
+                    </a>
+                    <a href="timeline.html">
+                        <div class="contact-avatar">
+                            <img src="../../../front/images/avatars/avatar-3.jpg" alt="">
+
+                        </div>
+                        <div class="contact-username">Stella Johnson</div>
+                    </a>
+                    <a href="timeline.html">
+                        <div class="contact-avatar">
+                            <img src="../../../front/images/avatars/avatar-4.jpg" alt="">
+
+                        </div>
+                        <div class="contact-username"> Alex Dolgove</div>
+                    </a>
+
+                </div>
+                <div>
+
+                    <a href="timeline.html">
+                        <div class="contact-avatar">
+                            <img src="../../../front/images/avatars/avatar-1.jpg" alt="">
+                            <span class="user_status status_online"></span>
+                        </div>
+                        <div class="contact-username"> Dennis Han</div>
+                    </a>
+                    <a href="timeline.html">
+                        <div class="contact-avatar">
+                            <img src="../../../front/images/avatars/avatar-2.jpg" alt="">
+                            <span class="user_status"></span>
+                        </div>
+                        <div class="contact-username"> Erica Jones</div>
+                    </a>
+                    <a href="timeline.html">
+                        <div class="contact-avatar">
+                            <img src="../../../front/images/avatars/avatar-3.jpg" alt="">
+
+                        </div>
+                        <div class="contact-username">Stella Johnson</div>
+                    </a>
+                    <a href="timeline.html">
+                        <div class="contact-avatar">
+                            <img src="../../../front/images/avatars/avatar-4.jpg" alt="">
+
+                        </div>
+                        <div class="contact-username"> Alex Dolgove</div>
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- story-preview -->
+    <div class="story-prev">
+
+        <div class="story-sidebar uk-animation-slide-left-medium">
+            <div class="md:flex justify-between items-center py-2 hidden">
+                <h3 class="text-2xl font-semibold"> All Story </h3>
+                <a href="#" class="text-blue-600"> Setting</a>
+            </div>
+
+            <div class="story-sidebar-scrollbar" data-simplebar>
+                <h3 class="text-lg font-medium"> Your Story </h3>
+
+                <a class="flex space-x-4 items-center hover:bg-gray-100 md:my-2 py-2 rounded-lg hover:text-gray-700" href="#">
+                    <svg class="w-12 h-12 p-3 bg-gray-200 rounded-full text-blue-500 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                    </svg>
+                    <div class="flex-1">
+                        <div class="text-lg font-semibold"> Create a story </div>
+                        <div class="text-sm -mt-0.5"> Share a photo or write something. </div>
+                    </div>
+                </a>
+
+                <h3 class="text-lg font-medium lg:mt-3 mt-1"> Friends Story </h3>
+
+                <div class="story-users-list" uk-switcher="connect: #story_slider ; toggle: > * ; animation: uk-animation-slide-right-medium, uk-animation-slide-left-medium ">
+
+                    <a href="#">
+                        <div class="story-media">
+                            <img src="../../../front/images/avatars/avatar-1.jpg" alt="">
+                        </div>
+                        <div class="story-text">
+                            <div class="story-username"> Dennis Han</div>
+                            <p> <span class="story-count"> 2 new </span> <span class="story-time"> 4Mn ago</span> </p>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="story-media">
+                            <img src="../../../front/images/avatars/avatar-2.jpg" alt="">
+                        </div>
+                        <div class="story-text">
+                            <div class="story-username"> Adrian Mohani</div>
+                            <p> <span class="story-count"> 1 new </span> <span class="story-time"> 1hr ago</span> </p>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="story-media">
+                            <img src="../../../front/images/avatars/avatar-3.jpg" alt="">
+                        </div>
+                        <div class="story-text">
+                            <div class="story-username">Alex Dolgove </div>
+                            <p> <span class="story-count"> 3 new </span> <span class="story-time"> 2hr ago</span> </p>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="story-media">
+                            <img src="../../../front/images/avatars/avatar-4.jpg" alt="">
+                        </div>
+                        <div class="story-text">
+                            <div class="story-username"> Stella Johnson </div>
+                            <p> <span class="story-count"> 2 new </span> <span class="story-time"> 3hr ago</span> </p>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="story-media">
+                            <img src="../../../front/images/avatars/avatar-5.jpg" alt="">
+                        </div>
+                        <div class="story-text">
+                            <div class="story-username"> Adrian Mohani </div>
+                            <p> <span class="story-count"> 1 new </span> <span class="story-time"> 4hr ago</span> </p>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="story-media">
+                            <img src="../../../front/images/avatars/avatar-8.jpg" alt="">
+                        </div>
+                        <div class="story-text">
+                            <div class="story-username"> Dennis Han</div>
+                            <p> <span class="story-count"> 2 new </span> <span class="story-time"> 8Hr ago</span> </p>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="story-media">
+                            <img src="../../../front/images/avatars/avatar-6.jpg" alt="">
+                        </div>
+                        <div class="story-text">
+                            <div class="story-username"> Adrian Mohani</div>
+                            <p> <span class="story-count"> 1 new </span> <span class="story-time"> 12hr ago</span> </p>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="story-media">
+                            <img src="../../../front/images/avatars/avatar-7.jpg" alt="">
+                        </div>
+                        <div class="story-text">
+                            <div class="story-username">Alex Dolgove </div>
+                            <p> <span class="story-count"> 3 new </span> <span class="story-time"> 22hr ago</span> </p>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="story-media">
+                            <img src="../../../front/images/avatars/avatar-8.jpg" alt="">
+                        </div>
+                        <div class="story-text">
+                            <div class="story-username"> Stella Johnson </div>
+                            <p> <span class="story-count"> 2 new </span> <span class="story-time"> 3Dy ago</span> </p>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="story-media">
+                            <img src="../../../front/images/avatars/avatar-5.jpg" alt="">
+                        </div>
+                        <div class="story-text">
+                            <div class="story-username"> Adrian Mohani </div>
+                            <p> <span class="story-count"> 1 new </span> <span class="story-time"> 4Dy ago</span> </p>
+                        </div>
+                    </a>
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+        <div class="story-content">
+
+            <ul class="uk-switcher uk-animation-scale-up" id="story_slider">
+                <li class="relative">
+
+                    <span uk-switcher-item="previous" class="slider-icon is-left"> </span>
+                    <span uk-switcher-item="next" class="slider-icon is-right"> </span>
+
+                    <div uk-lightbox>
+                        <a href="../../../front/images/avatars/avatar-lg-2.jpg" data-alt="Image">
+                            <img src="../../../front/images/avatars/avatar-lg-2.jpg" class="story-slider-image" data-alt="Image">
+                        </a>
+                    </div>
+
+                </li>
+                <li class="relative">
+
+                    <span uk-switcher-item="previous" class="slider-icon is-left"> </span>
+                    <span uk-switcher-item="next" class="slider-icon is-right"> </span>
+
+                    <div uk-lightbox>
+                        <a href="../../../front/images/avatars/avatar-lg-1.jpg" data-alt="Image">
+                            <img src="../../../front/images/avatars/avatar-lg-1.jpg" class="story-slider-image" data-alt="Image">
+                        </a>
+                    </div>
+
+                </li>
+                <li class="relative">
+
+                    <span uk-switcher-item="previous" class="slider-icon is-left"> </span>
+                    <span uk-switcher-item="next" class="slider-icon is-right"> </span>
+
+                    <div uk-lightbox>
+                        <a href="../../../front/images/avatars/avatar-lg-4.jpg" data-alt="Image">
+                            <img src="../../../front/images/avatars/avatar-lg-4.jpg" class="story-slider-image" data-alt="Image">
+                        </a>
+                    </div>
+
+                </li>
+
+                <li class="relative">
+                    <div class="bg-gray-200 story-slider-placeholder shadow-none animate-pulse"> </div>
+                </li>
+                <li class="relative">
+                    <div class="bg-gray-200 story-slider-placeholder shadow-none animate-pulse"> </div>
+                </li>
+                <li class="relative">
+                    <div class="bg-gray-200 story-slider-placeholder shadow-none animate-pulse"> </div>
+                </li>
+                <li class="relative">
+                    <div class="bg-gray-200 story-slider-placeholder shadow-none animate-pulse"> </div>
+                </li>
+                <li class="relative">
+                    <div class="bg-gray-200 story-slider-placeholder shadow-none animate-pulse"> </div>
+                </li>
+                <li class="relative">
+                    <div class="bg-gray-200 story-slider-placeholder shadow-none animate-pulse"> </div>
+                </li>
+                <li class="relative">
+                    <div class="bg-gray-200 story-slider-placeholder shadow-none animate-pulse"> </div>
+                </li>
+                <li class="relative">
+                    <div class="bg-gray-200 story-slider-placeholder shadow-none animate-pulse"> </div>
+                </li>
+            </ul>
+
+        </div>
+
+        <!-- story colose button-->
+        <span class="story-btn-close" uk-toggle="target: body ; cls: story-active" uk-tooltip="title:Close story ; pos: left">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </span>
+
+    </div>
+
+    <!-- Craete post modal -->
+
+
+
+    <!-- Javascript
+    ================================================== -->
+    <script src="../../../front/js/jquery-3.3.1.min.js"></script>
+    <script src="../../../front/js/uikit.js"></script>
+    <script src="../../../front/js/simplebar.js"></script>
+    <script src="../../../front/js/custom.js"></script>
+    <script src="../../../front/js/bootstrap-select.min.js"></script>
+    <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+
+</body>
+
+</html>

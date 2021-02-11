@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+
+
+
+<head>
+
+    <!-- Basic Page Needs
+    ================================================== -->
+    <title>Panipal Express</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Tüm aradıkların bir ekranda iş, alışveriş ve mekanlar ile yeni sosyal panipal.com">
+
+    <!-- Favicon -->
+    <link rel="icon" href="../../../../../panpan.png">
+
+
+    <!-- CSS 
+    ================================================== -->
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="stylesheet" href="../../../assets/css/framework.css">
+
+    <!-- icons
+    ================================================== -->
+    <link rel="stylesheet" href="../../../assets/css/icons.css">
+    <!--
+    
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,300i,400,400i,500,600" rel="stylesheet"> -->
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <style>
+        body {
+            background-image: url(../../../images/19854.jpg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            background-color: #464646;
+        }
+    </style>
+</head>
+
+<body>
+    <div uk-height-viewport="expand: true" class="uk-flex uk-flex-middle">
+        <div class="uk-width-1-3@m uk-width-1-2@s m-auto" style="background-color:white; padding:20px; border-radius: 30px; box-shadow: 5px 10px 5px lightblue;">
+            <div class="px-2 uk-animation-scale-up">
+                <div class="my-4 uk-text-center">
+                    <h1 class="mb-2"> Giriş Yap </h1>
+                    <p class="my-2">Hesabınız yok mu ? Hemen
+                        <!-- <a href="/register" class="uk-link text-primary"> Üye ol</a> </p> -->
+                </div>
+                <form action="/users/login" method="POST">
+                    <div class="uk-form-group">
+                        <div class="uk-position-relative">
+                            <input class="uk-input bg-secondary" name="username" type="email" placeholder="Kullanıcı Adı">
+                        </div>
+                    </div>
+                    <div class="uk-form-group">
+                        <div class="uk-position-relative">
+                            <input class="uk-input bg-secondary" name="password" type="password" placeholder="Şifre">
+                        </div>
+                    </div>
+                    <button type="submit" class="button primary large block mb-4">Giriş Yap</button>
+                    <a href="#" class="text-center uk-display-block"> Şifrenizi mi unuttunuz ?</a>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- javaScripts
+    ================================================== -->
+    <script src="../../../assets/js/framework.js"></script>
+    <script src="../../../assets/js/jquery-3.3.1.min.js"></script>
+    <script src="../../../assets/js/simplebar.js"></script>
+    <script src="../../../assets/js/main.js"></script>
+    <script src="../../../assets/js/bootstrap-select.min.html"></script>
+
+
+</body>
+
+
+<!-- Mirrored from demo.foxthemes.net/socialitehtml/form-login.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 09 Dec 2020 13:38:52 GMT -->
+
+</html>

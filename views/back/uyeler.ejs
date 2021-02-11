@@ -1,0 +1,38 @@
+<% layout("layout") %> 
+
+<section class="panel">
+    <header class="panel-heading">
+        <div class="panel-actions">
+            <a href="#" class="panel-action panel-action-toggle" data-panel-toggle></a>
+            <a href="#" class="panel-action panel-action-dismiss" data-panel-dismiss></a>
+        </div>
+
+        <h2 class="panel-title">ÜYELER</h2>
+    </header>
+    <div class="panel-body">
+        <table class="table table-bordered table-striped mb-none" id="datatable-default">
+            <thead>
+                <tr>
+                    <th>AD SOYAD</th>
+                    <th>TELEFON</th>
+                    <th>MAİL</th>
+                    <th>İL - İLÇE</th>
+                    <th>EYLEM</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% uyeler.forEach(element => { %>
+                    <% if (element.item.type == 2) { %>
+                        <tr>
+                            <td><%= element.item.name %> <%= element.item.surname %> </td>
+                            <td>-</td>
+                            <td><%= element.username %> </td>
+                            <td>- </td>
+                            <td><%= element._id %></td>
+                        </tr>
+                    <% } %>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+</section>
