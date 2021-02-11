@@ -4,12 +4,12 @@
         <div class="container">
             <div class="lg:flex lg:space-y-10">
                 <div class="lg:w-3/4 lg:px-20 space-y-12">
-                    <div class="bg-white shadow border border-gray-100 rounded-lg dark:bg-gray-900 lg:mx-0 p-4" uk-toggle="target: #create-post-modal">
+                    <!-- <div class="bg-white shadow border border-gray-100 rounded-lg dark:bg-gray-900 lg:mx-0 p-4" uk-toggle="target: #create-post-modal">
                         <div class="flex space-x-3">
                             <img src="../../../front/images/avatars/avatar-2.jpg" class="w-10 h-10 rounded-full">
                             <input placeholder="Lütfen eklemek istediğiniz içeriği giriniz." v-model="title" class="bg-gray-100 hover:bg-gray-200 flex-1 h-10 px-6 rounded-full">
                         </div>
-                    </div>
+                    </div> -->
                     <br><br>
                     <div class="flex flex-wrap gap-2">
                         <% etiket.forEach(element => { %>
@@ -40,6 +40,7 @@
                                     <div class="flex items-start pl-3 space-x-4">
                                         <img src="../../../front/images/avatars/avatar-2.jpg" alt="" class="w-16 h-16 rounded-full">
                                         <div class="flex-1">
+                                            <!-- <h3 class="text-lg font-semibold line-clamp-1"> -->
                                             <h3 class="text-lg font-semibold">
                                                 <%= element.title %>
                                             </h3>
