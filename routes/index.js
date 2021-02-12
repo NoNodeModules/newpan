@@ -18,4 +18,6 @@ router.get("/sozluk", sozlukController.list)
 router.post("/sozluk/yorumekle", sozlukController.ekle)
 router.post("/sozluk/konuekle", sozlukController.insert)
 
+router.get("/profil", mainController.profil)
+
 module.exports = router;

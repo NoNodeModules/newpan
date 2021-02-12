@@ -26,3 +26,12 @@ exports.single = async(req, res, next) => {
         konu: konu
     })
 }
+
+exports.profil = async(req, res, next) => {
+    let sozluk = await Sozluk.find({}).sort({ "createdAt": -1 }).limit(3)
+    res.render("front/profil", {
+        user: req.user,
+        sozluk: sozluk,
+        moment: moment
+    })
+}

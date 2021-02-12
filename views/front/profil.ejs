@@ -1,0 +1,210 @@
+<% layout("layout") %>
+
+    <div class="main_content">
+        <div class="mcontainer">
+
+            <div class="profile user-profile bg-white rounded-2xl -mt-4">
+
+                <div class="profiles_banner">
+                    <img src="../../../front/images/avatars/profile-cover.jpg" alt="">
+                </div>
+                <div class="profiles_content">
+
+                    <div class="profile_avatar">
+                        <div class="profile_avatar_holder">
+                            <img src="../../../front/images/avatars/avatar-8.jpg" alt="">
+                        </div>
+                        <div class="user_status status_online"></div>
+                        <div class="icon_change_photo" hidden>
+                            <ion-icon name="camera" class="text-xl"></ion-icon>
+                        </div>
+                    </div>
+
+                    <div class="profile_info">
+                        <h1> Abdullah Bektaş </h1>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="lg:flex lg:mt-8 mt-4 lg:space-x-8">
+                <div class="lg:w-12/12 space-y-6">
+                    <p class="text-center" style="font-family: 'Shadows Into Light', cursive !important; font-size: 20pt !important; color: steelblue;"> <b>YAZARIN PAYLAŞTIĞI KONULAR</b> </p>
+                    <hr style="background-color: steelblue; height: 1px; border: 0; margin-bottom: 10px;">
+
+                    <ul class="space-y-6">
+                        <% sozluk.forEach(element => { %>
+                            <li>
+                                <a href="/single/<%= element._id %>">
+                                    <div class="flex items-start pl-3 space-x-4">
+                                        <img src="../../../front/images/avatars/avatar-2.jpg" alt="" class="w-16 h-16 rounded-full">
+                                        <div class="flex-1">
+                                            <!-- <h3 class="text-lg font-semibold line-clamp-1"> -->
+                                            <h3 class="text-lg font-semibold">
+                                                <%= element.title %>
+                                            </h3>
+                                            <p class="text-sm text-gray-400 mb-2"> Yazar: <span data-href="%40tag-dev.html">Abdullah Bektaş</span> |
+                                                <%= moment(element.createdAt,"ddd MMM DD YYYY HH:mm:ss GMT Z'").fromNow(true) %> önce </span>
+                                            </p>
+                                            <!-- <p class="leading-6 line-clamp-2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat</p> -->
+                                        </div>
+                                    </div>
+                                    <div class="row">
+
+                                        <div class="col-md-12 col-sm-12 col-xs-12" style="width: 33%;">
+                                            <table>
+                                                <tr>
+                                                    <td>
+                                                        <div class="flex items-center space-x-4">
+                                                            <ion-icon style="padding-left: 15vw;" name="share-social-outline" class="text-2xl"></ion-icon>
+                                                            <span class="text-xl">3</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="flex items-center space-x-4">
+                                                            <ion-icon style="padding-left: 15vw;" name="heart-outline" class="text-2xl"></ion-icon>
+                                                            <span class="text-xl"> 3 </span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="flex items-center space-x-4">
+                                                            <ion-icon style="padding-left: 15vw;" name="chatbubble-ellipses-outline" class="text-2xl"></ion-icon>
+                                                            <span class="text-xl"> <%= element.comment.length %>  </span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+
+
+
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <hr style="margin-top: 7px;">
+                            <% }) %>
+                    </ul>
+                </div>
+            </div>
+            <div class="lg:flex lg:mt-8 mt-4 lg:space-x-8">
+                <div class="lg:w-12/12 space-y-6">
+                    <p class="text-center" style="font-family: 'Shadows Into Light', cursive !important; font-size: 20pt !important; color: steelblue;"> <b>YAZARIN CEVAPLADIĞI KONULAR</b> </p>
+                    <hr style="background-color: steelblue; height: 1px; border: 0; margin-bottom: 10px;">
+
+                    <ul class="space-y-6">
+                        <% sozluk.forEach(element => { %>
+                            <li>
+                                <a href="/single/<%= element._id %>">
+                                    <div class="flex items-start pl-3 space-x-4">
+                                        <img src="../../../front/images/avatars/avatar-2.jpg" alt="" class="w-16 h-16 rounded-full">
+                                        <div class="flex-1">
+                                            <!-- <h3 class="text-lg font-semibold line-clamp-1"> -->
+                                            <h3 class="text-lg font-semibold">
+                                                <%= element.title %>
+                                            </h3>
+                                            <p class="text-sm text-gray-400 mb-2"> Yazar: <span data-href="%40tag-dev.html">Abdullah Bektaş</span> |
+                                                <%= moment(element.createdAt,"ddd MMM DD YYYY HH:mm:ss GMT Z'").fromNow(true) %> önce </span>
+                                            </p>
+                                            <!-- <p class="leading-6 line-clamp-2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat</p> -->
+                                        </div>
+                                    </div>
+                                    <div class="row">
+
+                                        <div class="col-md-12 col-sm-12 col-xs-12" style="width: 33%;">
+                                            <table>
+                                                <tr>
+                                                    <td>
+                                                        <div class="flex items-center space-x-4">
+                                                            <ion-icon style="padding-left: 15vw;" name="share-social-outline" class="text-2xl"></ion-icon>
+                                                            <span class="text-xl">3</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="flex items-center space-x-4">
+                                                            <ion-icon style="padding-left: 15vw;" name="heart-outline" class="text-2xl"></ion-icon>
+                                                            <span class="text-xl"> 3 </span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="flex items-center space-x-4">
+                                                            <ion-icon style="padding-left: 15vw;" name="chatbubble-ellipses-outline" class="text-2xl"></ion-icon>
+                                                            <span class="text-xl"> <%= element.comment.length %>  </span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+
+
+
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <hr style="margin-top: 7px;">
+                            <% }) %>
+                    </ul>
+                </div>
+            </div>
+            <div class="lg:flex lg:mt-8 mt-4 lg:space-x-8">
+                <div class="lg:w-12/12 space-y-6">
+                    <p class="text-center" style="font-family: 'Shadows Into Light', cursive !important; font-size: 20pt !important; color: steelblue;"> <b>YAZARIN BEĞENDİĞİ KONULAR</b> </p>
+                    <hr style="background-color: steelblue; height: 1px; border: 0; margin-bottom: 10px;">
+
+                    <ul class="space-y-6">
+                        <% sozluk.forEach(element => { %>
+                            <li>
+                                <a href="/single/<%= element._id %>">
+                                    <div class="flex items-start pl-3 space-x-4">
+                                        <img src="../../../front/images/avatars/avatar-2.jpg" alt="" class="w-16 h-16 rounded-full">
+                                        <div class="flex-1">
+                                            <!-- <h3 class="text-lg font-semibold line-clamp-1"> -->
+                                            <h3 class="text-lg font-semibold">
+                                                <%= element.title %>
+                                            </h3>
+                                            <p class="text-sm text-gray-400 mb-2"> Yazar: <span data-href="%40tag-dev.html">Abdullah Bektaş</span> |
+                                                <%= moment(element.createdAt,"ddd MMM DD YYYY HH:mm:ss GMT Z'").fromNow(true) %> önce </span>
+                                            </p>
+                                            <!-- <p class="leading-6 line-clamp-2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat</p> -->
+                                        </div>
+                                    </div>
+                                    <div class="row">
+
+                                        <div class="col-md-12 col-sm-12 col-xs-12" style="width: 33%;">
+                                            <table>
+                                                <tr>
+                                                    <td>
+                                                        <div class="flex items-center space-x-4">
+                                                            <ion-icon style="padding-left: 15vw;" name="share-social-outline" class="text-2xl"></ion-icon>
+                                                            <span class="text-xl">3</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="flex items-center space-x-4">
+                                                            <ion-icon style="padding-left: 15vw;" name="heart-outline" class="text-2xl"></ion-icon>
+                                                            <span class="text-xl"> 3 </span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="flex items-center space-x-4">
+                                                            <ion-icon style="padding-left: 15vw;" name="chatbubble-ellipses-outline" class="text-2xl"></ion-icon>
+                                                            <span class="text-xl"> <%= element.comment.length %>  </span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+
+
+
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <hr style="margin-top: 7px;">
+                            <% }) %>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
