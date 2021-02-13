@@ -36,7 +36,7 @@
                     <hr style="background-color: steelblue; height: 1px; border: 0; margin-bottom: 10px;">
                     <ul class="space-y-6">
                         <% sozluk.forEach(element => { %>
-                            <li>
+                            <li style="margin-top: 4px;">
                                 <a href="/single/<%= element._id %>">
                                     <div class="flex items-start pl-3 space-x-4">
                                         <img src="../../../front/images/avatars/avatar-2.jpg" alt="" class="w-16 h-16 rounded-full">
@@ -57,32 +57,29 @@
                                                 <tr>
                                                     <td>
                                                         <div class="flex items-center space-x-4">
-                                                            <ion-icon style="padding-left: 15vw;" name="share-social-outline" class="text-2xl"></ion-icon>
+                                                            <ion-icon style="padding-left: 17vw;" name="share-social-outline" class="text-2xl"></ion-icon>
                                                             <span class="text-xl">3</span>
                                                         </div>
                                                     </td>
                                                     <td>
                                                         <div class="flex items-center space-x-4">
-                                                            <ion-icon style="padding-left: 15vw;" name="heart-outline" class="text-2xl"></ion-icon>
+                                                            <ion-icon style="padding-left: 17vw;" name="heart-outline" class="text-2xl"></ion-icon>
                                                             <span class="text-xl"> 3 </span>
                                                         </div>
                                                     </td>
                                                     <td>
                                                         <div class="flex items-center space-x-4">
-                                                            <ion-icon style="padding-left: 15vw;" name="chatbubble-ellipses-outline" class="text-2xl"></ion-icon>
+                                                            <ion-icon style="padding-left: 17vw;" name="chatbubble-ellipses-outline" class="text-2xl"></ion-icon>
                                                             <span class="text-xl"> <%= element.comment.length %>  </span>
                                                         </div>
                                                     </td>
                                                 </tr>
                                             </table>
-
-
-
                                         </div>
                                     </div>
                                 </a>
                             </li>
-                            <hr style="margin-top: 7px;">
+                            <hr style="margin-top: -0px;">
                             <% }) %>
                     </ul>
                 </div>
