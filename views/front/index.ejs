@@ -1,5 +1,17 @@
 <% layout("layout") %>
-
+    <style>
+        @media screen and (max-width: 600px) {
+            #icon {
+                margin-left: 18vw;
+            }
+        }
+        
+        @media screen and (min-width:600px) and (max-width:2400px) {
+            #icon {
+                margin-left: 17vw;
+            }
+        }
+    </style>
     <div class="main_content" id="app">
         <div class="container">
             <div class="lg:flex lg:space-y-10">
@@ -57,19 +69,19 @@
                                                 <tr>
                                                     <td>
                                                         <div class="flex items-center space-x-4">
-                                                            <ion-icon style="padding-left: 20vw;" name="share-social-outline" class="text-2xl"></ion-icon>
+                                                            <ion-icon id="icon" name="share-social-outline" class="text-2xl"></ion-icon>
                                                             <span class="text-xl">3</span>
                                                         </div>
                                                     </td>
                                                     <td>
                                                         <div class="flex items-center space-x-4">
-                                                            <ion-icon style="padding-left: 17vw;" name="heart-outline" class="text-2xl"></ion-icon>
+                                                            <ion-icon id="icon" name="heart-outline" class="text-2xl"></ion-icon>
                                                             <span class="text-xl"> 3 </span>
                                                         </div>
                                                     </td>
                                                     <td>
                                                         <div class="flex items-center space-x-4">
-                                                            <ion-icon style="padding-left: 17vw;" name="chatbubble-ellipses-outline" class="text-2xl"></ion-icon>
+                                                            <ion-icon id="icon" name="chatbubble-ellipses-outline" class="text-2xl"></ion-icon>
                                                             <span class="text-xl"> <%= element.comment.length %>  </span>
                                                         </div>
                                                     </td>
