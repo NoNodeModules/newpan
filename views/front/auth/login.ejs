@@ -1,88 +1,110 @@
-<!doctype html>
-<html lang="en">
-
-
+<!DOCTYPE html>
+<html lang="en" class="bg-gray-100">
 
 <head>
-
-    <!-- Basic Page Needs
-    ================================================== -->
-    <title>Panipal Express</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Tüm aradıkların bir ekranda iş, alışveriş ve mekanlar ile yeni sosyal panipal.com">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Favicon -->
-    <link rel="icon" href="../../../../../panpan.png">
+    <link href="../../../front/images/favicon.png" rel="icon" type="image/png">
 
-
-    <!-- CSS 
-    ================================================== -->
-    <link rel="stylesheet" href="../../../assets/css/style.css">
-    <link rel="stylesheet" href="../../../assets/css/framework.css">
+    <!-- Basic Page Needs
+        ================================================== -->
+    <title>PANİPAL - GİRİŞ YAP</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Panipal giriş yap">
 
     <!-- icons
     ================================================== -->
-    <link rel="stylesheet" href="../../../assets/css/icons.css">
-    <!--
-    
-    <link href="https://fonts.googleapis.com/css?family=Muli:300,300i,400,400i,500,600" rel="stylesheet"> -->
+    <link rel="stylesheet" href="../../../front/scss/icons.css">
 
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <!-- CSS 
+    ================================================== -->
+    <link rel="stylesheet" href="../../../front/css/uikit.css">
+    <link rel="stylesheet" href="../../../front/css/style.css">
+    <link rel="stylesheet" href="../../../front/css/icons.css">
+    <link rel="stylesheet" href="../../../front/css/tailwind.css">
+
+
     <style>
-        body {
-            background-image: url(../../../images/19854.jpg);
-            background-position: center center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-size: cover;
-            background-color: #464646;
+        input,
+        .bootstrap-select.btn-group button {
+            background-color: #f3f4f6 !important;
+            height: 44px !important;
+            box-shadow: none !important;
         }
     </style>
 </head>
 
 <body>
-    <div uk-height-viewport="expand: true" class="uk-flex uk-flex-middle">
-        <div class="uk-width-1-3@m uk-width-1-2@s m-auto" style="background-color:white; padding:20px; border-radius: 30px; box-shadow: 5px 10px 5px lightblue;">
-            <div class="px-2 uk-animation-scale-up">
-                <div class="my-4 uk-text-center">
-                    <h1 class="mb-2"> Giriş Yap </h1>
-                    <p class="my-2">Hesabınız yok mu ? Hemen
-                        <!-- <a href="/register" class="uk-link text-primary"> Üye ol</a> </p> -->
+
+    <body class="bg-gray-100">
+
+
+        <div id="wrapper" class="flex flex-col justify-between h-screen">
+
+            <!-- header-->
+            <div class="bg-white py-4 shadow dark:bg-gray-800">
+                <div class="max-w-6xl mx-auto">
+
+
+                    <div class="flex items-center lg:justify-between justify-around">
+
+                        <a href="/">
+                            <img src="../../../newpan.png" alt="" class="w-32">
+                        </a>
+
+
+                    </div>
                 </div>
-                <form action="/users/login" method="POST">
-                    <div class="uk-form-group">
-                        <div class="uk-position-relative">
-                            <input class="uk-input bg-secondary" name="username" type="email" placeholder="Kullanıcı Adı">
-                        </div>
-                    </div>
-                    <div class="uk-form-group">
-                        <div class="uk-position-relative">
-                            <input class="uk-input bg-secondary" name="password" type="password" placeholder="Şifre">
-                        </div>
-                    </div>
-                    <button type="submit" class="button primary large block mb-4">Giriş Yap</button>
-                    <a href="#" class="text-center uk-display-block"> Şifrenizi mi unuttunuz ?</a>
-                </form>
             </div>
+
+            <!-- Content-->
+            <div>
+                <div class="lg:p-12 max-w-xl lg:my-0 my-12 mx-auto p-6 space-y-">
+                    <form class="lg:p-10 p-6 space-y-3 relative bg-white shadow-xl rounded-md" action="/users/login" method="POST">
+                        <h1 class="lg:text-2xl text-xl font-semibold mb-6"> Giriş Yap </h1>
+                        <div>
+                            <label class="mb-0"> Mail Adresiniz </label>
+                            <input type="email" name="username" placeholder="info@ornek.com" class="bg-gray-100 h-12 mt-2 px-3 rounded-md w-full">
+                        </div>
+                        <div>
+                            <label class="mb-0"> Şifre </label>
+                            <input type="password" name="password" placeholder="******" class="bg-gray-100 h-12 mt-2 px-3 rounded-md w-full">
+                        </div>
+
+                        <div>
+                            <button type="submit" class="bg-blue-600 font-semibold p-2 mt-5 rounded-md text-center text-white w-full">
+                                Giriş Yap</button>
+                        </div>
+                    </form>
+
+
+                </div>
+            </div>
+
+            <!-- Footer -->
+
+            <div class="lg:mb-5 py-3 uk-link-reset">
+                <div class="flex flex-col items-center justify-between lg:flex-row max-w-6xl mx-auto lg:space-y-0 space-y-3">
+
+                    <p class="capitalize"> © copyright 2020 by Panipal</p>
+                </div>
+            </div>
+
         </div>
-    </div>
 
 
-
-
-    <!-- javaScripts
+        <!-- Javascript
     ================================================== -->
-    <script src="../../../assets/js/framework.js"></script>
-    <script src="../../../assets/js/jquery-3.3.1.min.js"></script>
-    <script src="../../../assets/js/simplebar.js"></script>
-    <script src="../../../assets/js/main.js"></script>
-    <script src="../../../assets/js/bootstrap-select.min.html"></script>
+        <script src="../../../front/js/jquery-3.3.1.min.js"></script>
+        <script src="../../../front/js/uikit.js"></script>
+        <script src="../../../front/js/simplebar.js"></script>
+        <script src="../../../front/js/custom.js"></script>
+        <script src="../../../front/js/bootstrap-select.min.js"></script>
+        <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
 
-
-</body>
-
-
-<!-- Mirrored from demo.foxthemes.net/socialitehtml/form-login.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 09 Dec 2020 13:38:52 GMT -->
+    </body>
 
 </html>
