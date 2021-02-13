@@ -4,11 +4,7 @@ var User = require('../models/user');
 var router = express.Router();
 
 router.get('/register', function(req, res) {
-    res.render('front/auth/register', {});
-});
-
-router.get('/m/register', function(req, res) {
-    res.render('front/auth/mregister', {});
+    res.render('front/auth/register2', {});
 });
 
 router.post('/register', function(req, res) {
@@ -16,7 +12,7 @@ router.post('/register', function(req, res) {
         req.body.password,
         function(err, user) {
             if (err) {
-                return res.render('front/auth/register', { user: user });
+                return res.render('front/auth/register2', { user: user });
             }
 
             passport.authenticate('local')(req, res, function() {
