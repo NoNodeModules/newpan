@@ -35,3 +35,9 @@ exports.profil = async(req, res, next) => {
         moment: moment
     })
 }
+
+exports.ayar = async(req,res,next)=>{
+    res.render("front/setting",{
+        user:req.user
+    })
+}
