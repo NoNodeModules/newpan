@@ -25,7 +25,7 @@
                     <br>
                     <div class="flex flex-wrap gap-1 responsive-tab ">
                         <% etiket.forEach(element => { %>
-                            <a href="/sozluk/<%= element.tag %>" class="bg-gray-100 py-1.5 px-4 rounded-full">
+                            <a href="/sozluk/<%= element.tag %>" style="text-transform: lowercase;" class="bg-gray-100 py-1.5 px-4 rounded-full">
                                 <%= element.tag %>
                             </a>
                             <% }) %>
