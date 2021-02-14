@@ -23,6 +23,31 @@
                     <div class="profile_info">
                         <h1> Abdullah Bektaş </h1>
                     </div>
+                    <div class="widget">
+                        <!-- <h4 class="text-2xl mb-3 font-semibold"> Hakkında </h4> -->
+                        <ul class="text-gray-600 space-y-4">
+                            <li class="flex items-center space-x-2"> 
+                                <ion-icon name="home-sharp" class=" rounded-full bg-gray-200 text-xl p-1.5 mr-3"></ion-icon>
+                                <strong> İstanbul'da bir yer . .   </strong>
+                            </li>
+                            <li class="flex items-center space-x-2"> 
+                                <ion-icon name="globe" class=" rounded-full bg-gray-200 text-xl p-1.5 mr-3"></ion-icon>
+                                <strong> www.ornek.com  </strong>
+                            </li>
+                            <li class="flex items-center space-x-2"> 
+                                <ion-icon name="logo-instagram" class=" rounded-full bg-gray-200 text-xl p-1.5 mr-3"></ion-icon>
+                                <strong> @ornekkisi  </strong>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <ion-icon name="logo-facebook" class=" rounded-full bg-gray-200 text-xl p-1.5 mr-3"></ion-icon>
+                                <strong> <a href="https://google.com">Abdullah Bektaş</a> </strong>
+                            </li>   
+                            <li class="flex items-center space-x-2">
+                            <ion-icon name="logo-twitter" class=" rounded-full bg-gray-200 text-xl p-1.5 mr-3"></ion-icon>
+                                <strong> <a href="https://google.com">Abdullah Bektaş</a> </strong>
+                            </li>   
+                        </ul></div>
+                    </div>
 
                 </div>
 
@@ -40,7 +65,7 @@
             </div>
 
             <div class="lg:flex lg:mt-8 mt-4 lg:space-x-8">
-                <div class="lg:w-12/12 space-y-6">
+                <div class="lg:w-7/12 space-y-6">
                     <ul class="space-y-6">
                         <% sozluk.forEach(element => { %>
                             <li>
@@ -60,24 +85,24 @@
                                     </div>
                                     <div class="row">
 
-                                        <div class="col-md-12 col-sm-12 col-xs-12" style="width: 33%;">
+                                        <div class="col-md-12 col-sm-12 col-xs-12" style="width: 18%;">
                                             <table>
                                                 <tr>
                                                     <td>
                                                         <div class="flex items-center space-x-4">
-                                                            <ion-icon style="padding-left: 15vw;" name="share-social-outline" class="text-2xl"></ion-icon>
+                                                            <ion-icon style="padding-left: 8vw;" name="share-social-outline" class="text-2xl"></ion-icon>
                                                             <span class="text-xl">3</span>
                                                         </div>
                                                     </td>
                                                     <td>
                                                         <div class="flex items-center space-x-4">
-                                                            <ion-icon style="padding-left: 15vw;" name="heart-outline" class="text-2xl"></ion-icon>
+                                                            <ion-icon style="padding-left: 8vw;" name="heart-outline" class="text-2xl"></ion-icon>
                                                             <span class="text-xl"> 3 </span>
                                                         </div>
                                                     </td>
                                                     <td>
                                                         <div class="flex items-center space-x-4">
-                                                            <ion-icon style="padding-left: 15vw;" name="chatbubble-ellipses-outline" class="text-2xl"></ion-icon>
+                                                            <ion-icon style="padding-left: 8vw;" name="chatbubble-ellipses-outline" class="text-2xl"></ion-icon>
                                                             <span class="text-xl"> <%= element.comment.length %>  </span>
                                                         </div>
                                                     </td>
@@ -91,6 +116,33 @@
                             <% }) %>
                     </ul>
                 </div>
+                <!-- <div class="lg:w-5/12 space-y-6">
+                  
+                    <div class="widget">
+                        <h4 class="text-2xl mb-3 font-semibold"> Hakkında </h4>
+                        <ul class="text-gray-600 space-y-4">
+                            <li class="flex items-center space-x-2"> 
+                                <ion-icon name="home-sharp" class=" rounded-full bg-gray-200 text-xl p-1.5 mr-3"></ion-icon>
+                                <strong> İstanbul'da bir yer . .   </strong>
+                            </li>
+                            <li class="flex items-center space-x-2"> 
+                                <ion-icon name="globe" class=" rounded-full bg-gray-200 text-xl p-1.5 mr-3"></ion-icon>
+                                <strong> www.ornek.com  </strong>
+                            </li>
+                            <li class="flex items-center space-x-2"> 
+                                <ion-icon name="logo-instagram" class=" rounded-full bg-gray-200 text-xl p-1.5 mr-3"></ion-icon>
+                                <strong> @ornekkisi  </strong>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <ion-icon name="logo-facebook" class=" rounded-full bg-gray-200 text-xl p-1.5 mr-3"></ion-icon>
+                                <strong> <a href="https://google.com">Abdullah Bektaş</a> </strong>
+                            </li>   
+                            <li class="flex items-center space-x-2">
+                            <ion-icon name="logo-twitter" class=" rounded-full bg-gray-200 text-xl p-1.5 mr-3"></ion-icon>
+                                <strong> <a href="https://google.com">Abdullah Bektaş</a> </strong>
+                            </li>   
+                        </ul></div>
+                    </div> -->
             </div>
 
         </div>
