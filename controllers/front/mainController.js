@@ -4,7 +4,7 @@ const Etiket = require("../../models/etiket")
 const moment = require("moment")
 moment.locale("tr")
 
-exports.index = async(req, res, next) => {
+exports.index = async (req, res, next) => {
     let sozluk = await Sozluk.find({}).sort({ "createdAt": -1 })
     let etiket = await Etiket.find({})
     res.render("front/index", {
@@ -15,7 +15,7 @@ exports.index = async(req, res, next) => {
     })
 }
 
-exports.single = async(req, res, next) => {
+exports.single = async (req, res, next) => {
     let sozluk = await Sozluk.find({}).sort({ "createdAt": -1 })
     let etiket = await Etiket.find({})
     let konu = await Sozluk.findById({ "_id": req.params.id })
@@ -27,7 +27,7 @@ exports.single = async(req, res, next) => {
     })
 }
 
-exports.profil = async(req, res, next) => {
+exports.profil = async (req, res, next) => {
     let sozluk = await Sozluk.find({}).sort({ "createdAt": -1 }).limit(3)
     res.render("front/profil", {
         user: req.user,
@@ -36,8 +36,14 @@ exports.profil = async(req, res, next) => {
     })
 }
 
-exports.ayar = async(req,res,next)=>{
-    res.render("front/setting",{
-        user:req.user
+exports.ayar = async (req, res, next) => {
+    res.render("front/set/setting", {
+        user: req.user
+    })
+}
+
+exports.hesap = async (req, res, next) => {
+    res.render("front/set/hesap", {
+        user: req.user
     })
 }

@@ -21,5 +21,6 @@ router.post("/sozluk/konuekle", sozlukController.insert)
 
 router.get("/profil", mainController.profil)
 router.get("/setting",mainController.ayar)
+router.get("/hesap",mainController.hesap)
 
 module.exports = router;
