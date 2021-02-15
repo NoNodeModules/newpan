@@ -53,3 +53,9 @@ exports.baglanti = async (req, res, next) => {
         user: req.user
     })
 }
+
+exports.guvenlik = async (req, res, next) => {
+    res.render("front/set/guvenlik",{
+        user:req.user
+    })
+}

@@ -23,5 +23,6 @@ router.get("/profil", mainController.profil)
 router.get("/setting",mainController.ayar)
 router.get("/hesap",mainController.hesap)
 router.get("/baglanti",mainController.baglanti)
+router.get("/guvenlik",mainController.guvenlik)
 
 module.exports = router;
