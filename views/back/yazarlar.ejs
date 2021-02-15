@@ -7,7 +7,7 @@
             <a href="#" class="panel-action panel-action-dismiss" data-panel-dismiss></a>
         </div>
 
-        <h2 class="panel-title">ÜYELER</h2>
+        <h2 class="panel-title">YAZARLAR</h2>
     </header>
     <div class="panel-body">
         <table class="table table-bordered table-striped mb-none" id="datatable-default">
@@ -21,14 +21,14 @@
                 </tr>
             </thead>
             <tbody>
-                <% uyeler.forEach(element => { %>
-                    <% if (element.type == 2) { %>
+                <% yazar.forEach(element => { %>
+                    <% if (element.type == 1) { %>
                         <tr>
                             <td><%= element.item.name %> <%= element.item.surname %> </td>
                             <td><%= element.item.dt %></td>
                             <td><%= element.username %> </td>
                             <td><%= element.item.cinsiyet %></td>
-                            <td> <a href="/admin/uye/yazarata/<%= element._id %>" class="btn btn-success btn-xs pull-right"> <i class="fas fa-file-alt"></i> YAZAR ATA</a> </td>
+                            <td> <a href="/admin/uye/cevir/<%= element._id %>" class="btn btn-danger btn-xs pull-right"> <i class="fas fa-file-alt"></i> ÜYEYE ÇEVİR</a> </td>
                         </tr>
                     <% } %>
                 <% }) %>

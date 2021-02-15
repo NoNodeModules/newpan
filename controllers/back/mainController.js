@@ -7,15 +7,6 @@ exports.index = async(req, res, next) => {
     })
 }
 
-exports.uyeler = async(req, res, next) => {
-    let uyeler = await User.find({})
-    res.render("back/uyeler", {
-        title: "Üye Listesi",
-        uyeler: uyeler,
-        user: req.user
-    })
-}
-
 exports.firmalar = async(req, res, next) => {
     let firmalar = await User.find({})
     res.render("back/firmalar", {
