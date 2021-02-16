@@ -11,6 +11,8 @@
                 margin-left: 17vw;
             }
         }
+
+        
     </style>
     <div class="main_content" id="app">
         <div class="container">
@@ -22,15 +24,18 @@
                             <input placeholder="Lütfen eklemek istediğiniz içeriği giriniz." v-model="title" class="bg-gray-100 hover:bg-gray-200 flex-1 h-10 px-6 rounded-full">
                         </div>
                     </div> -->
-                    <br>
-                    <div class="flex flex-wrap gap-1 responsive-tab ">
+                    <div style="overflow: auto; white-space: nowrap;">
                         <% etiket.forEach(element => { %>
-                            <a href="/sozluk/<%= element.tag %>" style="text-transform: lowercase;" class="bg-gray-100 py-1.5 px-4 rounded-full">
+                            <a href="/sozluk/<%= element.tag %>" style="text-transform: lowercase; display: inline-block;
+                                text-align: center;
+                                margin: 5px;
+                                text-decoration: none;" class="bg-gray-100 py-1.5 px-4 rounded-full">
                                 <%= element.tag %>
                             </a>
-                            <% }) %>
+                        <% }) %>
                     </div>
-                    <br><br>
+                    
+                    
                     <div class="flex justify-between relative md:mb-4 mb-3">
                         <div class="flex-1">
                             <p class="text-center" style="font-family: 'Shadows Into Light', cursive !important; font-size: 20pt !important; color: steelblue;"> <b>Kesfet</b> </p>
@@ -92,7 +97,11 @@
                             <hr style="margin-top: -0px;">
                             <% }) %>
                     </ul>
+                    <div class="flex flex-wrap gap-1 responsive-tab">
+                        <img src="../../../banner.png" style="width: 100%;" class="img-responsive">
+                    </div>
                 </div>
+                
                 <div id="son" class="lg:w-1/4 w-full flex-shrink-0">
 
                     <div uk-sticky="offset:100" class="uk-sticky">
