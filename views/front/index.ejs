@@ -68,33 +68,32 @@
                                             <p class="text-sm text-gray-400 mb-2"> Yazar: <span data-href="%40tag-dev.html">Abdullah Bektaş</span> |
                                                 <%= moment(element.createdAt,"ddd MMM DD YYYY HH:mm:ss GMT Z'").fromNow(true) %> önce </span>
                                             </p>
-                                            <!-- <p class="leading-6 line-clamp-2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat</p> -->
-                                        </div>
+                                            <div class="row" style="margin-top: -9px; margin-left: 1px;">
+                                                <table>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="flex items-center">
+                                                                <ion-icon name="share-social-outline"></ion-icon>
+                                                                <span class="text-sm">22</span>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="flex items-center">
+                                                                <ion-icon style="padding-left: 17vw;" name="heart-outline"></ion-icon>
+                                                                <span class="text-sm">22</span>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="flex items-center">
+                                                                <ion-icon style="padding-left: 17vw;" name="chatbubble-ellipses-outline"></ion-icon>
+                                                                <span class="text-sm"><%= element.comment.length %>11 </span>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                        </div>                                        </div>
                                     </div>
-                                    <div class="row" style="margin-top: -9px; margin-left: 5px;">
-                                            <table>
-                                                <tr>
-                                                    <td>
-                                                        <div class="flex items-center">
-                                                            <ion-icon style="padding-left: 16vw;" name="share-social-outline"></ion-icon>
-                                                            <span class="text-sm">22</span>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="flex items-center">
-                                                            <ion-icon style="padding-left: 17vw;" name="heart-outline"></ion-icon>
-                                                            <span class="text-sm">22</span>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="flex items-center">
-                                                            <ion-icon style="padding-left: 17vw;" name="chatbubble-ellipses-outline"></ion-icon>
-                                                            <span class="text-sm"><%= element.comment.length %>11 </span>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                    </div>
+                                    
                                 </a>
                             </li>
                             <hr style="margin-top: -0px;">
