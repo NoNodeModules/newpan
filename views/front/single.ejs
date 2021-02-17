@@ -6,7 +6,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" />
 
-    <div class="main_content" id="app">
+    <div class="main_content">
         <div class="container">
             <div class="lg:flex lg:space-y-10">
                 <div class="lg:w-3/4 lg:px-20 space-y-12">
@@ -128,6 +128,7 @@
             </div>
 
         </div>
+        
         <div id="create-post-modal" class="create-post" uk-modal>
             <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical rounded-lg p-0 lg:w-5/12 relative shadow-2xl uk-animation-slide-bottom-small">
 
@@ -156,46 +157,14 @@
                     </select>
 
                     <div class="flex space-x-2">
-                        <a @click="ekle()" class="bg-blue-600 flex h-9 items-center justify-center rounded-md text-white px-5 font-medium">
-                          Paylaş </a>
+                        <button @click="ekle()" style="color: white;" class="uk-close bg-blue-600 flex h-9 items-center justify-center rounded-md text-white px-5 font-medium">
+                          Paylaş </button>
                     </div>
 
-                    <a @click="ekle()" hidden class="bg-blue-600 flex h-9 items-center justify-center rounded-lg text-white px-12 font-semibold">
-                        Paylaş </a>
+                    <button @click="ekle()" style="color: white;" hidden class="uk-close bg-blue-600 flex h-9 items-center justify-center rounded-lg text-white px-12 font-semibold">
+                        Paylaş </button>
                 </div>
             </div>
         </div>
     </div>
 
-    <script>
-        new Vue({
-            el: "#app",
-            data: {
-                sid: "",
-                yorum: "",
-                konu: false
-            },
-            methods: {
-                ekle() {
-                    axios.post("/sozluk/yorumekle", {
-                        sid: document.getElementById("sid").value,
-                        yorum: this.yorum
-                    }).then(response => {
-                        if (response.data.status == true) {
-                            // swal({
-                            //     title: "Başarılı!",
-                            //     text: "Yorum ekleme başarılı !",
-                            //     icon: "success",
-                            // }).then(function() {
-                            // });;
-                            setInterval(() => {
-                                window.location.reload()
-                            }, 1000);
-                        } else {
-
-                        }
-                    })
-                }
-            }
-        })
-    </script>

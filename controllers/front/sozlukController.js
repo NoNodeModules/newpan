@@ -32,7 +32,7 @@ exports.single = async (req, res, next) => {
     let sozluk = await Sozluk.findById({ "_id": req.params.id })
     res.render("front/sozluk/single", {
         sozluk: sozluk,
-        yorum: sozluk.comment,
+        yorum: sozluk.comment.sortBy(function(o){ return new Date( o.date ) }),
         moment: moment,
         user: req.user
     })
