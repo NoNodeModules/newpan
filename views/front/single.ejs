@@ -14,14 +14,12 @@
                         <img src="../../../front/images/avatars/avatar-2.jpg" class="bg-gray-200 border border-white rounded-full w-10 h-10">
                     </a>
                     <div class="flex-1 font-semibold capitalize">
-                        <h2 class="text-3xl font-semibold" style="text-transform: capitalize;">
+                        <h3 class="text-lg font-semibold">
                             <%= konu.title %>
-                        </h2>
-
-                        
-                        <div class="text-gray-700 flex items-center space-x-2">
-                            Abdullah Bektaş | <%= moment(konu.createdAt,"ddd MMM DD YYYY HH:mm:ss GMT Z'").fromNow(true) %> önce
-                        </div>
+                        </h3>
+                        <p class="text-sm text-gray-400 mb-2"> Yazar: <span data-href="%40tag-dev.html">Abdullah Bektaş</span> |
+                            <%= moment(konu.createdAt,"ddd MMM DD YYYY HH:mm:ss GMT Z'").fromNow(true) %> önce </span>
+                        </p>
                     </div>
                 </div>
                 <div class="lg:w-3/4 lg:px-20 space-y-12">
