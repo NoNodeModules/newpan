@@ -24,9 +24,9 @@
                                         <%= konu.title %>
                                     </h2>
 
-                                    <a href="#" class="text-black"> Abdullah Bektaş </a>
+                                    
                                     <div class="text-gray-700 flex items-center space-x-2">
-                                        <%= moment(konu.createdAt,"ddd MMM DD YYYY HH:mm:ss GMT Z'").fromNow(true) %> önce
+                                        Abdullah Bektaş | <%= moment(konu.createdAt,"ddd MMM DD YYYY HH:mm:ss GMT Z'").fromNow(true) %> önce
                                     </div>
                                 </div>
                             </div>
@@ -40,7 +40,7 @@
                         </div>
 
                         <div class="p-4 space-y-3">
-                            <div class="row" style="margin-left: 8vw;">
+                            <!-- <div class="row" style="margin-left: 8vw;">
                                 <div class="col-md-4 col-sm-4 col-xs-4" style="width: 33%;">
                                     <div class="flex items-center space-x-4">
                                         <ion-icon name="share-social-outline"></ion-icon>
@@ -59,7 +59,7 @@
                                         <span class="text-sm"> <%= konu.comment.length %>  </span>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
 
                             <div class="border-t py-4 space-y-4 dark:border-gray-600">
                                 <% konu.comment.forEach(element => { %>
