@@ -186,6 +186,7 @@
                 konu: false,
                 title: "",
                 tag: "",
+                yyy: null
             },
             methods: {
                 acKapa() {
@@ -201,15 +202,10 @@
                         yorum: this.yorum
                     }).then(response => {
                         if (response.data.status == true) {
-                            swal({
-                                title: "Başarılı!",
-                                text: "Yorum ekleme başarılı !",
-                                icon: "success",
-                            }).then(function () {
-                                setInterval(() => {
-                                    window.location.reload()
-                                }, 1000);
-                            });;
+                            this.yyy = true
+                            setInterval(() => {
+                                window.location.reload()
+                            }, 1000);
                         } else {
 
                         }
