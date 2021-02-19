@@ -11,6 +11,10 @@ function checkAuthentication(req, res, next) {
     }
 }
 
+router.get("/loader",function(req,res,next) {
+    res.render("front/loader")
+})
+
 router.get('/', mainController.index);
 router.get('/single/:id', mainController.single)
 
