@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex</title>
+    <style>
+        .container {
+            display: flex;
+        }
+
+        .center {
+            flex-direction: row;
+            display: flex;
+            flex: 2;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo {
+            flex-direction: row;
+            flex: 1;
+            background-color: lavender;
+            height: 70px;
+            min-width: 70px;
+            border: 1px solid black;
+            align-self: center;
+        }
+
+        .item {
+            flex-direction: row;
+            flex: 11;
+            background-color: lavender;
+            height: 70px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="https://via.placeholder.com/50px" id="resim">
+        </div>
+        <div class="item">
+            <a href="" class="center">Deneme</a>
+            <a href="" class="center">Deneme</a>
+            <a href="" class="center">Deneme</a>
+            <a href="" class="center">Deneme</a>
+            <a href="" class="center">Deneme</a>
+            <a href="" class="center">Deneme</a>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -11,6 +11,10 @@ function checkAuthentication(req, res, next) {
     }
 }
 
+router.get("/flex",(req,res,next)=>{
+    res.render("flex")
+})
+
 router.get("/loader",function(req,res,next) {
     res.render("front/loader")
 })
