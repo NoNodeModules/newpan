@@ -1,10 +1,20 @@
 <% layout("layout") %>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"
+        integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA=="
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+        crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+        integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+        integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+        crossorigin="anonymous" />
 
 
     <div class="main_content">
@@ -24,24 +34,28 @@
                             </p> -->
                         </div>
                     </div>
-                        <div class="p-4 space-y-3">
-                            <div class="border-t py-4 space-y-4 dark:border-gray-600" style="width: 100%;">
-                                <% konu.comment.forEach(element => { %>
-                                    <div class="profiles_content" style="padding-top: 20px; padding-left: 10px;">
-                                        <table>
-                                            <tr>
-                                                <td><div class="profile_avatar">
+                    <div class="p-4 space-y-3">
+                        <div class="border-t py-4 space-y-4 dark:border-gray-600" style="width: 100%;">
+                            <% konu.comment.forEach(element=> { %>
+                                <div class="profiles_content" style="padding-top: 20px; padding-left: 10px;">
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <div class="profile_avatar">
                                                     <div class="profile_avatar_holder">
                                                         <table>
                                                             <tr>
-                                                        <td>
-                                                        <img src="../../../front/images/avatars/avatar-8.jpg" style="border-radius: 75px; height: 45px; width: 45px;">
-                    
-                                                        </td>
-                                                        <td>
-                                                        <h3 class="text-lg font-semibold" style="color: crimson; text-align: right;">Abdullah</h3>
-                    
-                                                        </td>
+                                                                <td>
+                                                                    <img src="../../../front/images/avatars/avatar-8.jpg"
+                                                                        style="border-radius: 75px; height: 45px; width: 45px;">
+
+                                                                </td>
+                                                                <td>
+                                                                    <h3 class="text-lg font-semibold"
+                                                                        style="color: crimson; text-align: right;">
+                                                                        Abdullah</h3>
+
+                                                                </td>
                                                             </tr>
                                                         </table>
                                                     </div>
@@ -49,72 +63,84 @@
                                                     <div class="icon_change_photo" hidden>
                                                         <ion-icon name="camera" class="text-xl"></ion-icon>
                                                     </div>
-                                                </div></td>
-                                                <td style="width: 48vw;">
-                                                    <h3 class="text-lg font-semibold" style="color: crimson; text-align: right;">
-                                                    <span style="color:cornflowerblue;">BAĞIŞ YAP </span>| ABONE OL
+                                                </div>
+                                            </td>
+                                            <td style="width: 60vw;">
+                                                <h3 class="text-lg font-semibold"
+                                                    style="color: crimson; text-align: right;">ABONE OL
                                                 </h3>
                                             </td>
-                                            </tr>
-                                        </table>
-                                        <br>
-                                    </div>
-                                    <div class="flex">
-                                        <div>
-                                                <p class="leading-6" style="font-size: 15pt;">
-                                                    <%= element.yorum %>
-                                                </p>
-                                            <div class="row" style="margin-left: 2vw;">
-                                                <table>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="flex items-center">
-                                                                <ion-icon name="share-social-outline" class="text-2xl"></ion-icon>
-                                                                <span class="text-sm">22</span>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="flex items-center">
-                                                                <ion-icon style="padding-left: 20vw;" class="text-2xl" name="heart-outline"></ion-icon>
-                                                                <span class="text-sm">22</span>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="flex items-center">
-                                                                <ion-icon style="padding-left: 20vw;" class="text-2xl" name="trash-outline"></ion-icon>
-                                                                <span class="text-sm"></span>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                        </div>     
+                                        </tr>
+                                    </table>
+                                    <br>
+                                </div>
+                                <div class="flex">
+                                    <div>
+                                        <p class="leading-6"
+                                            style="font-size: 15pt; margin-left: -3vw; margin-right: -3vw;">
+                                            <%= element.yorum %>
+                                        </p>
+                                        <div class="row" style="margin-left: 2vw; margin-top: 3px;">
+                                            <table>
+                                                <tr>
+                                                    <td>
+                                                        <div class="flex items-center">
+                                                            <ion-icon name="share-social-outline" class="text-2xl">
+                                                            </ion-icon>
+                                                            <span class="text-sm">22</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="flex items-center">
+                                                            <ion-icon style="padding-left: 20vw;" class="text-2xl"
+                                                                name="heart-outline"></ion-icon>
+                                                            <span class="text-sm">22</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="flex items-center">
+                                                            <ion-icon style="padding-left: 20vw;" class="text-2xl"
+                                                                name="trash-outline"></ion-icon>
+                                                            <span class="text-sm"></span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
                                         </div>
+                                        <hr style="margin-top: 4px;">
+
                                     </div>
-                                    <% }) %>
-                            </div>
+                                </div>
+                                <% }) %>
                         </div>
+                    </div>
 
                 </div>
             </div>
 
         </div>
-        
+
         <div id="create-post-modal" class="create-post" uk-modal>
-            <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical rounded-lg p-0 lg:w-5/12 relative shadow-2xl uk-animation-slide-bottom-small">
+            <div
+                class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical rounded-lg p-0 lg:w-5/12 relative shadow-2xl uk-animation-slide-bottom-small">
 
                 <div class="text-center py-4 border-b" v-if="yyy == null">
                     <h3 class="text-lg font-semibold"> Konuya yorum ekliyorsunuz </h3>
-                    <button class="uk-modal-close-default bg-gray-100 rounded-full p-2.5 m-1 right-2" type="button" uk-close uk-tooltip="title: Close ; pos: bottom ;offset:7"></button>
+                    <button class="uk-modal-close-default bg-gray-100 rounded-full p-2.5 m-1 right-2" type="button"
+                        uk-close uk-tooltip="title: Close ; pos: bottom ;offset:7"></button>
                 </div>
                 <div class="text-center py-4 border-b" style="background-color: #03A9F4" v-if="yyy == true">
                     <h3 class="text-lg font-semibold" style="color: white;"> Yorumunuz başarıyla eklendi. </h3>
                     <!-- <button class="uk-modal-close-default bg-gray-100 rounded-full p-2.5 m-1 right-2" type="button" uk-close uk-tooltip="title: Close ; pos: bottom ;offset:7"></button> -->
                 </div>
                 <div class="flex flex-1 items-start space-x-4 p-5">
-                    <img src="../../../front/images/avatars/avatar-2.jpg" class="bg-gray-200 border border-white rounded-full w-11 h-11">
+                    <img src="../../../front/images/avatars/avatar-2.jpg"
+                        class="bg-gray-200 border border-white rounded-full w-11 h-11">
                     <div class="flex-1 pt-2">
                         <input type="hidden" id="sid" value="<%= konu._id %>">
-                        <textarea v-model="yorum" class="uk-textare text-black shadow-none focus:shadow-none text-xl font-medium resize-none" rows="5" placeholder="Eklemek istediğiniz içeriği giriniz."></textarea>
+                        <textarea v-model="yorum"
+                            class="uk-textare text-black shadow-none focus:shadow-none text-xl font-medium resize-none"
+                            rows="5" placeholder="Eklemek istediğiniz içeriği giriniz."></textarea>
                     </div>
 
                 </div>
@@ -124,18 +150,22 @@
                 <div class="flex items-center w-full justify-between p-3 border-t">
 
                     <select class="selectpicker mt-2 col-4 story">
-                        <% etiket.forEach(element => { %>
-                            <option value=""> <%= element.tag %> </option>
-    
+                        <% etiket.forEach(element=> { %>
+                            <option value="">
+                                <%= element.tag %>
+                            </option>
+
                             <% }) %>
                     </select>
 
                     <div class="flex space-x-2">
-                        <button @click="ekle()" style="color: white;" class="uk-close bg-blue-600 flex h-9 items-center justify-center rounded-md text-white px-5 font-medium">
-                          Paylaş </button>
+                        <button @click="ekle()" style="color: white;"
+                            class="uk-close bg-blue-600 flex h-9 items-center justify-center rounded-md text-white px-5 font-medium">
+                            Paylaş </button>
                     </div>
 
-                    <button @click="ekle()" style="color: white;" hidden class="uk-close bg-blue-600 flex h-9 items-center justify-center rounded-lg text-white px-12 font-semibold">
+                    <button @click="ekle()" style="color: white;" hidden
+                        class="uk-close bg-blue-600 flex h-9 items-center justify-center rounded-lg text-white px-12 font-semibold">
                         Paylaş </button>
                 </div>
             </div>
