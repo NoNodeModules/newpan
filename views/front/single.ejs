@@ -6,66 +6,59 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" />
 
-    
+
     <div class="main_content">
         <div class="container">
             <div class="lg:flex lg:space-y-10">
-                <div class="flex flex-1 items-center space-x-4 uk-sticky" uk-sticky="offset:60" style="z-index: 99999; background-color: white;" id="gizle">
-                    <div class="flex-1 font-semibold capitalize">
-                        <h3 class="text-lg font-semibold" style="padding-left: 5vw;">
-                            <%= konu.title %>
-                        </h3>
-                    </div>
-                </div>
-                <div class="profiles_content" style="padding-top: 20px; padding-left: 10px;">
-                    <table>
-                        <tr>
-                            <td><div class="profile_avatar">
-                                <div class="profile_avatar_holder">
-                                    <table>
-                                        <tr>
-                                    <td>
-                                    <img src="../../../front/images/avatars/avatar-8.jpg" style="border-radius: 75px; height: 60px; width: 60px;">
-
-                                    </td>
-                                    <td>
-                                    <h3 class="text-lg font-semibold" style="color: crimson; text-align: right;">Abdullah</h3>
-
-                                    </td>
-                                        </tr>
-                                    </table>
-                                </div>
-                                <div class="user_status status_online"></div>
-                                <div class="icon_change_photo" hidden>
-                                    <ion-icon name="camera" class="text-xl"></ion-icon>
-                                </div>
-                            </div></td>
-                            <td style="width: 58vw;">
-                                <h3 class="text-lg font-semibold" style="color: crimson; text-align: right;">
-                                <span style="color:cornflowerblue;">BAĞIŞ YAP </span>| ABONE OL
-                            </h3>
-                        </td>
-                        </tr>
-                    </table>
-                    <br>
-                </div>
                 <div class="lg:w-3/4 lg:px-20 space-y-12">
-                    <div class="flex flex-1 items-center space-x-4 uk-sticky" uk-sticky="offset:60" style="z-index: 99999; background-color: white;" id="son">
-                        <a href="#">
+                    <div class="flex flex-1 items-center space-x-4" style="z-index: 99999; background-color: white;">
+                        <!-- <a href="#">
                             <img src="../../../front/images/avatars/avatar-2.jpg" class="bg-gray-200 border border-white rounded-full w-10 h-10">
-                        </a>
-                        <div class="flex-1 font-semibold capitalize">
+                        </a> -->
+                        <div class="flex-1 font-semibold capitalize" style="padding-left: 5vw;">
                             <h3 class="text-lg font-semibold">
                                 <%= konu.title %>
                             </h3>
-                            <p class="text-sm text-gray-400 mb-2"> Yazar: <span data-href="%40tag-dev.html">Abdullah Bektaş</span> |
+                            <!-- <p class="text-sm text-gray-400 mb-2"> Yazar: <span data-href="%40tag-dev.html">Abdullah Bektaş</span> |
                                 <%= moment(konu.createdAt,"ddd MMM DD YYYY HH:mm:ss GMT Z'").fromNow(true) %> önce </span>
-                            </p>
+                            </p> -->
                         </div>
                     </div>
                         <div class="p-4 space-y-3">
                             <div class="border-t py-4 space-y-4 dark:border-gray-600" style="width: 100%; height: 100vh; overflow-y: scroll;">
                                 <% konu.comment.forEach(element => { %>
+                                    <div class="profiles_content" style="padding-top: 20px; padding-left: 10px;">
+                                        <table>
+                                            <tr>
+                                                <td><div class="profile_avatar">
+                                                    <div class="profile_avatar_holder">
+                                                        <table>
+                                                            <tr>
+                                                        <td>
+                                                        <img src="../../../front/images/avatars/avatar-8.jpg" style="border-radius: 75px; height: 60px; width: 60px;">
+                    
+                                                        </td>
+                                                        <td>
+                                                        <h3 class="text-lg font-semibold" style="color: crimson; text-align: right;">Abdullah</h3>
+                    
+                                                        </td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                    <div class="user_status status_online"></div>
+                                                    <div class="icon_change_photo" hidden>
+                                                        <ion-icon name="camera" class="text-xl"></ion-icon>
+                                                    </div>
+                                                </div></td>
+                                                <td style="width: 58vw;">
+                                                    <h3 class="text-lg font-semibold" style="color: crimson; text-align: right;">
+                                                    <span style="color:cornflowerblue;">BAĞIŞ YAP </span>| ABONE OL
+                                                </h3>
+                                            </td>
+                                            </tr>
+                                        </table>
+                                        <br>
+                                    </div>
                                     <div class="flex">
                                         <div>
                                             <div class="py-2 px-3 rounded-md relative lg:ml-5 ml-2 lg:mr-12">
@@ -150,4 +143,3 @@
             </div>
         </div>
     </div>
-
