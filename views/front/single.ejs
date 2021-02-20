@@ -11,17 +11,43 @@
         <div class="container">
             <div class="lg:flex lg:space-y-10">
                 <div class="flex flex-1 items-center space-x-4 uk-sticky" uk-sticky="offset:60" style="z-index: 99999; background-color: white;" id="gizle">
-                    <a href="#">
-                        <img src="../../../front/images/avatars/avatar-2.jpg" class="bg-gray-200 border border-white rounded-full w-10 h-10">
-                    </a>
                     <div class="flex-1 font-semibold capitalize">
-                        <h3 class="text-lg font-semibold">
+                        <h3 class="text-lg font-semibold" style="padding-left: 5vw;">
                             <%= konu.title %>
                         </h3>
-                        <p class="text-sm text-gray-400 mb-2"> Yazar: <span data-href="%40tag-dev.html">Abdullah Bektaş</span> |
-                            <%= moment(konu.createdAt,"ddd MMM DD YYYY HH:mm:ss GMT Z'").fromNow(true) %> önce </span>
-                        </p>
                     </div>
+                </div>
+                <div class="profiles_content" style="padding-top: 20px; padding-left: 10px;">
+                    <table>
+                        <tr>
+                            <td><div class="profile_avatar">
+                                <div class="profile_avatar_holder">
+                                    <table>
+                                        <tr>
+                                    <td>
+                                    <img src="../../../front/images/avatars/avatar-8.jpg" style="border-radius: 75px; height: 75px; width: 75px;">
+
+                                    </td>
+                                    <td>
+                                    <h3 class="text-lg font-semibold" style="color: crimson; text-align: right;">Abdullah</h3>
+
+                                    </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="user_status status_online"></div>
+                                <div class="icon_change_photo" hidden>
+                                    <ion-icon name="camera" class="text-xl"></ion-icon>
+                                </div>
+                            </div></td>
+                            <td style="width: 60vw;">
+                                <h3 class="text-lg font-semibold" style="color: crimson; text-align: right;">
+                                <span style="color:cornflowerblue;">BAĞIŞ YAP </span>| ABONE OL
+                            </h3>
+                        </td>
+                        </tr>
+                    </table>
+                    <br>
                 </div>
                 <div class="lg:w-3/4 lg:px-20 space-y-12">
                     <div class="flex flex-1 items-center space-x-4 uk-sticky" uk-sticky="offset:60" style="z-index: 99999; background-color: white;" id="son">
@@ -40,7 +66,6 @@
                         <div class="p-4 space-y-3">
                             <div class="border-t py-4 space-y-4 dark:border-gray-600" style="width: 100%; height: 100vh; overflow-y: scroll;">
                                 <% konu.comment.forEach(element => { %>
-                                    <hr>
                                     <div class="flex">
                                         <div class="w-10 h-10 rounded-full relative flex-shrink-0">
                                             <img src="../../../front/images/avatars/avatar-2.jpg" alt="" class="absolute h-full rounded-full w-full">
@@ -81,44 +106,6 @@
                             </div>
                         </div>
 
-                </div>
-
-                <div id="son" class="lg:w-1/4 w-full flex-shrink-0">
-
-                    <div uk-sticky="offset:100" class="uk-sticky">
-
-                        <h2 class="text-2xl font-semibold mb-3"> Son Eklenen Konular </h2>
-                        <ul>
-                            <% sozluk.forEach(element => { %>
-                                <li>
-                                    <a href="blog-read.html" class="hover:bg-gray-100 rounded-md p-2 -mx-2 block">
-                                        <h3 class="font-medium line-clamp-2">
-                                            <%= element.title %>
-                                        </h3>
-                                        <div class="flex items-center my-auto text-xs space-x-1.5">
-                                            <div>
-                                                <%= moment(element.createdAt,"ddd MMM DD YYYY HH:mm:ss GMT Z'").fromNow(true) %> önce</div>
-                                            <div class="pb-1"> . </div>
-                                            <ion-icon name="chatbox-ellipses-outline"></ion-icon>
-                                            <div>
-                                                <%= element.comment.length %>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <% }) %>
-                        </ul>
-                        <br>
-
-                        <h4 class="text-xl font-semibold mb-3"> Etiketler </h4>
-
-                        <div class="flex flex-wrap gap-2">
-                            <a href="#" class="bg-gray-100 py-1.5 px-4 rounded-full"> 🔵🟠 GÜNDEM</a>
-                            <a href="#" class="bg-gray-100 py-1.5 px-4 rounded-full"> 🎞🍿 FİLM</a>
-                            <a href="#" class="bg-gray-100 py-1.5 px-4 rounded-full"> 🛍 ALIŞVERİŞ</a>
-                            <a href="#" class="bg-gray-100 py-1.5 px-4 rounded-full"> ⚽️🏀🏐 SPOR</a>
-                        </div>
-                    </div>
                 </div>
             </div>
 
