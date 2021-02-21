@@ -57,9 +57,12 @@
                     <ul class="space-y-6">
                         <% sozluk.forEach(element => { %>
                             <li style="margin-top: 4px;">
-                                <a href="/single/<%= element._id %>">
                                     <div class="flex items-start pl-3 space-x-4">
+                                        <a href="/profil">
                                         <img src="../../../front/images/avatars/avatar-2.jpg" style="width: 40px; height: 40px;" class="rounded-full">
+                                        </a>
+                                <a href="/single/<%= element._id %>">
+                                        
                                         <div class="flex-1">
                                             <!-- <h3 class="text-lg font-semibold line-clamp-1"> -->
                                             <h3 class="text-lg font-semibold">
@@ -91,11 +94,12 @@
                                                         </td>
                                                     </tr>
                                                 </table>
-                                        </div>                                        
+                                        </div>
+                                </a>
+
                                     </div>
                                     </div>
                                     
-                                </a>
                             </li>
                             <hr style="margin-top: -0px;">
                             <% }) %>

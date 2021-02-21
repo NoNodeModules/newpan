@@ -23,7 +23,8 @@ exports.single = async (req, res, next) => {
         sozluk: sozluk,
         moment: moment,
         etiket: etiket,
-        konu: konu
+        konu: konu,
+        user: req.user
     })
 }
 
