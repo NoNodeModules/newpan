@@ -38,6 +38,16 @@ exports.profil = async (req, res, next) => {
     })
 }
 
+exports.myprofil = async (req, res, next) => {
+    let sozluk = await Sozluk.find({}).sort({ "createdAt": -1 }).limit(3)
+    res.render("front/myprofile", {
+        user: req.user,
+        sozluk: sozluk,
+        moment: moment,
+        user: req.user
+    })
+}
+
 exports.ayar = async (req, res, next) => {
     res.render("front/set/setting", {
         user: req.user

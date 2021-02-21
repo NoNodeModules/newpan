@@ -28,6 +28,7 @@ router.post("/sozluk/yorumekle", sozlukController.ekle)
 router.post("/sozluk/konuekle", sozlukController.insert)
 
 router.get("/profil", mainController.profil)
+router.get("/myprofil", mainController.myprofil)
 router.get("/setting",mainController.ayar)
 router.get("/hesap",mainController.hesap)
 router.get("/baglanti",mainController.baglanti)
