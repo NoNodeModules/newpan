@@ -32,7 +32,8 @@ exports.profil = async (req, res, next) => {
     res.render("front/profil", {
         user: req.user,
         sozluk: sozluk,
-        moment: moment
+        moment: moment,
+        user: req.user
     })
 }
 
@@ -55,7 +56,7 @@ exports.baglanti = async (req, res, next) => {
 }
 
 exports.guvenlik = async (req, res, next) => {
-    res.render("front/set/guvenlik",{
-        user:req.user
+    res.render("front/set/guvenlik", {
+        user: req.user
     })
 }
