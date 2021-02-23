@@ -29,6 +29,7 @@ router.post("/sozluk/konuekle", sozlukController.insert)
 
 router.get("/profil", mainController.profil)
 router.get("/magaza", mainController.magaza)
+router.get("/magazaic", mainController.magazaic)
 router.get("/bildirim", mainController.bildirim)
 router.get("/myprofil", mainController.myprofil)
 router.get("/guncelle", mainController.guncelle)

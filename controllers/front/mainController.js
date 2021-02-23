@@ -93,3 +93,10 @@ exports.magaza = async(req,res,next)=>{
         user:req.user
     })
 }
+
+exports.magazaic = async(req,res,next)=>{
+    res.render("front/magazaic",{
+        user:req.user
+    })
+}
+
