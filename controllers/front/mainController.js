@@ -87,3 +87,9 @@ exports.bildirim = async (req, res, next) => {
         user: req.user
     })
 }
+
+exports.magaza = async(req,res,next)=>{
+    res.render("front/magaza",{
+        user:req.user
+    })
+}
