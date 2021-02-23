@@ -48,7 +48,7 @@ exports.myprofil = async (req, res, next) => {
     })
 }
 
-exports.guncelle = async(req,res,next)=>{
+exports.guncelle = async (req, res, next) => {
     let sozluk = await Sozluk.find({}).sort({ "createdAt": -1 }).limit(3)
     res.render("front/guncelle", {
         user: req.user,
@@ -78,6 +78,12 @@ exports.baglanti = async (req, res, next) => {
 
 exports.guvenlik = async (req, res, next) => {
     res.render("front/set/guvenlik", {
+        user: req.user
+    })
+}
+
+exports.bildirim = async (req, res, next) => {
+    res.render("front/bildirim", {
         user: req.user
     })
 }
