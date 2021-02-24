@@ -38,5 +38,6 @@ router.get("/hesap",mainController.hesap)
 router.get("/baglanti",mainController.baglanti)
 router.get("/guvenlik",mainController.guvenlik)
 router.get("/mesaj",mainController.mesaj)
+router.get("/mesajic",mainController.mesajic)
 
 module.exports = router;

@@ -106,3 +106,9 @@ exports.mesaj = async(req,res,next)=>{
     })
 }
 
+exports.mesajic = async(req,res,next)=>{
+    res.render("front/mesajic",{
+        user:req.user
+    })
+}
+
