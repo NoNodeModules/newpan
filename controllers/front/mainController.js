@@ -100,3 +100,9 @@ exports.magazaic = async(req,res,next)=>{
     })
 }
 
+exports.mesaj = async(req,res,next)=>{
+    res.render("front/mesaj",{
+        user:req.user
+    })
+}
+
