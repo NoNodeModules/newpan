@@ -2,7 +2,20 @@
 
     <div class="main_content">
         <div class="mcontainer">
-
+            <div style="overflow: auto; white-space: nowrap; margin-top: -24px;">
+                <% etiket.forEach(element => { %>
+                    <a href="/sozluk/<%= element.tag %>" style="text-transform: lowercase; display: inline-block;
+                        text-align: center;
+                        margin: 5px;
+                        background-color: #E3F2FD;
+                        border: 1px solid #0091EA;
+                        color: #0D47A1;
+                        text-decoration: none;" class="bg-gray-100 py-1.5 px-4 rounded-full">
+                        <b><%= element.tag %></b>
+                    </a>
+                <% }) %>
+            </div>
+            <hr>
             <div style="display: flex;">
                 <a href="/magazaic">
                     <span>

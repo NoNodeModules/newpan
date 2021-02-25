@@ -89,8 +89,10 @@ exports.bildirim = async (req, res, next) => {
 }
 
 exports.magaza = async(req,res,next)=>{
+    let etiket = await Etiket.find({})
     res.render("front/magaza",{
-        user:req.user
+        user:req.user,
+        etiket:etiket
     })
 }
 
