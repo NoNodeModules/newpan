@@ -120,3 +120,9 @@ exports.mesajicc = async(req,res,next)=>{
     })
 }
 
+exports.duzenle = async(req,res,next)=>{
+    res.render("front/duzenle",{
+        user:req.user
+    })
+}
+

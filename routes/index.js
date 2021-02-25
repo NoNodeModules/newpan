@@ -40,5 +40,6 @@ router.get("/guvenlik",mainController.guvenlik)
 router.get("/mesaj",mainController.mesaj)
 router.get("/mesajic",mainController.mesajic)
 router.get("/mmm",mainController.mesajicc)
+router.get("/duzenle",mainController.duzenle)
 
 module.exports = router;
