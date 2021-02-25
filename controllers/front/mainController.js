@@ -112,3 +112,9 @@ exports.mesajic = async(req,res,next)=>{
     })
 }
 
+exports.mesajicc = async(req,res,next)=>{
+    res.render("front/mesajic",{
+        user:req.user
+    })
+}
+
