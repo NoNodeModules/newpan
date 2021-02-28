@@ -1,35 +1,78 @@
 <% layout("layout") %>
-<div class="main_content">
-    <div class="mcontainer">
-        <div class="bg-white rounded-2xl -mt-4"> 
-            <div class="profiles_content" style="padding-top: 20px; padding-left: 10px;">
-                <table>
-                    <tr>
-                        <td><div class="profile_avatar">
-                            <div class="profile_avatar_holder">
-                                <img src="../../../front/images/avatars/avatar-8.jpg" style="border-radius: 75px; height: 75px; width: 75px;">
-                                <ion-icon name="add-circle-outline" class="text-6xl" style="position: absolute; margin-top: -65px; margin-left: 6px; color: white;"></ion-icon>
-                            </div>
-                            <div class="user_status status_online"></div>
-                            <div class="icon_change_photo" hidden>
-                                <ion-icon name="camera" class="text-xl"></ion-icon>
-                            </div>
-                        </div></td>
-                        <td style="width: 50vw;">
-                            <h3 class="text-lg font-semibold" style=" text-align: right;"> <span style="color: crimson;">Profil Değiştir</span> </h3>
-                        </h3>
-                    </td>
-                    </tr>
-                    <tr>
-                        <td style="width: 100%;">
-                            <h3 class="text-lg font-semibold" style="padding-top: 50px;"> <span>Biyografi : </span> </h3>
-                            <textarea class="uk-textare text-black shadow-none focus:shadow-none text-xl font-medium resize-none" rows="14" rows="10" placeholder="Biyografi giriniz . . . "></textarea>
-                            <hr>
-                        </td>
-                    </tr>
-                </table>
+    <style>
+        img {
+            max-width: 180px;
+        }
+
+        input[type=file] {
+            padding: 10px;
+            background: #2d2d2d;
+        }
+    </style>
+    <div class="main_content">
+        <div class="mcontainer">
+            <div class="bg-white rounded-2xl -mt-4">
+                <div class="profiles_content" style="padding-top: 20px; padding-left: 10px;">
+                    <table>
+                        <tr>
+                            <td>
+                                <div class="profile_avatar_holder image-upload">
+                                    <label for="file-input">
+
+                                        <img id="blah" src="../../../front/images/avatars/avatar-8.jpg" style="border-radius: 75px; height: 75px; width: 75px; max-height: 75px;
+                                max-width: 75px; object-fit: cover;">
+                                        <ion-icon name="add-circle-outline" class="text-6xl"
+                                            style="position: absolute; margin-top: -65px; margin-left: 8px; color: white;">
+                                        </ion-icon>
+
+                                    </label>
+                                </div>
+                                <input id="file-input" type='file' onchange="readURL(this);" style="display: none;" />
+                            </td>
+                            <td style="width: 50vw;">
+                                <h3 class="text-lg font-semibold" style=" text-align: right;"> <span
+                                        style="color: crimson;">Profil Değiştir</span> </h3>
+                                </h3>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 100%;">
+                                <h3 class="text-lg font-semibold" style="padding-top: 50px;"> <span>Biyografi : </span>
+                                </h3>
+                                <textarea
+                                    class="uk-textare text-black shadow-none focus:shadow-none text-xl font-medium resize-none"
+                                    rows="14" rows="10" placeholder="Biyografi giriniz . . . "></textarea>
+                                <hr>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
+
+    <script>
+        function readURL(input) {
+            console.log(input.files[0])
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+    
+                reader.onload = function (e) {
+                    console.log(e.target.result)
+                    axios.post("http://localhost:4005/image", {
+                        image: e.target.result,
+                        pid: "asdasdasdasd"
+                    }).then((response) => {
+                        alert(response)
+                    })
+                    $('#blah')
+                        .attr('src', e.target.result)
+                        .width(300)
+                        .height(300);
+                };
+    
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
