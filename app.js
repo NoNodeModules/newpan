@@ -7,6 +7,8 @@ const engine = require("ejs-locals")
 const mongoose = require("mongoose")
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
+const body_parser = require("body-parser")
+const cors = require("cors")
 
 mongoose.connect("mongodb+srv://xox:Q1w2e3r4.@cluster0.uxiuf.mongodb.net/panipal?retryWrites=true&w=majority", (err, data) => {
     if (!err) {
@@ -19,6 +21,10 @@ const usersRouter = require('./routes/users');
 const adminRouter = require('./routes/admin');
 
 const app = express();
+app.use(body_parser.json({limit:'50mb'}));
+app.use(body_parser.urlencoded({limit:'50mb',extended:true}));
+app.use(express.json({limit: '5mb'}));
+app.use(cors())
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

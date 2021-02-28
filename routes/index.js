@@ -45,6 +45,7 @@ router.get("/duzenle",mainController.duzenle)
 
 //USER UPDATE 
 router.post("/probio",userController.probio)
+router.post("/cloudupload",mainController.cloudupload)
 
 
 

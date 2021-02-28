@@ -1,4 +1,5 @@
 <% layout("layout") %>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cloudinary-core/2.11.3/cloudinary-core.min.js" integrity="sha512-JlOhEgkriqAqb9bcQ3ILIQZFjpr7kJHKU9vudBHBulgfc1IgtUtMCK5dX3OyWRFpa1hkz8M4EiuY0ut5vMgAVg==" crossorigin="anonymous"></script>
     <style>
         img {
             max-width: 180px;
@@ -42,8 +43,7 @@
                             <td style="width: 100%;">
                                 <h3 class="text-lg font-semibold" style="padding-top: 50px;"> <span>Biyografi : </span>
                                 </h3>
-                                <textarea 
-                                    id="bio"
+                                <textarea id="bio"
                                     class="uk-textare text-black shadow-none focus:shadow-none text-xl font-medium resize-none"
                                     rows="14" rows="10" placeholder="Biyografi giriniz . . . "></textarea>
                                 <hr>
@@ -62,14 +62,16 @@
 
 
     <script>
-        window.a
         function readURL(input) {
             console.log(input.files[0])
             if (input.files && input.files[0]) {
                 var reader = new FileReader();
                 reader.onload = function (e) {
-                    console.log(e.target.result)
-                    window.a = e.target.result
+                    axios.post("/cloudupload",{
+                        resim:e.target.result
+                    }).then(response=>{
+                        console.log(response)
+                    })
                     $('#blah')
                         .attr('src', e.target.result)
                         .width(300)

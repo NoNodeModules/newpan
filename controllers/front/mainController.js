@@ -2,6 +2,12 @@ const async = require("async")
 const Sozluk = require("../../models/sozluk")
 const Etiket = require("../../models/etiket")
 const moment = require("moment")
+const cloudinary = require("cloudinary")
+cloudinary.config({
+    cloud_name: "panipal",
+    api_key: "696114387999363",
+    api_secret: "rL5AcC0ga8MtLBlIHmoy2oi7Gqs"
+});
 moment.locale("tr")
 
 exports.index = async (req, res, next) => {
@@ -88,41 +94,52 @@ exports.bildirim = async (req, res, next) => {
     })
 }
 
-exports.magaza = async(req,res,next)=>{
+exports.magaza = async (req, res, next) => {
     let etiket = await Etiket.find({})
-    res.render("front/magaza",{
-        user:req.user,
-        etiket:etiket
+    res.render("front/magaza", {
+        user: req.user,
+        etiket: etiket
     })
 }
 
-exports.magazaic = async(req,res,next)=>{
-    res.render("front/magazaic",{
-        user:req.user
+exports.magazaic = async (req, res, next) => {
+    res.render("front/magazaic", {
+        user: req.user
     })
 }
 
-exports.mesaj = async(req,res,next)=>{
-    res.render("front/mesaj",{
-        user:req.user
+exports.mesaj = async (req, res, next) => {
+    res.render("front/mesaj", {
+        user: req.user
     })
 }
 
-exports.mesajic = async(req,res,next)=>{
-    res.render("front/mesajicc",{
-        user:req.user
+exports.mesajic = async (req, res, next) => {
+    res.render("front/mesajicc", {
+        user: req.user
     })
 }
 
-exports.mesajicc = async(req,res,next)=>{
-    res.render("front/mesajic",{
-        user:req.user
+exports.mesajicc = async (req, res, next) => {
+    res.render("front/mesajic", {
+        user: req.user
     })
 }
 
-exports.duzenle = async(req,res,next)=>{
-    res.render("front/duzenle",{
-        user:req.user
+exports.duzenle = async (req, res, next) => {
+    res.render("front/duzenle", {
+        user: req.user
     })
+}
+
+exports.cloudupload = async (req, res, next) => {
+    cloudinary.uploader.upload(req.body.resim,
+        function (data, err) {
+            console.log(data)
+            res.json({
+                status:true,
+                resim:data
+            })
+    });
 }
 
