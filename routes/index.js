@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const mainController = require("../controllers/front/mainController")
 const sozlukController = require("../controllers/front/sozlukController")
+const userController = require("../controllers/front/userController")
 
 function checkAuthentication(req, res, next) {
     if (req.isAuthenticated()) {
@@ -41,5 +42,10 @@ router.get("/mesaj",mainController.mesaj)
 router.get("/mesajic",mainController.mesajic)
 router.get("/mmm",mainController.mesajicc)
 router.get("/duzenle",mainController.duzenle)
+
+//USER UPDATE 
+router.post("/probio",userController.probio)
+
+
 
 module.exports = router;
