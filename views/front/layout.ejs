@@ -103,14 +103,14 @@
                             </div>
                             <i class="uil-search-alt"></i>
                         </div>
-                        <% if (!user) { %>
+                        <% if (user) { %>
                             <div class="right_side" style="margin-right: -15vw;">
                                 <div class="header_widgets">
                                     <a href="#" class="is_link"> Anasayfa </a>
                                     <a href="#" class="is_link"> Abdullah Bektaş </a>
                                     <% if (user) { %>
                                         <a href="/profil">
-                                          asd  <img src="../../../front/images/avatars/avatar-2.jpg" class="is_avatar" alt="">
+                                          <img src="../../../front/images/avatars/avatar-2.jpg" class="is_avatar" alt="">
                                         </a>
                                         <% }else{ %>
                                             <a href="/users/login" id="gizle" class="is_icon">
@@ -156,11 +156,19 @@
                                                 <a href="/magaza" id="gizle" class="is_icon">
                                                     <ion-icon name="camera-outline" style="color: gray;" class="text-4xl"></ion-icon>
                                                 </a>
-                                                <a href="#" id="gizle" class="is_icon"
+                                                <% if (user) { %>
+                                                <% if (user.type == 1) { %>
+                                                    <a href="#" id="gizle" class="is_icon"
                                                     uk-toggle="target: #create-post-modal">
                                                     <img src="../../../paylas.png" height="30px">
     
                                                 </a>
+                                                <% }else{ %>
+                                                
+                                                <% } %> 
+                                                <% }else{ %>
+                                                
+                                                <% } %> 
                                                 <a href="/bildirim" class="is_icon">
                                                     <svg id="Layer_1" enable-background="new 0 0 512 512" height="512"
                                                         viewBox="0 0 512 512" width="512"
