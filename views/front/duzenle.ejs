@@ -51,7 +51,7 @@
                         </tr>
                         <tr>
                             <td>
-                                <button onclick="kaydet()">Değiştir</button>
+                                <button id="tikla" style="display: none;" onclick="kaydet()">Değiştir</button>
                             </td>
                         </tr>
                     </table>
@@ -70,7 +70,13 @@
                     axios.post("/cloudupload",{
                         resim:e.target.result
                     }).then(response=>{
-                        console.log(response)
+                        if (response.data.status == true) {
+                            document.getElementById("tikla").style.display = "block"
+                    swal("Başarılı","Profil bilgileriniz başarıyla değiştirildi.","success")
+                            
+                        } else {
+                            
+                        }
                     })
                     $('#blah')
                         .attr('src', e.target.result)
