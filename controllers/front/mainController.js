@@ -146,22 +146,12 @@ exports.duzenle = async (req, res, next) => {
 }
 
 exports.cloudupload = async (req, res, next) => {
-    let user = await User.findById({"_id":req.user._id})
     cloudinary.uploader.upload(req.body.resim,
         function (data, err) {
             console.log(data)
             res.json({
                 status:true,
                 resim:data
-            })
-            user.update({
-                photo:data.secure_url
-            },(err,data)=>{
-                if (err) {
-                    console.log("Hata")
-                } else {
-                    console.log("Başarılı")
-                }
             })
     });
     

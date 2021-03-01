@@ -58,13 +58,15 @@
 <body>
     <div id="app">
         <div id="wrapper">
-            <% if (user) { %>
-             <% if (user.type == 1) { %>
+           <% if (user) { %>
+            <% if (user.type == 1) { %>
                 <% include ./part/header.ejs %> 
-             <% } %>
-            <% }else{ %>
+                <% }else{ %>
                 <% include ./part/header2.ejs %> 
-            <% } %>
+                <% } %> 
+           <% }else{ %>
+            <% include ./part/header.ejs %> 
+           <% } %> 
             <%- body %>
 
         </div>
@@ -113,7 +115,7 @@
             konuEkle() {
                 axios.post("/sozluk/konuekle", {
                     title: this.title,
-                    tag: this.tag
+                    tag: this.tag,
                 }).then(response => {
                     if (response.data.status == true) {
                         setInterval(() => {

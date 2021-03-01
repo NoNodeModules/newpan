@@ -186,7 +186,7 @@
                 </div>
                 <div class="flex items-center w-full justify-between p-3 border-t">
 
-                    <select class="selectpicker mt-2 col-4 story">
+                    <select v-model="tag" class="selectpicker mt-2 col-4 story">
                         <% etiket.forEach(element => { %>
                             <option> <%= element.tag %> </option>
                             <% }) %>

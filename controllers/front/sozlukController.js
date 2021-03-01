@@ -58,7 +58,11 @@ exports.ekle = async (req, res, next) => {
 }
 
 exports.insert = async (req, res, next) => {
-    new Sozluk(req.body).save((err, data) => {
+    new Sozluk({
+        title:req.body.title,
+        tag:req.body.tag,
+        user:req.user
+    }).save((err, data) => {
         if (err) {
             console.log(err)
         } else {

@@ -2,7 +2,11 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/cloudinary-core/2.11.3/cloudinary-core.min.js" integrity="sha512-JlOhEgkriqAqb9bcQ3ILIQZFjpr7kJHKU9vudBHBulgfc1IgtUtMCK5dX3OyWRFpa1hkz8M4EiuY0ut5vMgAVg==" crossorigin="anonymous"></script>
-   
+   <style>
+       header{
+           display: none;
+       }
+   </style>
     <div class="main_content">
         <div class="mcontainer">
             <h2 class="text-2xl font-semibold text-center" style="margin-top: 20px;"> Profil Bilgileri</h2>
@@ -11,22 +15,24 @@
 
                 <% if (user) { %>
                     <% if (user.photo == "") { %>
-                        <img id="blah" src="https://via.placeholder.com/100" style="border-radius: 75px; height: 75px; width: 75px; max-height: 75px;
-                        max-width: 75px; object-fit: cover;">
-                        <ion-icon name="camera" class="text-3xl" style="color: white;"></ion-icon>
+                        <img id="blah" src="https://www.flaticon.com/svg/vstatic/svg/747/747376.svg?token=exp=1614597537~hmac=bd451b72d38fc070d47d8a313616a864" style="border-radius: 75px; height: 75px; width: 75px; max-height: 75px;
+                        max-width: 75px; object-fit: cover; border: 1px solid black; padding:2px">
+                        <ion-icon name="camera" class="text-3xl" style="color: white; padding-left: 22px; margin-top: -50px; position: absolute;"></ion-icon>
                     <% }else{ %>
                         <img id="blah" src="<%= user.photo %>" style="border-radius: 75px; height: 75px; width: 75px; max-height: 75px;
                         max-width: 75px; object-fit: cover;">
-                        <ion-icon name="camera" class="text-3xl" style="color: white;"></ion-icon>
+                        <ion-icon name="camera" class="text-3xl" style="color: white; padding-left: 22px; margin-top: -50px; position: absolute;"></ion-icon>
                     <% } %> 
+                    <button onclick="kaydet()" id="tikla" style="display: none;">Profili Onayla</button>
+                    <br>
+                    <textarea id="bio" class="uk-textare text-black shadow-none focus:shadow-none text-xl font-medium resize-none" rows="5" rows="10" placeholder="Biyografi giriniz . . . "></textarea>
+
                 <% }else{ %>
                     <img id="blah" src="https://via.placeholder.com/100" style="border-radius: 100px; height: 75px; width: 75px; max-height: 75px;
                     max-width: 75px; object-fit: cover;">
                     <ion-icon name="camera" class="text-3xl" style="color: white; padding-left: 22px; margin-top: -50px; position: absolute;"></ion-icon>
                     <br>
-                    <textarea id="bio"
-                                    class="uk-textare text-black shadow-none focus:shadow-none text-xl font-medium resize-none"
-                                    rows="5" rows="10" placeholder="Biyografi giriniz . . . "></textarea>
+                    <textarea id="bio" class="uk-textare text-black shadow-none focus:shadow-none text-xl font-medium resize-none" rows="5" rows="10" placeholder="Biyografi giriniz . . . "></textarea>
                 <% } %> 
                 </label>
             </div>
@@ -40,18 +46,18 @@
     </div>
 
     <script>
+        window.a = ""
         function readURL(input) {
             console.log(input.files[0])
             if (input.files && input.files[0]) {
                 var reader = new FileReader();
                 reader.onload = function (e) {
+                    window.a = e.target.result
                     axios.post("/cloudupload",{
                         resim:e.target.result
                     }).then(response=>{
                         if (response.data.status == true) {
                             document.getElementById("tikla").style.display = "block"
-                            swal("Başarılı","Profil bilgileriniz başarıyla değiştirildi.","success")
-                            
                         } else {
                             
                         }
@@ -68,7 +74,6 @@
         function kaydet() {
             axios.post("/probio",{
                 photo:window.a,
-                bio:document.getElementById("bio").value
             }).then(response=>{
                 if (response.data.status == true) {
                     swal("Başarılı","Profil bilgileriniz başarıyla değiştirildi.","success")

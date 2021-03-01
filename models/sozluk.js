@@ -3,6 +3,7 @@ const Schema = mongoose.Schema
 
 const sozlukSchema = new Schema({
     title:String,
+    user:Object,
     tag:String,
     comment:Array,
     createdAt:{
