@@ -50,7 +50,11 @@ c59.551,0,108,48.448,108,108S315.551,256,256,256z" />
                         <a href="#" class="is_link"> Abdullah Bektaş </a>
                         <% if (user) { %>
                             <a href="/profil">
-                                <img src="../../../front/images/avatars/avatar-2.jpg" class="is_avatar" alt="">
+                                <% if (user.photo == "") { %>
+                                    <img src="https://via.pplaceholder.com/100" class="is_avatar" alt="" style="object-fit: cover;">
+                                <% }else{ %>
+                                    <img src="<%= user.photo %>" class="is_avatar" alt="" style="object-fit: cover;">
+                                <% } %> 
                             </a>
                             <% }else{ %>
                                 <a href="/users/login" id="gizle" class="is_icon">

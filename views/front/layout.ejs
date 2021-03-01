@@ -58,7 +58,13 @@
 <body>
     <div id="app">
         <div id="wrapper">
-            
+            <% if (user) { %>
+             <% if (user.type == 1) { %>
+                <% include ./part/header.ejs %> 
+             <% } %>
+            <% }else{ %>
+                <% include ./part/header2.ejs %> 
+            <% } %>
             <%- body %>
 
         </div>
