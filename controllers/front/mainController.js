@@ -1,6 +1,7 @@
 const async = require("async")
 const Sozluk = require("../../models/sozluk")
 const Etiket = require("../../models/etiket")
+const User = require("../../models/user")
 const moment = require("moment")
 const cloudinary = require("cloudinary")
 cloudinary.config({
@@ -133,6 +134,7 @@ exports.duzenle = async (req, res, next) => {
 }
 
 exports.cloudupload = async (req, res, next) => {
+    let user = await User.findById({"_id":req.user._id})
     cloudinary.uploader.upload(req.body.resim,
         function (data, err) {
             console.log(data)
@@ -140,6 +142,16 @@ exports.cloudupload = async (req, res, next) => {
                 status:true,
                 resim:data
             })
+            user.update({
+                photo:data.secure_url
+            },(err,data)=>{
+                if (err) {
+                    console.log("Hata")
+                } else {
+                    console.log("Başarılı")
+                }
+            })
     });
+    
 }
 
