@@ -44,6 +44,8 @@ router.get("/mmm",mainController.mesajicc)
 router.get("/duzenle",mainController.duzenle)
 router.get("/pro",mainController.pro)
 router.get("/hes",mainController.hes)
+router.get("/eris",mainController.eris)
+router.get("/ista",mainController.ista)
 
 //USER UPDATE 
 router.post("/probio",userController.probio)

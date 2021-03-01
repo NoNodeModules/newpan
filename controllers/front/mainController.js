@@ -95,15 +95,15 @@ exports.bildirim = async (req, res, next) => {
     })
 }
 
-exports.pro = async(req,res,next)=>{
-    res.render("front/set/pro",{
-        user:req.user
+exports.pro = async (req, res, next) => {
+    res.render("front/set/pro", {
+        user: req.user
     })
 }
 
-exports.hes = async(req,res,next)=>{
-    res.render("front/set/hes",{
-        user:req.user
+exports.hes = async (req, res, next) => {
+    res.render("front/set/hes", {
+        user: req.user
     })
 }
 
@@ -145,15 +145,27 @@ exports.duzenle = async (req, res, next) => {
     })
 }
 
+exports.eris = async (req, res, next) => {
+    res.render("front/set/eris", {
+        user: req.user
+    })
+}
+
+exports.ista = async (req, res, next) => {
+    res.render("front/set/ista", {
+        user: req.user
+    })
+}
+
 exports.cloudupload = async (req, res, next) => {
     cloudinary.uploader.upload(req.body.resim,
         function (data, err) {
             console.log(data)
             res.json({
-                status:true,
-                resim:data
+                status: true,
+                resim: data
             })
-    });
-    
+        });
+
 }
 
