@@ -95,6 +95,18 @@ exports.bildirim = async (req, res, next) => {
     })
 }
 
+exports.pro = async(req,res,next)=>{
+    res.render("front/set/pro",{
+        user:req.user
+    })
+}
+
+exports.hes = async(req,res,next)=>{
+    res.render("front/set/hes",{
+        user:req.user
+    })
+}
+
 exports.magaza = async (req, res, next) => {
     let etiket = await Etiket.find({})
     res.render("front/magaza", {
