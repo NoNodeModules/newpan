@@ -23,18 +23,17 @@
                                 <div class="profile_avatar_holder image-upload">
                                     <label for="file-input">
 
-                                    <% if (!user.photo) { %>
-                                        <img id="blah" src="../../../front/images/avatars/avatar-8.jpg" style="border-radius: 75px; height: 75px; width: 75px; max-height: 75px;
-                                        max-width: 75px; object-fit: cover;">
-                                        <ion-icon name="add-circle-outline" class="text-6xl"
-                                            style="position: absolute; margin-top: -65px; margin-left: 8px; color: white;">
-                                        </ion-icon>
+                                    <% if (user) { %>
+                                        <% if (user.photo == "") { %>
+                                            <img id="blah" src="https://via.placeholder.com/100" style="border-radius: 75px; height: 75px; width: 75px; max-height: 75px;
+                                            max-width: 75px; object-fit: cover;">
+                                        <% }else{ %>
+                                            <img id="blah" src="<%= user.photo %>" style="border-radius: 75px; height: 75px; width: 75px; max-height: 75px;
+                                            max-width: 75px; object-fit: cover;">
+                                        <% } %> 
                                     <% }else{ %>
-                                        <img id="blah" src="<%= user.photo %>" style="border-radius: 75px; height: 75px; width: 75px; max-height: 75px;
+                                        <img id="blah" src="https://via.placeholder.com/100" style="border-radius: 75px; height: 75px; width: 75px; max-height: 75px;
                                         max-width: 75px; object-fit: cover;">
-                                        <ion-icon name="add-circle-outline" class="text-6xl"
-                                            style="position: absolute; margin-top: -65px; margin-left: 8px; color: white;">
-                                        </ion-icon>
                                     <% } %> 
                                     </label>
                                 </div>
@@ -44,10 +43,24 @@
                                     <ion-icon name="camera" class="text-xl"></ion-icon>
                                 </div>
                             </div></td>
-                            <td style="width: 65vw;">
-                                <h3 class="text-lg font-semibold" style=" text-align: right;"> <ion-icon style="margin-top: -2px;" class="text-2xl" name="chatbubble-outline"></ion-icon> | <span style="color: crimson;">ABONE OL</span> </h3>
-                            </h3>
-                        </td>
+                                <% if (user) { %>
+                                <td style="width: 70vw;">
+                                    <h3 class="text-lg font-semibold" style=" text-align: right;"> <span style="text-transform: lowercase; display: inline-block;
+                                        text-align: center;
+                                        margin: 5px;
+                                        border-radius: 100px;
+                                        padding: 5px;
+                                        text-transform: capitalize;
+                                        background-color: #E3F2FD;
+                                        border: 1px solid #0091EA;
+                                        color: #0D47A1;
+                                        text-decoration: none;"> <a href="/hesap">Profili Düzenle</a> </span> </h3>
+                                </td>
+                                <% }else{ %>
+                                    <td style="width: 65vw;">
+                                    <h3 class="text-lg font-semibold" style=" text-align: right;"> <ion-icon style="margin-top: -2px;" class="text-2xl" name="chatbubble-outline"></ion-icon> | <span style="color: crimson;">ABONE OL</span> </h3>
+                                </td>
+                                <% } %>
                         </tr>
                     </table>
                     
@@ -82,7 +95,7 @@
                             <li style="margin-top: 4px;">
                                 <a href="/single/<%= element._id %>">
                                     <div class="flex items-start pl-3 space-x-4">
-                                        <img src="../../../front/images/avatars/avatar-2.jpg" style="width: 40px; height: 40px;" class="rounded-full">
+                                        <img src="<%= user.photo %>" style="width: 40px; height: 40px;" class="rounded-full">
                                         <div class="flex-1">
                                             <!-- <h3 class="text-lg font-semibold line-clamp-1"> -->
                                             <h3 class="text-lg font-semibold">
