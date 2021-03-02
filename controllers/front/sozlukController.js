@@ -2,6 +2,7 @@ const async = require("async")
 const Sozluk = require("../../models/sozluk")
 const Etiket = require("../../models/etiket")
 const User = require("../../models/user")
+const Yorum = require("../../models/yorum")
 const moment = require("moment")
 const cloudinary = require("cloudinary")
 cloudinary.config({
@@ -30,7 +31,7 @@ exports.tag = async (req, res, next) => {
         sozluk: sozluk,
         etiket: etiket,
         moment: moment,
-        konu : req.params.tag,
+        konu: req.params.tag,
         user: req.user
     })
 }
@@ -39,8 +40,10 @@ exports.single = async (req, res, next) => {
     let sozluk = await Sozluk.find({}).sort({ "createdAt": -1 })
     let etiket = await Etiket.find({})
     let konu = await Sozluk.findById({ "_id": req.params.id })
+    let yorum = await Yorum.find({ "konu": konu._id }).sort({ "createdAt": -1 })
     res.render("front/sozluk/single", {
         sozluk: sozluk,
+        yorum: yorum,
         moment: moment,
         etiket: etiket,
         konu: konu,
@@ -51,15 +54,11 @@ exports.single = async (req, res, next) => {
 
 exports.ekle = async (req, res, next) => {
     let sozluk = await Sozluk.findById({ "_id": req.body.sid })
-    sozluk.update({
-        $push: {
-            comment: {
-                user: req.user,
-                yorum: req.body.yorum,
-                createdAt: moment().format("DD-MM-YYYY HH:mm:ss")
-            }
-        }
-    }, (err, data) => {
+    new Yorum({
+        user: req.user,
+        yorum: req.body.yorum,
+        konu: req.body.sid
+    }).save((err, data) => {
         if (err) {
             res.json({ status: false })
         } else {
@@ -70,9 +69,9 @@ exports.ekle = async (req, res, next) => {
 
 exports.insert = async (req, res, next) => {
     new Sozluk({
-        title:req.body.title,
-        tag:req.body.tag,
-        user:req.user
+        title: req.body.title,
+        tag: req.body.tag,
+        user: req.user
     }).save((err, data) => {
         if (err) {
             console.log(err)

@@ -97,14 +97,14 @@ exports.hes = async (req, res, next) => {
 
 exports.magaza = async (req, res, next) => {
     let etiket = await Etiket.find({})
-    res.render("front/magaza", {
+    res.render("front/magaza/magaza", {
         user: req.user,
         etiket: etiket
     })
 }
 
 exports.magazaic = async (req, res, next) => {
-    res.render("front/magazaic", {
+    res.render("front/magaza/magazaic", {
         user: req.user
     })
 }
