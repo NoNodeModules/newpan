@@ -17,9 +17,9 @@
         <div class="mcontainer">
             <div class="bg-white rounded-2xl -mt-4"> 
                 <div class="profiles_content" style="padding-top: 20px; padding-left: 10px;">
-                    <table>
-                        <tr>
-                            <td><div class="profile_avatar">
+                    <div style="display: flex; flex-direction: row;">
+                        <div style="flex: 8;">
+                            <div class="profile_avatar">
                                 <div class="profile_avatar_holder image-upload">
                                     <label for="file-input">
 
@@ -42,28 +42,21 @@
                                 <div class="icon_change_photo" hidden>
                                     <ion-icon name="camera" class="text-xl"></ion-icon>
                                 </div>
-                            </div></td>
-                                <% if (user) { %>
-                                <td style="width: 70vw;">
-                                    <h3 class="text-lg font-semibold" style=" text-align: right;"> <span style="text-transform: lowercase; display: inline-block;
-                                        text-align: center;
-                                        margin: 5px;
-                                        border-radius: 100px;
-                                        padding: 5px;
-                                        text-transform: capitalize;
-                                        background-color: #E3F2FD;
-                                        border: 1px solid #0091EA;
-                                        color: #0D47A1;
-                                        text-decoration: none;"> <a href="/hesap">Profili Düzenle</a> </span> </h3>
-                                </td>
-                                <% }else{ %>
-                                    <td style="width: 65vw;">
-                                    <h3 class="text-lg font-semibold" style=" text-align: right;"> <ion-icon style="margin-top: -2px;" class="text-2xl" name="chatbubble-outline"></ion-icon> | <span style="color: crimson;">ABONE OL</span> </h3>
-                                </td>
-                                <% } %>
-                        </tr>
-                    </table>
-                    
+                            </div>
+                        </div>
+                        <div style="flex:4">
+                            <h3 class="text-lg font-semibold" style=" text-align: right;"> <span style="text-transform: lowercase; display: inline-block;
+                                text-align: center;
+                                margin: 5px;
+                                border-radius: 100px;
+                                padding: 5px;
+                                text-transform: capitalize;
+                                background-color: #E3F2FD;
+                                border: 1px solid #0091EA;
+                                color: #0D47A1;
+                                text-decoration: none;"> <a href="/hesap">Profili Düzenle</a> </span> </h3>
+                        </div>
+                    </div>                    
                     <% if (user) { %>
                         <%= user.item.name %>
                     <% }else{ %>
