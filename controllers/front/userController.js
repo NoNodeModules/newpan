@@ -1,5 +1,8 @@
 const async = require("async")
-const User = require("../../models/user")
+const User = require("../../models/user") 
+const Sozluk = require("../../models/sozluk")
+const moment = require("moment")
+moment.locale("tr")
 
 exports.probio = async(req,res,next)=>{
     let user = await User.findById({"_id":req.user._id})
@@ -17,9 +20,12 @@ exports.probio = async(req,res,next)=>{
 }
 
 exports.kisi = async(req,res,next)=>{
-    let kisi = await User.findById({"_id":req.params.id})
+    let kisi = await User.findById({"_id":req.params.id}) 
+    let sozluk = await Sozluk.find({"user._id":kisi._id})
     res.render("front/myprofile",{
         user:req.user,
-        kisi:kisi
+        sozluk:sozluk,
+        kisi:kisi,
+        moment:moment
     })
 }
