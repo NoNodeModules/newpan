@@ -15,3 +15,11 @@ exports.probio = async(req,res,next)=>{
         }
     })
 }
+
+exports.kisi = async(req,res,next)=>{
+    let kisi = await User.findById({"_id":req.params.id})
+    res.render("front/myprofile",{
+        user:req.user,
+        kisi:kisi
+    })
+}

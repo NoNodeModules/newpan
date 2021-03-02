@@ -9,7 +9,7 @@
                         <tr>
                             <td><div class="profile_avatar">
                                 <div class="profile_avatar_holder">
-                                    <img src="../../../front/images/avatars/avatar-8.jpg" style="border-radius: 75px; height: 75px; width: 75px;">
+                                    <img src="<%= kisi.photo %>" style="border-radius: 75px; height: 75px; width: 75px;">
                                 </div>
                                 <div class="user_status status_online"></div>
                                 <div class="icon_change_photo" hidden>
@@ -17,17 +17,14 @@
                                 </div>
                             </div></td>
                             <td style="width: 70vw;">
-                                <h3 class="text-lg font-semibold" style=" text-align: right;"> <ion-icon name="settings-outline" class="text-3xl"></ion-icon>
-                            </h3>
+                                <h3 class="text-lg font-semibold"
+                                            style=" text-align: right;"> <ion-icon style="margin-top: -2px;" class="text-2xl" name="chatbubble-outline"></ion-icon> | <span style="color: crimson;">ABONE OL</span> 
+                                        </h3>
                         </td>
                         </tr>
                     </table>
                     
-                    <% if (user) { %>
-                        <%= user.item.name %>
-                    <% }else{ %>
-                    
-                    <% } %> 
+                    Ad Soyad
                     
                     <br>
                     <small>233 Abone</small><br>
@@ -37,93 +34,16 @@
                 <div class="flex justify-between lg:border-t flex-col-reverse lg:flex-row" style="padding-top: 10px;">
                     <nav class="cd-secondary-nav pl-2 is_ligh -mb-0.5 border-transparent">
                         <ul>
-                            <li class="active"><a href="#0"> Paylaşımlar</a></li>
+                            <li class="active"><a href="#0"> Raf</a></li>
                             <li><a href="#0">Yorumlar </a></li>
                             <li><a href="#0">Beğeniler </a></li>
-                            <li><a href="#0">İstatistik </a></li>
                         </ul>
                     </nav>
                 </div>
 
             </div>
 
-            <div class="lg:flex lg:mt-8 mt-4 lg:space-x-8">
-                <div class="lg:w-12/12 space-y-6">
-                    <ul class="space-y-6">
-                        <% sozluk.forEach(element => { %>
-                            <li style="margin-top: 4px;">
-                                <a href="/single/<%= element._id %>">
-                                    <div class="flex items-start pl-3 space-x-4">
-                                        <img src="../../../front/images/avatars/avatar-2.jpg" style="width: 40px; height: 40px;" class="rounded-full">
-                                        <div class="flex-1">
-                                            <!-- <h3 class="text-lg font-semibold line-clamp-1"> -->
-                                            <h3 class="text-lg font-semibold">
-                                                <%= element.title %>
-                                            </h3>
-                                            <p class="text-sm text-gray-400 mb-2"> Yazar: <span data-href="%40tag-dev.html">Abdullah Bektaş</span> |
-                                                <%= moment(element.createdAt,"ddd MMM DD YYYY HH:mm:ss GMT Z'").fromNow(true) %> önce </span>
-                                            </p>
-                                            <div class="row" style="margin-top: -9px; margin-left: 1px;">
-                                                <table>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="flex items-center">
-                                                                <ion-icon name="share-social-outline"></ion-icon>
-                                                                <span class="text-sm">22</span>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="flex items-center">
-                                                                <ion-icon style="padding-left: 20vw;" name="heart-outline"></ion-icon>
-                                                                <span class="text-sm">22</span>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="flex items-center">
-                                                                <ion-icon style="padding-left: 20vw;" name="chatbubble-ellipses-outline"></ion-icon>
-                                                                <span class="text-sm"><%= element.comment.length %>11 </span>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                        </div>                                        
-                                    </div>
-                                    </div>
-                                    
-                                </a>
-                            </li>
-                            <hr style="margin-top: -0px;">
-                            <% }) %>
-                    </ul>
-                </div>
-                <!-- <div class="lg:w-5/12 space-y-6">
-                  
-                    <div class="widget">
-                        <h4 class="text-2xl mb-3 font-semibold"> Hakkında </h4>
-                        <ul class="text-gray-600 space-y-4">
-                            <li class="flex items-center space-x-2"> 
-                                <ion-icon name="home-sharp" class=" rounded-full bg-gray-200 text-xl p-1.5 mr-3"></ion-icon>
-                                <strong> İstanbul'da bir yer . .   </strong>
-                            </li>
-                            <li class="flex items-center space-x-2"> 
-                                <ion-icon name="globe" class=" rounded-full bg-gray-200 text-xl p-1.5 mr-3"></ion-icon>
-                                <strong> www.ornek.com  </strong>
-                            </li>
-                            <li class="flex items-center space-x-2"> 
-                                <ion-icon name="logo-instagram" class=" rounded-full bg-gray-200 text-xl p-1.5 mr-3"></ion-icon>
-                                <strong> @ornekkisi  </strong>
-                            </li>
-                            <li class="flex items-center space-x-2">
-                                <ion-icon name="logo-facebook" class=" rounded-full bg-gray-200 text-xl p-1.5 mr-3"></ion-icon>
-                                <strong> <a href="https://google.com">Abdullah Bektaş</a> </strong>
-                            </li>   
-                            <li class="flex items-center space-x-2">
-                            <ion-icon name="logo-twitter" class=" rounded-full bg-gray-200 text-xl p-1.5 mr-3"></ion-icon>
-                                <strong> <a href="https://google.com">Abdullah Bektaş</a> </strong>
-                            </li>   
-                        </ul></div>
-                    </div> -->
-            </div>
+            
 
         </div>
     </div>

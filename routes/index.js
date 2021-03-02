@@ -51,6 +51,8 @@ router.get("/ista",mainController.ista)
 router.post("/probio",userController.probio)
 router.post("/cloudupload",mainController.cloudupload)
 
+//KİŞİLER
+router.get("/profil/:id",userController.kisi)
 
 
 module.exports = router;

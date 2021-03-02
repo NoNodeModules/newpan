@@ -40,8 +40,10 @@
                         <div class=" py-4 space-y-4 dark:border-" style="width: 100%;">
                             <% konu.comment.forEach(element=> { %>
                                 <div style="display: flex; flex-direction: row;">
-                                    <div style="flex:8"><img src="https://via.placeholder.com/100"
-                                        style="border-radius: 75px; height: 45px; width: 45px;"></div>
+                                    <div style="flex:8">
+                                        <a href="/profil/<%= element.user._id %>"><img src="<%= element.user.photo %>"
+                                            style="border-radius: 75px; height: 45px; width: 45px;"></a>
+                                    </div>
                                     <div style="flex:4">
                                         <h3 class="text-lg font-semibold"
                                             style=" text-align: right;"> <ion-icon style="margin-top: -2px;" class="text-2xl" name="chatbubble-outline"></ion-icon> | <span style="color: crimson;">ABONE OL</span> 
