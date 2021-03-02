@@ -1,45 +1,49 @@
 <% layout("layout") %>
-<%- include ./part/header2.ejs %> 
+    <%- include ./part/header2.ejs %>
 
-    <div class="main_content">
-        <div class="mcontainer">
-            <div class="bg-white rounded-2xl -mt-4"> 
-                <div class="profiles_content" style="padding-top: 20px; padding-left: 10px;">
-                    <table>
-                        <tr>
-                            <td><div class="profile_avatar">
-                                <div class="profile_avatar_holder">
-                                    <img src="<%= kisi.photo %>" style="border-radius: 75px; height: 75px; width: 75px;">
-                                </div>
-                                <div class="user_status status_online"></div>
-                                <div class="icon_change_photo" hidden>
-                                    <ion-icon name="camera" class="text-xl"></ion-icon>
-                                </div>
-                            </div></td>
-                            <td style="width: 70vw;">
-                                <h3 class="text-lg font-semibold"
-                                            style=" text-align: right;"> <ion-icon style="margin-top: -2px;" class="text-2xl" name="chatbubble-outline"></ion-icon> | <span style="color: crimson;">ABONE OL</span> 
-                                        </h3>
-                        </td>
-                        </tr>
-                    </table>
-                    
-                    <span style="text-transform: capitalize;"><%= kisi.item.name %> </span>
-                    
-                    <br>
-                    <small>233 Abone</small><br>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
-                   
-                </div>
-                <div class="flex justify-between lg:border-t flex-col-reverse lg:flex-row" style="padding-top: 10px;">
-                    <nav class="cd-secondary-nav pl-2 is_ligh -mb-0.5 border-transparent">
-                        <ul>
-                            <li class="active"><a href="#0"> Raf</a></li>
-                            <li><a href="#0">Yorumlar </a></li>
-                            <li><a href="#0">Beğeniler </a></li>
-                        </ul>
-                    </nav>
+        <div class="main_content">
+            <div class="mcontainer">
+                <div class="bg-white rounded-2xl -mt-4">
+                    <div class="profiles_content" style="padding-top: 20px; padding-left: 10px;">
+                        <table>
+                            <tr>
+                                <td>
+                                    <div class="profile_avatar">
+                                        <div class="profile_avatar_holder">
+                                            <img src="<%= kisi.photo %>"
+                                                style="border-radius: 75px; height: 75px; width: 75px;">
+                                        </div>
+                                        <div class="user_status status_online"></div>
+                                        <div class="icon_change_photo" hidden>
+                                            <ion-icon name="camera" class="text-xl"></ion-icon>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td style="width: 70vw;">
+                                    <h3 class="text-lg font-semibold" style=" text-align: right;"> <ion-icon
+                                            style="margin-top: -2px;" class="text-2xl" name="chatbubble-outline">
+                                        </ion-icon> | <span style="color: crimson;">ABONE OL</span>
+                                    </h3>
+                                </td>
+                            </tr>
+                        </table>
+                        <span style="text-transform: capitalize;">
+                            <%= kisi.item.name %>
+                        </span>
+                        <br>
+                        <small>233 Abone</small><br>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
+                    </div>
+                    <div class="flex justify-between lg:border-t flex-col-reverse lg:flex-row"
+                        style="padding-top: 10px;">
+                        <nav class="cd-secondary-nav pl-2 is_ligh -mb-0.5 border-transparent">
+                            <ul>
+                                <li class="active"><a href="#0"> Raf</a></li>
+                                <li><a href="#0">Yorumlar </a></li>
+                                <li><a href="#0">Beğeniler </a></li>
+                            </ul>
+                        </nav>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>

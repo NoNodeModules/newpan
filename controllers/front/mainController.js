@@ -22,18 +22,6 @@ exports.index = async (req, res, next) => {
     })
 }
 
-exports.single = async (req, res, next) => {
-    let sozluk = await Sozluk.find({}).sort({ "createdAt": -1 })
-    let etiket = await Etiket.find({})
-    let konu = await Sozluk.findById({ "_id": req.params.id })
-    res.render("front/single", {
-        sozluk: sozluk,
-        moment: moment,
-        etiket: etiket,
-        konu: konu,
-        user: req.user
-    })
-}
 
 exports.profil = async (req, res, next) => {
     let sozluk = await Sozluk.find({}).sort({ "createdAt": -1 }).limit(3)

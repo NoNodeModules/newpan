@@ -3,7 +3,14 @@ const Sozluk = require("../../models/sozluk")
 const Etiket = require("../../models/etiket")
 const User = require("../../models/user")
 const moment = require("moment")
+const cloudinary = require("cloudinary")
+cloudinary.config({
+    cloud_name: "panipal",
+    api_key: "696114387999363",
+    api_secret: "rL5AcC0ga8MtLBlIHmoy2oi7Gqs"
+});
 moment.locale("tr")
+
 
 exports.list = async (req, res, next) => {
     let sozluk = await Sozluk.find({}).sort({ createdAt: -1 })
@@ -29,14 +36,18 @@ exports.tag = async (req, res, next) => {
 }
 
 exports.single = async (req, res, next) => {
-    let sozluk = await Sozluk.findById({ "_id": req.params.id })
+    let sozluk = await Sozluk.find({}).sort({ "createdAt": -1 })
+    let etiket = await Etiket.find({})
+    let konu = await Sozluk.findById({ "_id": req.params.id })
     res.render("front/sozluk/single", {
         sozluk: sozluk,
-        yorum: sozluk.comment.sortBy(function(o){ return new Date( o.date ) }),
         moment: moment,
+        etiket: etiket,
+        konu: konu,
         user: req.user
     })
 }
+
 
 exports.ekle = async (req, res, next) => {
     let sozluk = await Sozluk.findById({ "_id": req.body.sid })

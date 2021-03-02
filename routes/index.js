@@ -21,7 +21,7 @@ router.get("/loader",function(req,res,next) {
 })
 
 router.get('/', mainController.index);
-router.get('/single/:id', mainController.single)
+router.get('/single/:id', sozlukController.single)
 
 router.get("/sozluk", sozlukController.list)
 router.get("/sozluk/:tag", sozlukController.tag)
