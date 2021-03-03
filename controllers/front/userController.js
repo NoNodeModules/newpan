@@ -21,7 +21,7 @@ exports.probio = async(req,res,next)=>{
 exports.kisi = async(req,res,next)=>{
     let kisi = await User.findById({"_id":req.params.id}) 
     let sozluk = await Sozluk.find({"user._id":kisi._id})
-    res.render("front/myprofile",{
+    res.render("front/auth/myprofile",{
         user:req.user,
         sozluk:sozluk,
         kisi:kisi,

@@ -26,7 +26,7 @@ exports.index = async (req, res, next) => {
 exports.profil = async (req, res, next) => {
     let sozluk = await Sozluk.find({}).sort({ "createdAt": -1 }).limit(3)
     let yorum = await Yorum.find({ "user._id": req.user._id })
-    res.render("front/profil", {
+    res.render("front/auth/profil", {
         user: req.user,
         sozluk: sozluk,
         yorum: yorum,
