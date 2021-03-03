@@ -88,7 +88,6 @@
                             <li style="margin-top: 4px;">
                                 <a href="/single/<%= element._id %>">
                                     <div class="flex items-start pl-3 space-x-4">
-                                        <img src="<%= user.photo %>" style="width: 40px; height: 40px;" class="rounded-full">
                                         <div class="flex-1">
                                             <!-- <h3 class="text-lg font-semibold line-clamp-1"> -->
                                             <h3 class="text-lg font-semibold">
@@ -100,54 +99,24 @@
                                             <div class="row" style="margin-top: -9px; margin-left: 1px;">
                                                 <table>
                                                     <tr>
-                                                        
-                                                    <td>
-                                                        <div class="flex items-center">
-                                                            <ion-icon name="logo-facebook"></ion-icon>
-                                                            <span class="text-sm"></span>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="flex items-center">
-                                                            <ion-icon name="logo-whatsapp" style="padding-left: 7vw;"></ion-icon>
-                                                            <span class="text-sm"></span>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="flex items-center">
-                                                            <ion-icon name="logo-twitter" style="padding-left: 7vw;"></ion-icon>
-                                                            <span class="text-sm"></span>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="flex items-center">
-                                                            <ion-icon style="padding-left: 7vw;" 
-                                                                name="heart-outline"></ion-icon>
-                                                            <span class="text-sm"></span>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="flex items-center">
-                                                            <ion-icon style="padding-left: 7vw;"  name="chatbubble-ellipses-outline"></ion-icon>
-
-                                                            <span class="text-sm"></span>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="flex items-center">
-                                                            <b>
-                                                            <ion-icon  style="color:#03A9F4; font-weight:bolder; padding-left: 7vw;" name="checkmark-outline"></ion-icon>
-
-                                                            </b>
-                                                            <span class="text-sm"></span>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="flex items-center">
-                                                            <ion-icon  style="padding-left: 7vw;" name="ellipsis-vertical"></ion-icon>
-                                                            <span class="text-sm"></span>
-                                                        </div>
-                                                    </td>
+                                                        <td>
+                                                            <div class="flex items-center">
+                                                                <ion-icon name="share-social-outline"></ion-icon>
+                                                                <span class="text-sm">22</span>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="flex items-center">
+                                                                <ion-icon style="padding-left: 20vw;" name="heart-outline"></ion-icon>
+                                                                <span class="text-sm">22</span>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="flex items-center">
+                                                                <ion-icon style="padding-left: 20vw;" name="chatbubble-ellipses-outline"></ion-icon>
+                                                                <span class="text-sm"><%= element.comment.length %>11 </span>
+                                                            </div>
+                                                        </td>
                                                     </tr>
                                                 </table>
                                         </div>                                        
