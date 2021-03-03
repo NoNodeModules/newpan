@@ -89,16 +89,31 @@
             tag: "",
             yyy: null,
             baglanti : true,
-            yorumm : false
+            yorumm : false,
+            begenn : false
         },
         methods: {
             baglac(){
                 this.baglanti = true
                 this.yorumm = false
+                this.begenn = false
             },
             yorac(){
-                this.baglanti = false
                 this.yorumm = true
+                this.baglanti = false
+                this.begenn = false
+            },
+            begac(){
+                this.begenn = true
+                this.baglanti = false
+                this.yorumm = false
+            },
+            begen(yorid){
+                axios.post("/begen",{
+                    yorid:yorid
+                }).then(response=>{
+                    console.log(response)
+                })
             },
             acKapa() {
                 if (durum == false) {
@@ -134,8 +149,6 @@
                     }
                 })
             }
-
-
         }
     })
 </script>

@@ -3,6 +3,7 @@ const Sozluk = require("../../models/sozluk")
 const Etiket = require("../../models/etiket")
 const User = require("../../models/user")
 const Yorum = require("../../models/yorum")
+const Begen = require("../../models/begen")
 const moment = require("moment")
 const cloudinary = require("cloudinary")
 cloudinary.config({
@@ -77,6 +78,20 @@ exports.insert = async (req, res, next) => {
             console.log(err)
         } else {
             res.json({ status: true })
+        }
+    })
+}
+
+exports.begen = async(req,res,next)=>{
+    let yorum = await Yorum.findById({"_id":req.body.yorid})
+    new Begen({
+        yorum:yorum,
+        user:req.user
+    }).save((err,data)=>{
+        if (er) {
+            res.json({status:false})
+        } else {
+            res.json({status:true})
         }
     })
 }

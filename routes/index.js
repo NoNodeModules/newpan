@@ -47,6 +47,8 @@ router.get("/hes",mainController.hes)
 router.get("/eris",mainController.eris)
 router.get("/ista",mainController.ista)
 
+router.post("/begen",sozlukController.begen)
+
 //USER UPDATE 
 router.post("/probio",userController.probio)
 router.post("/bioyaz",userController.bioyaz)
