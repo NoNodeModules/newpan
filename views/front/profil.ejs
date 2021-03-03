@@ -71,9 +71,9 @@
                 <div class="flex justify-between lg:border-t flex-col-reverse lg:flex-row" style="padding-top: 10px;">
                     <nav class="cd-secondary-nav pl-2 is_ligh -mb-0.5 border-transparent">
                         <ul>
-                            <li class="active"><a href="#0"> Raf</a></li>
-                            <li><a href="#0">Yorumlar </a></li>
-                            <li><a href="#0">Beğeniler </a></li>
+                            <li class="active" @click="baglac()"><a > Raf {{baglanti}} </a></li>
+                            <li @click="yorac()"><a >Yorumlar </a></li>
+                            <li><a>Beğeniler </a></li>
                             <!-- <li><a href="#0">İstatistik </a></li> -->
                         </ul>
                     </nav>
@@ -82,7 +82,7 @@
             </div>
 
             <div class="lg:flex lg:mt-8 mt-4 lg:space-x-8">
-                <div class="lg:w-12/12 space-y-6">
+                <div class="lg:w-12/12 space-y-6" v-if="baglanti == true" >
                     <ul class="space-y-6">
                         <% sozluk.forEach(element => { %>
                             <li style="margin-top: 4px;">
@@ -160,38 +160,88 @@
                             <% }) %>
                     </ul>
                 </div>
-                <!-- <div class="lg:w-5/12 space-y-6">
-                  
-                    <div class="widget">
-                        <h4 class="text-2xl mb-3 font-semibold"> Hakkında </h4>
-                        <ul class="text-gray-600 space-y-4">
-                            <li class="flex items-center space-x-2"> 
-                                <ion-icon name="home-sharp" class=" rounded-full bg-gray-200 text-xl p-1.5 mr-3"></ion-icon>
-                                <strong> İstanbul'da bir yer . .   </strong>
+                <div class="lg:w-12/12 space-y-6" v-if="yorum == true">
+                    <ul class="space-y-6">
+                        <% sozluk.forEach(element => { %>
+                            <li style="margin-top: 4px;">
+                                <a href="/single/<%= element._id %>">
+                                    <div class="flex items-start pl-3 space-x-4">
+                                        <img src="<%= user.photo %>" style="width: 40px; height: 40px;" class="rounded-full">
+                                        <div class="flex-1">
+                                            <!-- <h3 class="text-lg font-semibold line-clamp-1"> -->
+                                            <h3 class="text-lg font-semibold">
+                                                <%= element.title %>
+                                            </h3>
+                                            <p class="text-sm text-gray-400 mb-2"> Yazar: <span data-href="%40tag-dev.html">Abdullah Bektaş</span> |
+                                                <%= moment(element.createdAt,"ddd MMM DD YYYY HH:mm:ss GMT Z'").fromNow(true) %> önce </span>
+                                            </p>
+                                            <div class="row" style="margin-top: -9px; margin-left: 1px;">
+                                                <table>
+                                                    <tr>
+                                                        
+                                                    <td>
+                                                        <div class="flex items-center">
+                                                            <ion-icon name="logo-facebook"></ion-icon>
+                                                            <span class="text-sm"></span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="flex items-center">
+                                                            <ion-icon name="logo-whatsapp" style="padding-left: 7vw;"></ion-icon>
+                                                            <span class="text-sm"></span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="flex items-center">
+                                                            <ion-icon name="logo-twitter" style="padding-left: 7vw;"></ion-icon>
+                                                            <span class="text-sm"></span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="flex items-center">
+                                                            <ion-icon style="padding-left: 7vw;" 
+                                                                name="heart-outline"></ion-icon>
+                                                            <span class="text-sm"></span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="flex items-center">
+                                                            <ion-icon style="padding-left: 7vw;"  name="chatbubble-ellipses-outline"></ion-icon>
+
+                                                            <span class="text-sm"></span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="flex items-center">
+                                                            <b>
+                                                            <ion-icon  style="color:#03A9F4; font-weight:bolder; padding-left: 7vw;" name="checkmark-outline"></ion-icon>
+
+                                                            </b>
+                                                            <span class="text-sm"></span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="flex items-center">
+                                                            <ion-icon  style="padding-left: 7vw;" name="ellipsis-vertical"></ion-icon>
+                                                            <span class="text-sm"></span>
+                                                        </div>
+                                                    </td>
+                                                    </tr>
+                                                </table>
+                                        </div>                                        
+                                    </div>
+                                    </div>
+                                    
+                                </a>
                             </li>
-                            <li class="flex items-center space-x-2"> 
-                                <ion-icon name="globe" class=" rounded-full bg-gray-200 text-xl p-1.5 mr-3"></ion-icon>
-                                <strong> www.ornek.com  </strong>
-                            </li>
-                            <li class="flex items-center space-x-2"> 
-                                <ion-icon name="logo-instagram" class=" rounded-full bg-gray-200 text-xl p-1.5 mr-3"></ion-icon>
-                                <strong> @ornekkisi  </strong>
-                            </li>
-                            <li class="flex items-center space-x-2">
-                                <ion-icon name="logo-facebook" class=" rounded-full bg-gray-200 text-xl p-1.5 mr-3"></ion-icon>
-                                <strong> <a href="https://google.com">Abdullah Bektaş</a> </strong>
-                            </li>   
-                            <li class="flex items-center space-x-2">
-                            <ion-icon name="logo-twitter" class=" rounded-full bg-gray-200 text-xl p-1.5 mr-3"></ion-icon>
-                                <strong> <a href="https://google.com">Abdullah Bektaş</a> </strong>
-                            </li>   
-                        </ul></div>
-                    </div> -->
+                            <hr style="margin-top: -0px;">
+                            <% }) %>
+                    </ul>
+                </div>
             </div>
 
         </div>
     </div>
-
 
     <script>
         function readURL(input) {

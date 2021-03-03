@@ -1,5 +1,6 @@
 const async = require("async")
 const Sozluk = require("../../models/sozluk")
+const Yorum = require("../../models/yorum")
 const Etiket = require("../../models/etiket")
 const User = require("../../models/user")
 const moment = require("moment")
@@ -10,7 +11,6 @@ cloudinary.config({
     api_secret: "rL5AcC0ga8MtLBlIHmoy2oi7Gqs"
 });
 moment.locale("tr")
-
 exports.index = async (req, res, next) => {
     let sozluk = await Sozluk.find({}).sort({ "createdAt": -1 })
     let etiket = await Etiket.find({})
@@ -25,9 +25,11 @@ exports.index = async (req, res, next) => {
 
 exports.profil = async (req, res, next) => {
     let sozluk = await Sozluk.find({}).sort({ "createdAt": -1 }).limit(3)
+    let yorum = await Yorum.find({ "user._id": req.user._id })
     res.render("front/profil", {
         user: req.user,
         sozluk: sozluk,
+        yorum: yorum,
         moment: moment,
         user: req.user
     })
