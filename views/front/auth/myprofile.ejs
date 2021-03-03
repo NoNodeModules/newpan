@@ -1,5 +1,5 @@
-<% layout("layout") %>
-    <%- include ./part/header2.ejs %>
+<% layout("../layout") %>
+    <%- include ../part/header2.ejs %>
 
         <div class="main_content">
             <div class="mcontainer">
@@ -38,14 +38,14 @@
                         style="padding-top: 10px;">
                         <nav class="cd-secondary-nav pl-2 is_ligh -mb-0.5 border-transparent">
                             <ul>
-                                <li class="active"><a href="#0"> Raf</a></li>
-                                <li><a href="#0">Yorumlar </a></li>
-                                <li><a href="#0">Beğeniler </a></li>
+                                <li class="active" @click="baglac()"><a> Raf</a></li>
+                                <li @click="yorac()"><a>Yorumlar </a></li>
+                                <li><a>Beğeniler </a></li>
                             </ul>
                         </nav>
                     </div>
                     <div class="lg:flex lg:mt-8 mt-4 lg:space-x-8">
-                        <div class="lg:w-12/12 space-y-6">
+                        <div class="lg:w-12/12 space-y-6" v-if="baglanti == true">
                             <ul class="space-y-6">
                                 <% sozluk.forEach(element => { %>
                                     <li style="margin-top: 4px;">
@@ -92,6 +92,74 @@
                                     <hr style="margin-top: -0px;">
                                     <% }) %>
                             </ul>
+                        </div>
+                        <div class="lg:w-12/12 space-y-6" v-if="yorumm == true" style="padding: 20px;">
+                            <% yorum.forEach(element=> { %>
+                                <div class="flex">
+                                    <div>
+                                        <p style="font-size: 15pt; margin-left: -3vw; margin-right: -3vw;"><%= element.konu.title %> </p>
+                                        <p class="leading-6"
+                                            style="font-size: 12pt; margin-left: -3vw; margin-right: -3vw;">
+                                            <%= element.yorum %>
+                                        </p>
+                                        <div class="row" style="margin-left: 2vw;">
+                                            <table>
+                                                <tr>
+                                                    <td>
+                                                        <div class="flex items-center">
+                                                            <ion-icon name="logo-facebook" class="text-2xl"></ion-icon>
+                                                            <span class="text-sm"></span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="flex items-center">
+                                                            <ion-icon name="logo-whatsapp" style="padding-left: 9vw;" class="text-2xl"></ion-icon>
+                                                            <span class="text-sm"></span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="flex items-center">
+                                                            <ion-icon name="logo-twitter" style="padding-left: 9vw;" class="text-2xl"></ion-icon>
+                                                            <span class="text-sm"></span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="flex items-center">
+                                                            <ion-icon style="padding-left: 9vw;" class="text-2xl"
+                                                                name="heart-outline"></ion-icon>
+                                                            <span class="text-sm"></span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="flex items-center">
+                                                            <ion-icon style="padding-left: 9vw;" class="text-2xl" name="chatbubble-ellipses-outline"></ion-icon>
+
+                                                            <span class="text-sm"></span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="flex items-center">
+                                                            <b>
+                                                            <ion-icon class="text-2xl" style="color:#03A9F4; font-weight:bolder; padding-left: 9vw;" name="checkmark-outline"></ion-icon>
+
+                                                            </b>
+                                                            <span class="text-sm"></span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="flex items-center">
+                                                            <ion-icon class="text-2xl" style="padding-left: 9vw;" name="ellipsis-vertical"></ion-icon>
+                                                            <span class="text-sm"></span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                        <hr style="margin-top: 4px;">
+
+                                    </div>
+                                </div>
+                                <% }) %>
                         </div>
                         <!-- <div class="lg:w-5/12 space-y-6">
                           

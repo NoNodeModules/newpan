@@ -4,7 +4,7 @@ const Schema = mongoose.Schema
 const yorumSchema = new Schema({
     user:Object,
     yorum:String,
-    konu:String,
+    konu:Object,
     createdAt:{
         type:Date,
         default:Date.now

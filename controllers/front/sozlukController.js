@@ -40,7 +40,7 @@ exports.single = async (req, res, next) => {
     let sozluk = await Sozluk.find({}).sort({ "createdAt": -1 })
     let etiket = await Etiket.find({})
     let konu = await Sozluk.findById({ "_id": req.params.id })
-    let yorum = await Yorum.find({ "konu": konu._id }).sort({ "createdAt": -1 })
+    let yorum = await Yorum.find({ "konu._id": konu._id }).sort({ "createdAt": -1 })
     res.render("front/sozluk/single", {
         sozluk: sozluk,
         yorum: yorum,
@@ -57,7 +57,7 @@ exports.ekle = async (req, res, next) => {
     new Yorum({
         user: req.user,
         yorum: req.body.yorum,
-        konu: req.body.sid
+        konu: sozluk
     }).save((err, data) => {
         if (err) {
             res.json({ status: false })
