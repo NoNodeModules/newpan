@@ -160,17 +160,17 @@
                             <% }) %>
                     </ul>
                 </div>
-                <div class="lg:w-12/12 space-y-6" v-if="yorum == true">
+                <div class="lg:w-12/12 space-y-6" v-if="yorumm == true">
                     <ul class="space-y-6">
-                        <% sozluk.forEach(element => { %>
+                        <% yorum.forEach(element => { %>
                             <li style="margin-top: 4px;">
-                                <a href="/single/<%= element._id %>">
+                                <a href="/single/<%= element.konu %>">
                                     <div class="flex items-start pl-3 space-x-4">
-                                        <img src="<%= user.photo %>" style="width: 40px; height: 40px;" class="rounded-full">
+                                        <img src="<%= element.user.photo %>" style="width: 40px; height: 40px;" class="rounded-full">
                                         <div class="flex-1">
                                             <!-- <h3 class="text-lg font-semibold line-clamp-1"> -->
                                             <h3 class="text-lg font-semibold">
-                                                <%= element.title %>
+                                                <%= element.yorum %>
                                             </h3>
                                             <p class="text-sm text-gray-400 mb-2"> Yazar: <span data-href="%40tag-dev.html">Abdullah Bektaş</span> |
                                                 <%= moment(element.createdAt,"ddd MMM DD YYYY HH:mm:ss GMT Z'").fromNow(true) %> önce </span>
