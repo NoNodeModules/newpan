@@ -32,7 +32,7 @@
                         </span>
                         <br>
                         <small>233 Abone</small><br>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
+                        <%= kisi.bio %>  <br>
                     </div>
                     <div class="flex justify-between lg:border-t flex-col-reverse lg:flex-row"
                         style="padding-top: 10px;">
@@ -64,25 +64,32 @@
                                                             <tr>
                                                                 <td>
                                                                     <div class="flex items-center">
-                                                                        <ion-icon name="share-social-outline"></ion-icon>
-                                                                        <span class="text-sm">22</span>
+                                                                        <ion-icon name="logo-facebook"></ion-icon>
+                                                                        <span class="text-sm"></span>
                                                                     </div>
                                                                 </td>
                                                                 <td>
                                                                     <div class="flex items-center">
-                                                                        <ion-icon style="padding-left: 20vw;" name="heart-outline"></ion-icon>
-                                                                        <span class="text-sm">22</span>
+                                                                        <ion-icon style="padding-left: 16vw;" name="logo-twitter"></ion-icon>
+                                                                        <span class="text-sm"></span>
                                                                     </div>
                                                                 </td>
                                                                 <td>
                                                                     <div class="flex items-center">
-                                                                        <ion-icon style="padding-left: 20vw;" name="chatbubble-ellipses-outline"></ion-icon>
-                                                                        <span class="text-sm"><%= element.comment.length %>11 </span>
+                                                                        <ion-icon style="padding-left: 16vw;" name="logo-whatsapp"></ion-icon>
+                                                                        <span class="text-sm"></span>
+                                                                    </div>
+                                                                </td>
+        
+                                                                <td>
+                                                                    <div class="flex items-center">
+                                                                        <ion-icon style="padding-left: 16vw;" name="chatbubble-ellipses-outline"></ion-icon>
+                                                                        <span class="text-sm"><%= element.comment.length %></span>
                                                                     </div>
                                                                 </td>
                                                             </tr>
                                                         </table>
-                                                </div>                                        
+                                                    </div>                                       
                                             </div>
                                             </div>
                                             
@@ -92,18 +99,17 @@
                                     <% }) %>
                             </ul>
                         </div>
-                        <div class="lg:w-12/12 space-y-6" v-if="yorumm == true" style="padding: 20px;">
+                        <div class="lg:w-12/12 space-y-6" v-if="yorumm == true" style="padding: 6px;">
                             <% yorum.forEach(element=> { %>
                                 <div class="flex">
                                     <div>
                                         <h3 class="text-lg font-semibold">
                                             <%= element.konu.title %> 
                                         </h3>
-                                        <p class="leading-6"
-                                            style="font-size: 15pt; margin-left: -3vw; margin-right: -10;">
+                                        <p style="font-size: 15pt;">
                                             <%= element.yorum %>
                                         </p>
-                                        <div class="row" style="margin-left: 2vw;">
+                                        <div class="row" style="margin-left: 1vw;">
                                             <table>
                                                 <tr>
                                                     <td>
