@@ -90,6 +90,9 @@
             }).then(response=>{
                 if (response.data.status == true) {
                     swal("Başarılı","Biyografi başarıyla güncellendi.","success")
+                    setTimeout(() => {
+                        window.location.reload()
+                    }, 1500);
                 } else {
                     
                 }
