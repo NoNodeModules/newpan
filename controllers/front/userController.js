@@ -6,7 +6,6 @@ moment.locale("tr")
 
 exports.probio = async(req,res,next)=>{
     let user = await User.findById({"_id":req.user._id})
-
     user.update({
         photo:req.body.photo,
         bio:req.body.bio
