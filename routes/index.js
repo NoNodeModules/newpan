@@ -49,6 +49,7 @@ router.get("/ista",mainController.ista)
 
 //USER UPDATE 
 router.post("/probio",userController.probio)
+router.post("/bioyaz",userController.bioyaz)
 router.post("/cloudupload",mainController.cloudupload)
 
 //KİŞİLER

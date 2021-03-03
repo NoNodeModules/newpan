@@ -33,6 +33,7 @@
                     <ion-icon name="camera" class="text-3xl" style="color: white; padding-left: 22px; margin-top: -50px; position: absolute;"></ion-icon>
                     <br>
                     <textarea id="bio" class="uk-textare text-black shadow-none focus:shadow-none text-xl font-medium resize-none" rows="5" rows="10" placeholder="Biyografi giriniz . . . "></textarea>
+                    <button onclick="bioyaz()">Kaydet</button>
                 <% } %> 
                 </label>
             </div>
@@ -77,6 +78,18 @@
             }).then(response=>{
                 if (response.data.status == true) {
                     swal("Başarılı","Profil bilgileriniz başarıyla değiştirildi.","success")
+                } else {
+                    
+                }
+            })
+        }
+
+        function bioyaz() {
+            axios.post("/bioyaz",{
+                bio:document.getElementById("bio").value
+            }).then(response=>{
+                if (response.data.status == true) {
+                    swal("Başarılı","Biyografi başarıyla güncellendi.","success")
                 } else {
                     
                 }

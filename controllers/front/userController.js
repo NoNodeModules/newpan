@@ -9,12 +9,24 @@ exports.probio = async (req, res, next) => {
     let user = await User.findById({ "_id": req.user._id })
     user.update({
         photo: req.body.photo,
-        bio: req.body.bio
     }, (err, data) => {
         if (err) {
             res.json({ status: false })
         } else {
             res.json({ status: true })
+        }
+    })
+}
+
+exports.bioyaz = async(req,res,next)=>{
+    let user = await User.findById({"_id":req.user._id})
+    user.update({
+        bio:req.body.bio
+    },(err,data)=>{
+        if (err) {
+            res.json({status:false})
+        } else {
+            res.json({status:true})
         }
     })
 }

@@ -96,9 +96,11 @@
                             <% yorum.forEach(element=> { %>
                                 <div class="flex">
                                     <div>
-                                        <p style="font-size: 15pt; margin-left: -3vw; margin-right: -3vw; color: black;"><%= element.konu.title %> </p>
+                                        <h3 class="text-lg font-semibold">
+                                            <%= element.konu.title %> 
+                                        </h3>
                                         <p class="leading-6"
-                                            style="font-size: 15pt; margin-left: -3vw; margin-right: -3vw;">
+                                            style="font-size: 15pt; margin-left: -3vw; margin-right: -10;">
                                             <%= element.yorum %>
                                         </p>
                                         <div class="row" style="margin-left: 2vw;">

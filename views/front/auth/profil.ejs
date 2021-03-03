@@ -135,12 +135,14 @@
                             <li style="margin-top: 4px;">
                                 <a href="/single/<%= element.konu %>">
                                     <div class="flex items-start pl-3 space-x-4">
-                                        <img src="<%= element.user.photo %>" style="width: 40px; height: 40px;" class="rounded-full">
                                         <div class="flex-1">
-                                            <!-- <h3 class="text-lg font-semibold line-clamp-1"> -->
                                             <h3 class="text-lg font-semibold">
-                                                <%= element.yorum %>
+                                                <%= element.konu.title %> 
                                             </h3>
+                                            <p class="leading-6"
+                                                style="font-size: 15pt; margin-left: -3vw; margin-right: -10;">
+                                                <%= element.yorum %>
+                                            </p>
                                             <p class="text-sm text-gray-400 mb-2"> Yazar: <span data-href="%40tag-dev.html">Abdullah Bektaş</span> |
                                                 <%= moment(element.createdAt,"ddd MMM DD YYYY HH:mm:ss GMT Z'").fromNow(true) %> önce </span>
                                             </p>
