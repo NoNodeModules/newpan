@@ -3,6 +3,7 @@ const router = express.Router();
 const mainController = require("../controllers/front/mainController")
 const sozlukController = require("../controllers/front/sozlukController")
 const userController = require("../controllers/front/userController")
+const medyaController = require("../controllers/front/medyaController")
 
 function checkAuthentication(req, res, next) {
     if (req.isAuthenticated()) {
@@ -21,16 +22,17 @@ router.get("/loader",function(req,res,next) {
 })
 
 router.get('/', mainController.index);
+//SÖZLÜK
 router.get('/single/:id', sozlukController.single)
-
 router.get("/sozluk", sozlukController.list)
 router.get("/sozluk/:tag", sozlukController.tag)
 router.post("/sozluk/yorumekle", sozlukController.ekle)
 router.post("/sozluk/konuekle", sozlukController.insert)
+//MEDYA
+router.get("/medya", medyaController.list)
+router.get("/medyaic", medyaController.msingle)
 
 router.get("/profil", mainController.profil)
-router.get("/magaza", mainController.magaza)
-router.get("/magazaic", mainController.magazaic)
 router.get("/bildirim", mainController.bildirim)
 router.get("/myprofil", mainController.myprofil)
 router.get("/guncelle", mainController.guncelle)
