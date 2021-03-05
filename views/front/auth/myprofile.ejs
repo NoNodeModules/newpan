@@ -41,6 +41,7 @@
                                 <li @click="baglac()"><a> Raf</a></li>
                                 <li @click="yorac()"><a>Yorumlar </a></li>
                                 <li @click="begac()"><a>Beğeniler </a></li>
+                                <li @click="medac()"><a>Medya</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -237,33 +238,9 @@
                                 </div>
                                 <% }) %>
                         </div>
-                        <!-- <div class="lg:w-5/12 space-y-6">
-                          
-                            <div class="widget">
-                                <h4 class="text-2xl mb-3 font-semibold"> Hakkında </h4>
-                                <ul class="text-gray-600 space-y-4">
-                                    <li class="flex items-center space-x-2"> 
-                                        <ion-icon name="home-sharp" class=" rounded-full bg-gray-200 text-xl p-1.5 mr-3"></ion-icon>
-                                        <strong> İstanbul'da bir yer . .   </strong>
-                                    </li>
-                                    <li class="flex items-center space-x-2"> 
-                                        <ion-icon name="globe" class=" rounded-full bg-gray-200 text-xl p-1.5 mr-3"></ion-icon>
-                                        <strong> www.ornek.com  </strong>
-                                    </li>
-                                    <li class="flex items-center space-x-2"> 
-                                        <ion-icon name="logo-instagram" class=" rounded-full bg-gray-200 text-xl p-1.5 mr-3"></ion-icon>
-                                        <strong> @ornekkisi  </strong>
-                                    </li>
-                                    <li class="flex items-center space-x-2">
-                                        <ion-icon name="logo-facebook" class=" rounded-full bg-gray-200 text-xl p-1.5 mr-3"></ion-icon>
-                                        <strong> <a href="https://google.com">Abdullah Bektaş</a> </strong>
-                                    </li>   
-                                    <li class="flex items-center space-x-2">
-                                    <ion-icon name="logo-twitter" class=" rounded-full bg-gray-200 text-xl p-1.5 mr-3"></ion-icon>
-                                        <strong> <a href="https://google.com">Abdullah Bektaş</a> </strong>
-                                    </li>   
-                                </ul></div>
-                            </div> -->
+                        <div class="lg:w-12/12 space-y-6" v-if="medya == true" style="margin-left: 11px;">
+                            Medya gelecek
+                        </div>
                     </div>
                 </div>
             </div>

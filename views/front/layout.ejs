@@ -90,23 +90,33 @@
             yyy: null,
             baglanti : true,
             yorumm : false,
-            begenn : false
+            begenn : false,
+            medya : false
         },
         methods: {
             baglac(){
                 this.baglanti = true
                 this.yorumm = false
                 this.begenn = false
+                this.medya = false
             },
             yorac(){
                 this.yorumm = true
                 this.baglanti = false
                 this.begenn = false
+                this.medya = false
             },
             begac(){
                 this.begenn = true
                 this.baglanti = false
                 this.yorumm = false
+                this.medya = false
+            },
+            medac(){
+                this.begenn = false
+                this.baglanti = false
+                this.yorumm = false
+                this.medya = true
             },
             begen(yorid){
                 axios.post("/begen",{
