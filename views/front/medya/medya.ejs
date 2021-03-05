@@ -25,13 +25,13 @@
                             </h3>
                             <small>yazan : Abdullah Bektaş | 5s önce</small>
                         </div>
-                        <!-- <div style="flex: 4; height: 130px; width: 130px; max-height: 100px; max-width: 100px; margin-bottom: 35px;" class="relative overflow-hidden shadow uk-transition-toggle"> -->
-                        <div style="flex: 4; max-height: 100px; max-width: 100px; margin-bottom: 35px;" class="relative overflow-hidden shadow uk-transition-toggle">
-                            <img src="<%= element.kapak %>" style="object-fit: contain;">
+                        <div style="flex: 4; height: 130px; width: 130px; max-height: 100px; max-width: 100px; margin-bottom: 35px;" class="relative overflow-hidden shadow uk-transition-toggle">
+                            <img src="<%= element.kapak %>" style="object-fit: cover;">
                         </div>
                     </div>
                 <% }) %>
             </div>
+        </div>
         <a onaclick="medyaKaydet()" style="color: white;" hidden class="bg-blue-600 flex h-9 items-center justify-center rounded-lg text-white px-12 font-semibold">
             Paylaş </a>
         <div id="create-post-modal" class="create-post" uk-modal>
@@ -41,7 +41,7 @@
                     <h3 class="text-lg font-semibold"> Medya ekleme yapıyorsunuz. </h3>
                     <button class="uk-modal-close-default bg-gray-100 rounded-full p-2.5 m-1 right-2" type="button" uk-close uk-tooltip="title: Close ; pos: bottom ;offset:7"></button>
                 </div>
-                <!-- <div class="text-center py-4 border-b" id="aktif" style="background-color: #03A9F4" style="display: none;">
+                <!-- <div class="text-center py-4 border-b" style="background-color: #03A9F4">
                     <h3 class="text-lg font-semibold" style="color: white;"> Medya başarıyla eklendi. </h3>
                     <button class="uk-modal-close-default bg-gray-100 rounded-full p-2.5 m-1 right-2" type="button" uk-close uk-tooltip="title: Close ; pos: bottom ;offset:7"></button>
                 </div> -->
@@ -92,11 +92,7 @@
                 title: document.getElementById("title").value,
                 aciklama: document.getElementById("aciklama").value,
             }).then(response=>{
-                if (response.data.status == true) {
-                    alert("Başarıyla eklendi.")
-                } else {
-                    alert("Hata var")
-                }
+                alert(response)
             })
         }
     </script>
