@@ -1,37 +1,68 @@
 <% layout("../layout") %>
-<%- include ../part/header2.ejs %> 
+    <%- include ../part/header2.ejs %>
 
-    <div class="main_content">
-        <div class="mcontainer">
-            <div class="card" style="border-radius: 2px; margin-left: -10px; margin-right: -10px;">
-                <div style="height: 380px;" class="card-media h-44">
-                    <div class="card-media-overly"></div>
-                    <img src="<%= medya.kapak %>" style="border-radius: 2px; object-fit: cover;">
-                    <span class="absolute bg-white px-2 py-1 text-sm rounded-md m-2"> Label</span>
-                </div>
-                <br>
-                <div style="display: flex; padding:10px">
-                    <div style="flex: 8;">
-                        <div class="profile_avatar">
-                            <div class="profile_avatar_holder">
-                                <img src="<%= medya.user.photo %>" style="border-radius: 75px; height: 50px; width: 50px;"> 
-                            </div>
-                            
-                            <div class="user_status status_online"></div>
-                            <div class="icon_change_photo" hidden>
-                                <ion-icon name="camera" class="text-xl"></ion-icon>
-                            </div>
-                            </div>
+        <div class="main_content">
+            <div class="mcontainer">
+                <div class="card" style="border-radius: 2px; margin-left: -10px; margin-right: -10px;">
+                    <div style="height: 380px;" class="card-media h-44">
+                        <div class="card-media-overly"></div>
+                        <img src="<%= medya.kapak %>" style="border-radius: 2px; object-fit: cover;">
+                        <span class="absolute bg-white px-2 py-1 text-sm rounded-md m-2"> Label</span>
                     </div>
-                    <div style="flex: 4;">
-                        <h3 class="text-lg font-semibold" style=" text-align: right;"> <ion-icon style="margin-top: -2px;" class="text-2xl" name="chatbubble-outline"></ion-icon> | <span style="color: crimson;">ABONE OL</span> </h3>
-                    </h3>
+                    <br>
+                    <div style="display: flex; padding:4px">
+                        <div style="flex: 8;">
+                            <div class="profile_avatar">
+                                <div class="profile_avatar_holder">
+                                    <img src="<%= medya.user.photo %>"
+                                        style="border-radius: 75px; height: 50px; width: 50px;">
+                                </div>
+
+                                <div class="user_status status_online"></div>
+                                <div class="icon_change_photo" hidden>
+                                    <ion-icon name="camera" class="text-xl"></ion-icon>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="flex: 4;">
+                            <h3 class="text-lg font-semibold" style=" text-align: right;">
+                                <ion-icon style="margin-top: -2px;" class="text-2xl" name="chatbubble-outline">
+                                </ion-icon> | <span style="color: crimson;">ABONE OL</span>
+                            </h3>
+                            </h3>
+                        </div>
                     </div>
-                </div>
-                <div class="card-body">
-                    <div class="text-xs font-semibold uppercase text-yellow-500"><%= medya.title %></div>
-                    <div class="ext-lg font-medium mt-1 t"> <%- medya.aciklama %> </div>
+                    <div class="card-body" style="margin-left: -4px;">
+                        <div class="text-xs font-semibold uppercase text-yellow-500">
+                            <%= medya.title %>
+                        </div>
+                        <div class="ext-lg font-medium mt-1 t">
+                            <%- medya.aciklama %>
+                        </div>
+                    </div>
+                    <hr>
+                    <!-- <div style="display: flex; padding:10px">
+                        <div style="flex: 8;">
+                            <div class="profile_avatar">
+                                <div class="profile_avatar_holder">
+                                    <img src="<%= medya.user.photo %>"
+                                        style="border-radius: 75px; height: 50px; width: 50px;">
+                                </div>
+
+                                <div class="user_status status_online"></div>
+                                <div class="icon_change_photo" hidden>
+                                    <ion-icon name="camera" class="text-xl"></ion-icon>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="flex: 4;">
+                            <h3 class="text-lg font-semibold" style=" text-align: right;">
+                                <ion-icon style="margin-top: -2px;" class="text-2xl" name="chatbubble-outline">
+                                </ion-icon> | <span style="color: crimson;">ABONE OL</span>
+                            </h3>
+                            </h3>
+                        </div>
+                    </div> -->
                 </div>
             </div>
         </div>
-    </div>
