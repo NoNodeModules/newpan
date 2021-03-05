@@ -19,15 +19,17 @@
             <div style="margin-top: 20px;">
                 <% medya.forEach(element => { %>
                     <div style="display: flex; flex-direction: row;">
-                        <div style="flex: 10;">
-                            <h3 class="text-xl font-semibold" style="text-transform: capitalize; line-height: 20px;">
-                                <%= element.title %> 
-                            </h3>
-                            <small>yazan : Abdullah Bektaş | 5s önce</small>
-                        </div>
-                        <div style="flex: 4; height: 130px; width: 130px; max-height: 100px; max-width: 100px; margin-bottom: 35px;" class="relative overflow-hidden shadow uk-transition-toggle">
-                            <img src="<%= element.kapak %>" style="object-fit: cover;">
-                        </div>
+                            <div style="flex: 10;">
+                                <h3 class="text-xl font-semibold" style="text-transform: capitalize; line-height: 20px;">
+                        <a href="/medyaic/<%= element._id %>">
+                            <%= element.title %> 
+                        </a>
+                                </h3>
+                                <small>yazan : Abdullah Bektaş | 5s önce</small>
+                            </div>
+                            <div style="flex: 4; height: 130px; width: 130px; max-height: 100px; max-width: 100px; margin-bottom: 35px;" class="relative overflow-hidden shadow uk-transition-toggle">
+                                <img src="<%= element.kapak %>" style="object-fit: cover;">
+                            </div>
                     </div>
                 <% }) %>
             </div>

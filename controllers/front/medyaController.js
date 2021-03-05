@@ -13,10 +13,10 @@ exports.list = async (req, res, next) => {
 }
 
 exports.msingle = async (req, res, next) => {
-    // let medya = await Medya.findById({"_id":req.params.id})
+    let medya = await Medya.findById({"_id":req.params.id})
     res.render("front/medya/medyaic", {
         user: req.user,
-        // medya
+        medya
     })
 }
 

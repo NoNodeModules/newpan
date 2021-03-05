@@ -31,7 +31,7 @@ router.post("/sozluk/yorumekle", sozlukController.ekle)
 router.post("/sozluk/konuekle", sozlukController.insert)
 //MEDYA
 router.get("/medya", medyaController.list)
-router.get("/medyaic", medyaController.msingle)
+router.get("/medyaic/:id", medyaController.msingle)
 router.post("/medyaekle", medyaController.medyaekle)
 
 router.get("/profil", mainController.profil)
