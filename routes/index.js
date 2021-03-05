@@ -3,7 +3,8 @@ const router = express.Router();
 const mainController = require("../controllers/front/mainController")
 const sozlukController = require("../controllers/front/sozlukController")
 const userController = require("../controllers/front/userController")
-const medyaController = require("../controllers/front/medyaController")
+const medyaController = require("../controllers/front/medyaController");
+const medya = require('../models/medya');
 
 function checkAuthentication(req, res, next) {
     if (req.isAuthenticated()) {
@@ -31,6 +32,7 @@ router.post("/sozluk/konuekle", sozlukController.insert)
 //MEDYA
 router.get("/medya", medyaController.list)
 router.get("/medyaic", medyaController.msingle)
+router.post("/medyaekle", medyaController.medyaekle)
 
 router.get("/profil", mainController.profil)
 router.get("/bildirim", mainController.bildirim)
