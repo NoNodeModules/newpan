@@ -61,8 +61,11 @@
                             <div class="flex">
                                 <div>
                                     <br>
-                                    <p class="leading-6" style="font-size: 15pt; margin-top: -8px; margin-left: -10px;">
-                                        <%= medya.aciklama.substring(0,150) %>  <small style="color:steelblue"><a href="#">Devamını gör...</a></small>
+                                    <p class="leading-6" id="yorum" style="font-size: 15pt; margin-top: -8px; margin-left: -10px;">
+                                        <%= medya.aciklama.substring(0,150) %>...<a style="color: #03A9F4;" onclick="seeMore('yorum')">Devamını gör.</a>
+                                    </p>
+                                    <p class="leading-6" id="offyorum" style="font-size: 15pt; margin-top: -8px; margin-left: -10px; display: none;">
+                                        <%= medya.aciklama %>  <a style="color: #03A9F4;" onclick="geriAl('yorum')">Geri al.</a>
                                     </p>
                                     <div class="row" style="margin-left: 2vw; margin-top: 7px;">
                                         <table>
