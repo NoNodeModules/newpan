@@ -52,9 +52,11 @@
                                 <div class="flex">
                                     <div>
                                         <br>
-                                        <p class="leading-6"
-                                            style="font-size: 15pt; margin-left: -3vw; margin-right: -3vw;">
-                                            <%= element.yorum %>
+                                        <p class="leading-6" id="<%= element._id %>" style="font-size: 15pt; margin-left: -3vw; margin-right: -3vw;">
+                                            <%= element.yorum.substring(0,150) %> <small><a onclick="seeMore('<%=element._id%>')">Devamını gör</a></small>
+                                        </p>
+                                        <p class="leading-6" id="off<%= element._id %>" style="font-size: 15pt; margin-left: -3vw; margin-right: -3vw; display: none;">
+                                            <%= element.yorum %> <small> <a onclick="geriAl('<%=element._id%>')">Geri al</a> </small>
                                         </p>
                                         <div class="row" style="margin-left: 2vw; margin-top: 7px;">
                                             <table>
@@ -173,3 +175,15 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function seeMore(id) {
+            document.getElementById(id).style.display = "none"
+            document.getElementById("off"+id).style.display = "block"
+        }
+
+        function geriAl(id) {
+            document.getElementById(id).style.display = "block"
+            document.getElementById("off"+id).style.display = "none"
+        }
+    </script>
