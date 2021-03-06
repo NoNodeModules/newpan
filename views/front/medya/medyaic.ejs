@@ -36,8 +36,11 @@
                         <div class="text-xs font-semibold uppercase text-yellow-500">
                             <%= medya.title %>
                         </div>
-                        <div class="ext-lg font-medium mt-1 t">
-                            <%- medya.aciklama %>
+                        <div class="ext-lg font-medium mt-1 t" id="<%= medya._id %>">
+                            <%- medya.aciklama.substring(0,150) %>... <a style="color: #03A9F4;" onclick="seeMore('<%=medya._id%>')">Devamını gör.</a>
+                        </div>
+                        <div class="ext-lg font-medium mt-1 t" style="display: none;" id="off<%= medya._id %>">
+                            <%- medya.aciklama %> <a style="color: #03A9F4;" onclick="geriAl('<%=medya._id%>')">Geri al.</a>
                         </div>
                     </div>
                     <hr>
@@ -59,8 +62,7 @@
                                 <div>
                                     <br>
                                     <p class="leading-6" style="font-size: 15pt; margin-top: -8px; margin-left: -10px;">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero veritatis ullam
-                                        adipisci numquam? Corrupti ut veritatis voluptatibus unde, molestias <small style="color:steelblue"><a href="#">Devamını gör...</a></small>
+                                        <%= medya.aciklama.substring(0,150) %>  <small style="color:steelblue"><a href="#">Devamını gör...</a></small>
                                     </p>
                                     <div class="row" style="margin-left: 2vw; margin-top: 7px;">
                                         <table>
@@ -129,3 +131,15 @@
                 </div>
             </div>
         </div>
+
+        <script>
+            function seeMore(id) {
+                document.getElementById(id).style.display = "none"
+                document.getElementById("off"+id).style.display = "block"
+            }
+
+            function geriAl(id) {
+                document.getElementById(id).style.display = "block"
+                document.getElementById("off"+id).style.display = "none"
+            }
+        </script>
