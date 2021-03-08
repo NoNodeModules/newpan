@@ -162,3 +162,8 @@ exports.cloudupload = async (req, res, next) => {
 
 }
 
+exports.reklam = async(req,res,next)=>{
+    res.render("front/reklam",{
+        user:req.user
+    })
+}

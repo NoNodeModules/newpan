@@ -50,6 +50,7 @@ router.get("/pro",mainController.pro)
 router.get("/hes",mainController.hes)
 router.get("/eris",mainController.eris)
 router.get("/ista",mainController.ista)
+router.get("/reklam",mainController.reklam)
 
 router.post("/begen",sozlukController.begen)
 
