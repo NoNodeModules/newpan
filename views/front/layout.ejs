@@ -58,21 +58,8 @@
 <body>
     <div id="app">
         <div id="wrapper">
-           <% if (user) { %>
-            <% if (user.type == 1) { %>
-                <% include ./part/header.ejs %> 
-                <% }else{ %>
-                <% include ./part/header2.ejs %> 
-                <% } %> 
-           <% }else{ %>
-            <% include ./part/header.ejs %> 
-           <% } %> 
+            <%- include ./part/headerflex.ejs  %> 
             <%- body %>
-
-        </div>
-
-        <div @click="acKapa()" class="start-chat header-search-icon" id="gizle"
-            uk-toggle="target: #wrapper ; cls: show-searchbox">
         </div>
     </div>
     <%- include ./part/footerflex.ejs %> 
