@@ -14,9 +14,15 @@
     }
 </style>
 <footer>
-    <div style="flex: 2; align-items: center; justify-content: center; ">
-        <img src="../../../front/images/avatars/avatar-2.jpg" style="height: 33px; top: 0px; bottom: 0px; left: 0px; right: 0px; margin:auto; border-radius: 20px;">
-    </div>
+    <% if (user) { %>
+        <div style="flex: 2; align-items: center; justify-content: center; ">
+            <img src="../../../front/images/avatars/avatar-2.jpg" style="height: 33px; top: 0px; bottom: 0px; left: 0px; right: 0px; margin:auto; border-radius: 20px;">
+        </div>
+    <% }else{ %>
+        <div style="flex: 2; align-items: center; justify-content: center; ">
+            <a href="/users/login"><ion-icon name="person-outline" style="color: gray;" class="text-3xl"></ion-icon></a>
+        </div>
+    <% } %> 
     <div style="flex: 2; align-items: center; justify-content: center;">
         <ion-icon name="camera-outline" style="color: gray;" class="text-4xl"></ion-icon>
     </div>
