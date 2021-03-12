@@ -8,7 +8,8 @@ exports.list = async (req, res, next) => {
     res.render("front/medya/medya", {
         user: req.user,
         etiket,
-        medya
+        medya,
+        title:""
     })
 }
 
@@ -16,7 +17,8 @@ exports.msingle = async (req, res, next) => {
     let medya = await Medya.findById({"_id":req.params.id})
     res.render("front/medya/medyaic", {
         user: req.user,
-        medya
+        medya,
+        title:""
     })
 }
 
