@@ -1,7 +1,29 @@
 <% layout("../layout") %>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous"></script>
-<%- include ../part/headerflex.ejs  %>
+<header
+style="display: flex; height: 50px; padding-left: 2vw; padding-right: 7vw; padding-top: 10px; border-radius: 20px;">
+<% if (user) { %>
+    <div style="flex: 1;">
+        <a href="/setting">
+            <ion-icon name="chevron-back-outline" style="color: gray; float: left;" class="text-3xl"></ion-icon>
+        </a>
+    </div>
+    <% }else{ %>
+        <div style="flex: 2;">
+            <a href="/users/login">
+                <ion-icon name="person-outline" style="color: gray; float: left;" class="text-3xl"></ion-icon>
+            </a>
+        </div>
+        <% } %>
+            <div style="flex: 15;">
+                <h2 class="text-2xl font-semibold" style="margin-top: 0px;"> Hesap Ayarları<a> </h2>
+            </div>
+            <div style="flex: 2;">
+                <h2 class="text-2xl font-semibold" style="margin-top: 0px; color: steelblue;"
+                    onclick="bioyaz()"> Kaydet<a> </h2>
+            </div>
+</header>
 
     <div class="main_content">
         <div class="mcontainer">

@@ -8,8 +8,29 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/cloudinary-core/2.11.3/cloudinary-core.min.js"
     integrity="sha512-JlOhEgkriqAqb9bcQ3ILIQZFjpr7kJHKU9vudBHBulgfc1IgtUtMCK5dX3OyWRFpa1hkz8M4EiuY0ut5vMgAVg=="
     crossorigin="anonymous"></script>
-    <%- include ../part/headerflex.ejs  %>
-
+    <header
+    style="display: flex; height: 50px; padding-left: 2vw; padding-right: 7vw; padding-top: 10px; border-radius: 20px;">
+    <% if (user) { %>
+        <div style="flex: 1;">
+            <a href="/setting">
+                <ion-icon name="chevron-back-outline" style="color: gray; float: left;" class="text-3xl"></ion-icon>
+            </a>
+        </div>
+        <% }else{ %>
+            <div style="flex: 2;">
+                <a href="/users/login">
+                    <ion-icon name="person-outline" style="color: gray; float: left;" class="text-3xl"></ion-icon>
+                </a>
+            </div>
+            <% } %>
+                <div style="flex: 15;">
+                    <h2 class="text-2xl font-semibold" style="margin-top: 0px;"> Erişilebilirlik<a> </h2>
+                </div>
+                <div style="flex: 2;">
+                    <h2 class="text-2xl font-semibold" style="margin-top: 0px; color: steelblue;"
+                        onclick="bioyaz()"> Kaydet<a> </h2>
+                </div>
+</header>
   <div class="main_content">
     <div class="mcontainer">
       <span class="badge" style="display: flex; flex-direction: row;">

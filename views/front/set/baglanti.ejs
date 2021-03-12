@@ -2,8 +2,30 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/fontawesome.min.css"
         integrity="sha512-shT5e46zNSD6lt4dlJHb+7LoUko9QZXTGlmWWx0qjI9UhQrElRb+Q5DM7SVte9G9ZNmovz2qIaV7IWv0xQkBkw=="
         crossorigin="anonymous" />
-        <%- include ../part/headerflex.ejs  %>
-    
+
+        <header
+        style="display: flex; height: 50px; padding-left: 2vw; padding-right: 7vw; padding-top: 10px; border-radius: 20px;">
+        <% if (user) { %>
+            <div style="flex: 1;">
+                <a href="/setting">
+                    <ion-icon name="chevron-back-outline" style="color: gray; float: left;" class="text-3xl"></ion-icon>
+                </a>
+            </div>
+            <% }else{ %>
+                <div style="flex: 2;">
+                    <a href="/users/login">
+                        <ion-icon name="person-outline" style="color: gray; float: left;" class="text-3xl"></ion-icon>
+                    </a>
+                </div>
+                <% } %>
+                    <div style="flex: 15;">
+                        <h2 class="text-2xl font-semibold" style="margin-top: 0px;"> Bağlantılar<a> </h2>
+                    </div>
+                    <div style="flex: 2;">
+                        <h2 class="text-2xl font-semibold" style="margin-top: 0px; color: steelblue;"
+                            onclick="bioyaz()"> Kaydet<a> </h2>
+                    </div>
+    </header>
     <div class="main_content">
         <div class="mcontainer">
             <h2 class="text-2xl font-semibold text-center" style="margin-top: 20px;"> Bağlantılar</h2>
