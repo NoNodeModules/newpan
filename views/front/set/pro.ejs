@@ -9,7 +9,7 @@
    </style>
 
 
-<header style="display: flex; height: 50px; padding-left: 7vw; padding-right: 7vw; padding-top: 10px; border-radius: 20px;">
+<header style="display: flex; height: 50px; padding-left: 2vw; padding-right: 7vw; padding-top: 10px; border-radius: 20px;">
     <% if (user) { %>
         <div style="flex: 1;">
             <a href="/setting"><ion-icon name="chevron-back-outline" style="color: gray; float: left;" class="text-3xl"></ion-icon></a>
@@ -20,10 +20,10 @@
         </div>
     <% } %> 
     <div style="flex: 15;">
-        <h2 class="text-2xl font-semibold" style="margin-top: 3px;"> Profil Bilgileri<a> </h2>
+        <h2 class="text-2xl font-semibold" style="margin-top: 0px;"> Profil Bilgileri<a> </h2>
     </div>
     <div style="flex: 2;">
-        <ion-icon name="save-outline" style="color: gray; float: right;" class="text-3xl" uk-toggle="target: #wrapper ; cls: show-searchbox"></ion-icon>
+        <h2 class="text-2xl font-semibold" style="margin-top: 0px; color: steelblue;" onclick="bioyaz()"> Kaydet<a> </h2>
     </div>
 </header>
    
@@ -53,7 +53,7 @@
                     <ion-icon name="camera" class="text-3xl" style="color: white; padding-left: 22px; margin-top: -50px; position: absolute;"></ion-icon>
                     <br>
                     <textarea id="bio" class="uk-textare text-black shadow-none focus:shadow-none text-xl font-medium resize-none" rows="5" rows="10" placeholder="Biyografi giriniz . . . "></textarea>
-                    <button onclick="bioyaz()">Kaydet</button>
+
                 <% } %> 
                 </label>
             </div>
