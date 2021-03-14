@@ -33,11 +33,13 @@
                         <br>
                         <small>233 Abone</small><br>
                         <%= kisi.bio %>  <br>
-                        <span style="float: right; text-align: right;"><ion-icon name="caret-down-outline" class="text-2xl"></ion-icon></span>
-                    <br>
-                    <i class="fa fa-twitter"></i> : <%= kisi.social.twitter %> <br>
-                    <i class="fa fa-facebook"></i> : <%= kisi.social.facebook %> <br>
-                    <i class="fa fa-linkedin"></i> : <%= kisi.social.linkedin %> 
+                        <span style="float: right; text-align: right;"><ion-icon @click="socKapa()" name="caret-down-outline" class="text-2xl"></ion-icon></span>
+                        <br>
+                        <div v-if="social == true">
+                            <i class="fa fa-twitter"></i> : <%= kisi.social.twitter %> <br>
+                            <i class="fa fa-facebook"></i> : <%= kisi.social.facebook %> <br>
+                            <i class="fa fa-linkedin"></i> : <%= kisi.social.linkedin %> 
+                        </div>
                     </div>
                     <div class="flex justify-between lg:border-t flex-col-reverse lg:flex-row"
                         style="padding-top: 10px;">

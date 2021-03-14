@@ -80,6 +80,7 @@
             yorumm : false,
             begenn : false,
             medya : false,
+            social: false,
             page:0
         },
         methods: {
@@ -119,6 +120,13 @@
                     this.durum = true
                 } else {
                     this.durum = false
+                }
+            },
+            socKapa() {
+                if (social == false) {
+                    this.social = true
+                } else {
+                    this.social = false
                 }
             },
             ekle() {
