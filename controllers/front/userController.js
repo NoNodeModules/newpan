@@ -60,6 +60,7 @@ exports.kisi = async (req, res, next) => {
         yorum: yorum,
         begen: begen,
         kisi: kisi,
-        moment: moment
+        moment: moment,
+        title:"Deneme"
     })
 }
