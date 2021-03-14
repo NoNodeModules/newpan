@@ -18,6 +18,12 @@ const User = new Schema({
         default: 2
     }, // 0 Admin 1 Yazar 2 Üye
     item: Object,
+    social:{
+        linkedin:String,
+        twitter:String,
+        facebook:String,
+
+    },
     createdAt: {
         type: Date,
         default: Date.now

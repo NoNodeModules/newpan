@@ -58,6 +58,7 @@ router.post("/begen",sozlukController.begen)
 router.post("/probio",userController.probio)
 router.post("/bioyaz",userController.bioyaz)
 router.post("/cloudupload",mainController.cloudupload)
+router.post("/baglanti",userController.baglanti)
 
 //KİŞİLER
 router.get("/profil/:id",userController.kisi)

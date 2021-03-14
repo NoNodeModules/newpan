@@ -32,6 +32,23 @@ exports.bioyaz = async(req,res,next)=>{
     })
 }
 
+exports.baglanti = async(req,res,next)=>{
+    let user = await User.findById({"_id":req.user._id})
+    user.update({
+        social:{
+            linkedin:req.body.linkedin,
+            twitter:req.body.twitter,
+            facebook:req.body.facebook
+        }
+    },(err,data)=>{
+        if (err) {
+            res.json({status:false})
+        } else {
+            res.json({status:true})
+        }
+    })
+}
+
 exports.kisi = async (req, res, next) => {
     let kisi = await User.findById({ "_id": req.params.id })
     let sozluk = await Sozluk.find({ "user._id": kisi._id })
