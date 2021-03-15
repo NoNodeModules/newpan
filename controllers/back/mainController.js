@@ -1,9 +1,16 @@
 const async = require("async")
 const User = require("../../models/user")
+const Sozluk = require("../../models/sozluk")
 
 exports.index = async(req, res, next) => {
+    let uye = await User.find({"type":2}).count()
+    let yazar = await User.find({"type":1}).count()
+    let sozluk = await Sozluk.find({}).count()
     res.render("back/index", {
-        title: "Anasayfa"
+        title: "Anasayfa",
+        uye:uye,
+        yazar:yazar,
+        sozluk:sozluk
     })
 }
 

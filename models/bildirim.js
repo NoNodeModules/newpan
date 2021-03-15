@@ -2,7 +2,7 @@ const mongoose = require("mongoose")
 const Schema = mongoose.Schema
 
 const bildirimSchema = new Schema({
-    text:String,
+    title:String,
     url:String,
     user:String, //* genel _id özel
     desc:String,

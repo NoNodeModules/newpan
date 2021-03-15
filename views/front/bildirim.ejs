@@ -3,23 +3,16 @@
 
     <div class="main_content">
         <div class="mcontainer">
-            <div style="display: flex; flex-direction: row;">
-                <div style="flex:1; align-items: center; justify-content: center; padding-left: 5vw;"><ion-icon name="notifications-outline" class="text-2xl"></ion-icon> </div>
-                <div style="flex:12">
-                    <img src="https://via.placeholder.com/50" style="border-radius: 50px; margin-bottom: 6px;">
-                    <p style="margin-top: -11px;"> <b>Sistem mesajı</b> asdasd asdasdasd </p>
-                    <p style="line-height: 1.2;"> <small>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis unde fuga necessitatibus, atque corrupti quos eos</small> </p>
+            <% bildirim.forEach(element => { %>
+                <div style="display: flex; flex-direction: row; padding-top: 4px;">
+                    <div style="flex:1; align-items: center; justify-content: center; padding-left: 5vw; padding-top: 3px;"><ion-icon name="notifications-outline" class="text-2xl" style="color: cornflowerblue;"></ion-icon> </div>
+                    <div style="flex:12">
+                        <img src="https://via.placeholder.com/50" style="border-radius: 50px; margin-bottom: 6px;">
+                        <p style="margin-top: -11px;"> <a href="<%= element.url %>"><b>Sistem mesajı</b> <%= element.title %></a> </p>
+                        <p style="line-height: 1.2;"> <small> <%= element.desc %> </small> </p>
+                    </div>
                 </div>
-            </div>
-            <hr>
-            <div style="display: flex; flex-direction: row; padding-top: 6px;">
-                <div style="flex:1; align-items: center; justify-content: center; padding-left: 5vw;"><ion-icon name="star-outline" class="text-2xl"></ion-icon></div>
-                <div style="flex:12">
-                    <img src="https://via.placeholder.com/50" style="border-radius: 50px; margin-bottom: 6px;">
-                    <p style="margin-top: -11px;"> <b>Sistem mesajı</b> asdasd asdasdasd </p>
-                    <p style="line-height: 1.2;"> <small>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis unde fuga necessitatibus, atque corrupti quos eos</small> </p>
-                </div>
-            </div>
-            <hr>
+                <hr>
+            <% }) %>
         </div>
     </div>
