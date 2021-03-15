@@ -16,8 +16,20 @@
         integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
         crossorigin="anonymous" />
 
-    <%- include ../part/header2.ejs %> 
-
+    <header
+        style="display: flex; height: 50px; padding-left: 2vw; padding-right: 7vw; padding-top: 10px; border-radius: 20px;">
+        <div style="flex: 1;">
+            <a href="/">
+                <ion-icon name="chevron-back-outline" style="color: gray; float: left;" class="text-3xl"></ion-icon>
+            </a>
+        </div>
+        <div style="flex: 15;">
+            <h2 class="text-2xl font-semibold" style="margin-top: 0px;"> <%= konu.title.substring(0,40) %> <a> </h2>
+        </div>
+        <div style="flex: 2;">
+            
+        </div>
+    </header>
     <div class="main_content">
         <div class="container">
             <div class="lg:flex lg:space-y-10">
@@ -27,9 +39,9 @@
                             <img src="../../../front/images/avatars/avatar-2.jpg" class="bg-gray-200 border border-white rounded-full w-10 h-10">
                         </a> -->
                         <div class="flex-1 font-semibold capitalize">
-                            <h3 class="text-lg font-semibold">
+                            <!-- <h3 class="text-lg font-semibold">
                                 <%= konu.title %>
-                            </h3>
+                            </h3> -->
                             <!-- <p class="text-sm text-gray-400 mb-2"> Yazar: <span data-href="%40tag-dev.html">Abdullah Bektaş</span> |
                                 <%= moment(konu.createdAt,"ddd MMM DD YYYY HH:mm:ss GMT Z'").fromNow(true) %> önce </span>
                             </p> -->
@@ -41,22 +53,27 @@
                                 <div style="display: flex; flex-direction: row;">
                                     <div style="flex:8">
                                         <a href="/profil/<%= element.user._id %>"><img src="<%= element.user.photo %>"
-                                            style="border-radius: 75px; height: 45px; width: 45px;"></a>
+                                                style="border-radius: 75px; height: 45px; width: 45px;"></a>
                                     </div>
                                     <div style="flex:4">
-                                        <h3 class="text-lg font-semibold"
-                                            style=" text-align: right;"> <ion-icon style="margin-top: -2px;" class="text-2xl" name="chatbubble-outline"></ion-icon> | <span style="color: crimson;">ABONE OL</span> 
+                                        <h3 class="text-lg font-semibold" style=" text-align: right;"> <ion-icon
+                                                style="margin-top: -2px;" class="text-2xl" name="chatbubble-outline">
+                                            </ion-icon> | <span style="color: crimson;">ABONE OL</span>
                                         </h3>
                                     </div>
                                 </div>
                                 <div class="flex">
                                     <div>
                                         <br>
-                                        <p class="leading-6" id="<%= element._id %>" style="font-size: 15pt; margin-left: -3vw; margin-right: -3vw;">
-                                            <%= element.yorum.substring(0,150) %> <small><a onclick="seeMore('<%=element._id%>')">Devamını gör</a></small>
+                                        <p class="leading-6" id="<%= element._id %>"
+                                            style="font-size: 15pt; margin-left: -3vw; margin-right: -3vw;">
+                                            <%= element.yorum.substring(0,150) %> <small><a
+                                                        onclick="seeMore('<%=element._id%>')">Devamını gör</a></small>
                                         </p>
-                                        <p class="leading-6" id="off<%= element._id %>" style="font-size: 15pt; margin-left: -3vw; margin-right: -3vw; display: none;">
-                                            <%= element.yorum %> <small> <a onclick="geriAl('<%=element._id%>')">Geri al</a> </small>
+                                        <p class="leading-6" id="off<%= element._id %>"
+                                            style="font-size: 15pt; margin-left: -3vw; margin-right: -3vw; display: none;">
+                                            <%= element.yorum %> <small> <a onclick="geriAl('<%=element._id%>')">Geri
+                                                        al</a> </small>
                                         </p>
                                         <div class="row" style="margin-left: 2vw; margin-top: 7px;">
                                             <table>
@@ -69,26 +86,30 @@
                                                     </td>
                                                     <td>
                                                         <div class="flex items-center">
-                                                            <ion-icon name="logo-whatsapp" style="padding-left: 9vw;" class="text-2xl"></ion-icon>
+                                                            <ion-icon name="logo-whatsapp" style="padding-left: 9vw;"
+                                                                class="text-2xl"></ion-icon>
                                                             <span class="text-sm"></span>
                                                         </div>
                                                     </td>
                                                     <td>
                                                         <div class="flex items-center">
-                                                            <ion-icon name="logo-twitter" style="padding-left: 9vw;" class="text-2xl"></ion-icon>
+                                                            <ion-icon name="logo-twitter" style="padding-left: 9vw;"
+                                                                class="text-2xl"></ion-icon>
                                                             <span class="text-sm"></span>
                                                         </div>
                                                     </td>
                                                     <td>
-                                                        <div class="flex items-center" @click="begen('<%= element._id %>')">
-                                                            <ion-icon id="<%= element._id %>" style="padding-left: 9vw;" class="text-2xl"
-                                                                name="heart-outline"></ion-icon>
+                                                        <div class="flex items-center"
+                                                            @click="begen('<%= element._id %>')">
+                                                            <ion-icon id="<%= element._id %>" style="padding-left: 9vw;"
+                                                                class="text-2xl" name="heart-outline"></ion-icon>
                                                             <span class="text-sm"></span>
                                                         </div>
                                                     </td>
                                                     <td>
                                                         <div class="flex items-center">
-                                                            <ion-icon style="padding-left: 9vw;" class="text-2xl" name="chatbubble-ellipses-outline"></ion-icon>
+                                                            <ion-icon style="padding-left: 9vw;" class="text-2xl"
+                                                                name="chatbubble-ellipses-outline"></ion-icon>
 
                                                             <span class="text-sm"></span>
                                                         </div>
@@ -96,7 +117,9 @@
                                                     <td>
                                                         <div class="flex items-center">
                                                             <b>
-                                                            <ion-icon class="text-2xl" style="color:#03A9F4; font-weight:bolder; padding-left: 9vw;" name="checkmark-outline"></ion-icon>
+                                                                <ion-icon class="text-2xl"
+                                                                    style="color:#03A9F4; font-weight:bolder; padding-left: 9vw;"
+                                                                    name="checkmark-outline"></ion-icon>
 
                                                             </b>
                                                             <span class="text-sm"></span>
@@ -104,7 +127,8 @@
                                                     </td>
                                                     <td>
                                                         <div class="flex items-center">
-                                                            <ion-icon class="text-2xl" style="padding-left: 9vw;" name="ellipsis-vertical"></ion-icon>
+                                                            <ion-icon class="text-2xl" style="padding-left: 9vw;"
+                                                                name="ellipsis-vertical"></ion-icon>
                                                             <span class="text-sm"></span>
                                                         </div>
                                                     </td>
@@ -179,11 +203,11 @@
     <script>
         function seeMore(id) {
             document.getElementById(id).style.display = "none"
-            document.getElementById("off"+id).style.display = "block"
+            document.getElementById("off" + id).style.display = "block"
         }
 
         function geriAl(id) {
             document.getElementById(id).style.display = "block"
-            document.getElementById("off"+id).style.display = "none"
+            document.getElementById("off" + id).style.display = "none"
         }
     </script>
