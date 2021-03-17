@@ -330,15 +330,11 @@
                         if (response.data.status == true) {
                             document.getElementById("tikla").style.display = "block"
                             swal("Başarılı","Profil bilgileriniz başarıyla değiştirildi.","success")
-                            
                         } else {
                             
                         }
                     })
-                    $('#blah')
-                        .attr('src', e.target.result)
-                        .width(300)
-                        .height(300);
+                    $('#blah').attr('src', e.target.result).width(300).height(300);
                 };
                 reader.readAsDataURL(input.files[0]);
             }

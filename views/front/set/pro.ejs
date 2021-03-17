@@ -42,7 +42,6 @@
                 <a> <i class="fa fa-save" onclick="bioyaz()"></i></a> </h2>
             <div class="profile_avatar_holder image-upload">
                 <label for="file-input">
-
                     <% if (user) { %>
                         <% if (user.photo=="" ) { %>
                             <img id="blah"
@@ -95,11 +94,11 @@
             if (input.files && input.files[0]) {
                 var reader = new FileReader();
                 reader.onload = function (e) {
-                    window.a = e.target.result
                     axios.post("/cloudupload", {
                         resim: e.target.result
                     }).then(response => {
                         if (response.data.status == true) {
+                            window.a = response.data.resim.secure_url
                             document.getElementById("tikla").style.display = "block"
                         } else {
 
