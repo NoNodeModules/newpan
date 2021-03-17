@@ -1,24 +1,28 @@
 <% layout("../layout") %>
-<%- include ./part/header2.ejs %> 
+    <%- include ../part/headerflex.ejs %>
 
-    <div class="main_content">
-        <div class="mcontainer">
-            <% for( let index = 0; index < 10; index++ ) { %>
-                <a href="/mesajic">
-                    <span class="badge">
-                        <table>
-                            <tr>
-                                <td style="width: 60px;"> <img src="https://via.placeholder.com/50" style="height: 50px; border-radius: 100px;"> </td>
-                                <td>
-                                    <h3 class="text-2xl font-semibold"> <a href="/mesajic">Ad Soyad</a>
-                                    </h3>
-                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                                </td>
-                            </tr>
-                        </table>
-                        <hr style="margin-top: 10px;">
-                    </span>
-                </a>
-            <% } %>
+        <div class="main_content">
+            <div class="mcontainer">
+                    <%= mesaj %> 
+                    <% mesaj.forEach(element=> { %>
+                        <a href="/mesajic">
+                            <span class="badge">
+                                <table>
+                                    <tr>
+                                        <td style="width: 60px;"> <img src="<%= user.photo %>"
+                                                style="height: 50px; border-radius: 100px;"> </td>
+                                        <td>
+                                            <h3 class="text-2xl font-semibold"> <a href="/mesajic"> <%=
+                                                        element.user2.item.name %></a>
+                                            </h3>
+                                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <hr style="margin-top: 10px;">
+                            </span>
+                        </a>
+                    <% }) %>
+
+            </div>
         </div>
-    </div>

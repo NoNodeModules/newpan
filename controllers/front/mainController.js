@@ -133,19 +133,6 @@ exports.magazaic = async (req, res, next) => {
     })
 }
 
-exports.mesaj = async (req, res, next) => {
-    res.render("front/mesaj/mesaj", {
-        title: "",
-        user: req.user
-    })
-}
-
-exports.mesajic = async (req, res, next) => {
-    res.render("front/mesaj/mesajicc", {
-        title: "",
-        user: req.user
-    })
-}
 
 exports.mesajicc = async (req, res, next) => {
     res.render("front/mesajic", {

@@ -61,8 +61,8 @@ router.post("/cloudupload",mainController.cloudupload)
 router.post("/baglanti",userController.baglanti)
 
 //MESAJLAR
-router.get("/mesaj",mainController.mesaj)
-router.get("/mesajic",mainController.mesajic)
+router.get("/mesaj",mesajController.mesaj)
+router.get("/mesajic",mesajController.mesajic)
 router.post("/createmessage",mesajController.createmessage)
 
 //KİŞİLER
