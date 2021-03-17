@@ -129,6 +129,17 @@
                     this.social = false
                 }
             },
+            mesajEkle(data){
+                axios.post("/createmessage",{
+                    user2:data
+                }).then(response=>{
+                    if (response.data.status == true) {
+                        console.log(response.data)
+                    } else {
+                        console.log("Hata")
+                    }
+                })
+            },
             ekle() {
                 axios.post("/sozluk/yorumekle", {
                     sid: document.getElementById("sid").value,

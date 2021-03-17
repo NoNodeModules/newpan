@@ -4,6 +4,7 @@ const mainController = require("../controllers/front/mainController")
 const sozlukController = require("../controllers/front/sozlukController")
 const userController = require("../controllers/front/userController")
 const medyaController = require("../controllers/front/medyaController");
+const mesajController = require("../controllers/front/mesajController");
 const medya = require('../models/medya');
 
 function checkAuthentication(req, res, next) {
@@ -42,8 +43,7 @@ router.get("/setting",mainController.ayar)
 router.get("/hesap",mainController.hesap)
 router.get("/baglanti",mainController.baglanti)
 router.get("/guvenlik",mainController.guvenlik)
-router.get("/mesaj",mainController.mesaj)
-router.get("/mesajic",mainController.mesajic)
+
 router.get("/mmm",mainController.mesajicc)
 router.get("/duzenle",mainController.duzenle)
 router.get("/pro",mainController.pro)
@@ -59,6 +59,11 @@ router.post("/probio",userController.probio)
 router.post("/bioyaz",userController.bioyaz)
 router.post("/cloudupload",mainController.cloudupload)
 router.post("/baglanti",userController.baglanti)
+
+//MESAJLAR
+router.get("/mesaj",mainController.mesaj)
+router.get("/mesajic",mainController.mesajic)
+router.post("/createmessage",mesajController.createmessage)
 
 //KİŞİLER
 router.get("/profil/:id",userController.kisi)

@@ -30,7 +30,7 @@
                         </optgroup>
                         <optgroup label="ÖZEL">
                             <% user.forEach(element => { %>
-                                <option value="<%= element.item._id %>"><%= element.item.name.toUpperCase() %> <%= element.item.surname.toUpperCase() %></option>
+                                <option value="<%= element._id %>"><%= element.item.name.toUpperCase() %> <%= element.item.surname.toUpperCase() %></option>
                             <% }) %>
                         </optgroup>
                     </select>

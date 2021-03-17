@@ -134,14 +134,14 @@ exports.magazaic = async (req, res, next) => {
 }
 
 exports.mesaj = async (req, res, next) => {
-    res.render("front/mesaj", {
+    res.render("front/mesaj/mesaj", {
         title: "",
         user: req.user
     })
 }
 
 exports.mesajic = async (req, res, next) => {
-    res.render("front/mesajicc", {
+    res.render("front/mesaj/mesajicc", {
         title: "",
         user: req.user
     })

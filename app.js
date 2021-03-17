@@ -10,8 +10,16 @@ const LocalStrategy = require('passport-local').Strategy;
 const body_parser = require("body-parser")
 const cors = require("cors")
 
-mongoose.connect("mongodb+srv://xox:Q1w2e3r4.@cluster0.uxiuf.mongodb.net/panipal?retryWrites=true&w=majority", (err, data) => {
-    if (!err) {
+// mongoose.connect("mongodb+srv://xox:Q1w2e3r4.@cluster0.uxiuf.mongodb.net/panipal?retryWrites=true&w=majority", (err, data) => {
+//     if (!err) {
+//         console.log("Başarılı")
+//     }
+// })
+
+mongoose.connect("mongodb://localhost:27017/panipal",(err,data)=>{
+    if (err) {
+        console.log("Başarısız")
+    } else {
         console.log("Başarılı")
     }
 })
