@@ -28,7 +28,7 @@ exports.createmessage = async(req,res,next)=>{
         if (err) {
             console.log(err)
         } else {
-            res.redirect("/mesaj")
+            res.json({status:true})
         }
     })
 }
