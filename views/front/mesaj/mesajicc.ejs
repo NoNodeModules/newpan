@@ -11,12 +11,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
         integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
         crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+        crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <div class="container bootstrap snippets bootdeys">
+    <div class="container bootstrap snippets bootdeys" id="app">
         <div class="col-md-7 col-xs-12 col-md-offset-2">
-            <!-- Panel Chat -->
             <div class="panel" id="chat">
                 <div class="panel-heading">
                     <h3 class="panel-title">
@@ -26,8 +29,9 @@
                 </div>
                 <hr>
                 <div class="panel-body">
-                    <div class="chats">
-                        <div class="chat">
+                    <div class="chats" v-for="item in messages">
+                        {{item.user._id}}
+                        <div class="chat" v-if="item.user._id == '<%= user._id %>'">
                             <div class="chat-avatar">
                                 <a class="avatar avatar-online" data-toggle="tooltip" href="#" data-placement="right"
                                     title="" data-original-title="June Lane">
@@ -38,12 +42,12 @@
                             <div class="chat-body">
                                 <div class="chat-content" style="border-radius: 40px;">
                                     <p>
-                                        Lorem ipsum dolor sit amet consectetur.
+                                        {{item.text}}
                                     </p>
                                 </div>
                             </div>
                         </div>
-                        <div class="chat chat-left">
+                        <div class="chat chat-left" v-else>
                             <div class="chat-avatar">
                                 <a class="avatar avatar-online" data-toggle="tooltip" href="#" data-placement="left"
                                     title="" data-original-title="Edward Fletcher">
@@ -53,22 +57,8 @@
                             </div>
                             <div class="chat-body">
                                 <div class="chat-content" style="border-radius: 40px;">
-                                    <p>Lorem ipsum dolor sit amet consectetur.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="chat">
-                            <div class="chat-avatar">
-                                <a class="avatar avatar-online" data-toggle="tooltip" href="#" data-placement="right"
-                                    title="" data-original-title="June Lane">
-                                    <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="...">
-                                    <i></i>
-                                </a>
-                            </div>
-                            <div class="chat-body">
-                                <div class="chat-content" style="border-radius: 40px;">
                                     <p>
-                                        Lorem ipsum dolor sit amet consectetur.
+                                        {{item.text}}
                                     </p>
                                 </div>
                             </div>
@@ -79,10 +69,11 @@
                     <hr>
                     <form>
                         <div class="input-group">
-                            <input type="text" style="border-radius: 100px;" class="form-control" placeholder="Mesajınız giriniz..">
+                            <input type="text" v-model="text" style="border-radius: 100px;" class="form-control"
+                                placeholder="Mesajınız giriniz..">
                             <span class="input-group-btn">
-                                <button class="btn" style="border-radius: 100px;" type="button"> 
-                                    <i class="fa fa-chevron-right fa-2x" style="color: #62a8ea;"></i> 
+                                <button class="btn" @click="mesajGonder()" style="border-radius: 100px;" type="button">
+                                    <i class="fa fa-chevron-right fa-2x" style="color: #62a8ea;"></i>
                                 </button>
                             </span>
                         </div>
@@ -92,6 +83,44 @@
             <!-- End Panel Chat -->
         </div>
     </div>
+
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                text:null,
+                messages:null
+            },
+            methods:{
+                mesajGonder(){
+                    axios.post("/sendmessage",{
+                        mid:'<%= mesaj._id %>',
+                        text:this.text
+                    }).then(response=>{
+                        if (response.data.status == true) {
+                            alert("Mesaj gönderimi başarıyla gerçekleşti.")
+                        } else {
+                            alert("Mesaj gönderiminde bir hata oluştu.")
+                        }
+                    })
+                },
+                chatgetir(){
+                    axios.post("/chatgetir",{
+                        mid:'<%= mesaj._id %>'
+                    }).then(response=>{
+                        if (response.data.status == true) {
+                            this.messages = response.data.chat
+                        } else {
+                            this.messages = response.data.chat
+                        }
+                    })
+                }
+            },
+            created(){
+                this.chatgetir()
+            }
+        })
+    </script>
 
     <style>
         body {

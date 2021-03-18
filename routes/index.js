@@ -6,6 +6,7 @@ const userController = require("../controllers/front/userController")
 const medyaController = require("../controllers/front/medyaController");
 const mesajController = require("../controllers/front/mesajController");
 const medya = require('../models/medya');
+const mesaj = require('../models/mesaj');
 
 function checkAuthentication(req, res, next) {
     if (req.isAuthenticated()) {
@@ -62,8 +63,10 @@ router.post("/baglanti",userController.baglanti)
 
 //MESAJLAR
 router.get("/mesaj",mesajController.mesaj)
-router.get("/mesajic",mesajController.mesajic)
+router.get("/mesajic/:id",mesajController.mesajic)
 router.post("/createmessage",mesajController.createmessage)
+router.post("/sendmessage",mesajController.sendmessage)
+router.post("/chatgetir",mesajController.chatgetir)
 
 //KİŞİLER
 router.get("/profil/:id",userController.kisi)
