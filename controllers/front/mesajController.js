@@ -34,7 +34,7 @@ exports.createmessage = async (req, res, next) => {
 }
 
 exports.chatgetir = async (req, res, next) => {
-    let chat = await Chat.find({ "mid": req.body.mid }).sort({ createdAt: -1 })
+    let chat = await Chat.find({ "mid": req.body.mid }).sort({ createdAt: 1 })
 
     if (chat) {
         res.json({
