@@ -67,17 +67,8 @@ exports.mesaj = async (req, res, next) => {
     let mesaj = []
     let mesaj1 = await Mesaj.find({ "user1._id": req.user._id })
     let mesaj2 = await Mesaj.find({ "user2._id": req.user._id })
-
-    mesaj1.forEach(element => {
-        mesaj.push(element)
-    });
-
-    mesaj2.forEach(element => {
-        mesaj.push(element)
-    });
-
-    console.log(mesaj)
-
+    mesaj1.forEach(element => {mesaj.push(element)});
+    mesaj2.forEach(element => {mesaj.push(element)});
     res.render("front/mesaj/mesaj", {
         title: "",
         mesaj: mesaj,
