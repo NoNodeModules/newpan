@@ -4,7 +4,7 @@ const Schema = mongoose.Schema
 const bildirimSchema = new Schema({
     title:String,
     url:String,
-    user:String, //* genel _id özel
+    user:Object, //* genel _id özel
     desc:String,
     createdAt:{
         type:Date,
