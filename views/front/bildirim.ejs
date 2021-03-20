@@ -5,11 +5,24 @@
         <div class="mcontainer">
             <% bildirim.forEach(element => { %>
                 <div style="display: flex; flex-direction: row; padding-top: 4px;">
-                    <div style="flex:1; align-items: center; justify-content: center; padding-left: 5vw; padding-top: 3px;"><ion-icon name="notifications-outline" class="text-2xl" style="color: cornflowerblue;"></ion-icon> </div>
+                    <div style="flex:1; align-items: center; justify-content: center; padding-left: 5vw; padding-top: 3px;">
+                        <ion-icon name="chatbubble-ellipses-outline" class="text-2xl"></ion-icon>
+                    </div>
                     <div style="flex:12">
                         <img src="<%= element.user.photo %>" style="border-radius: 50px; margin-bottom: 6px; height: 40px;">
                         <p style="margin-top: -11px;"> <a href="<%= element.url %>"><b>Sistem mesajı</b> <%= element.title %></a> </p>
-                        <p style="line-height: 1.2;"> <small> <%= element.desc %> </small> </p>
+                        <p style="line-height: 1.2;"> <small> <%= element.title %> </small> </p>
+                    </div>
+                </div>
+                <hr>
+                <div style="display: flex; flex-direction: row; padding-top: 4px;">
+                    <div style="flex:1; align-items: center; justify-content: center; padding-left: 5vw; padding-top: 3px;">
+                        <ion-icon class="text-2xl" name="heart-outline"></ion-icon>
+                    </div>
+                    <div style="flex:12">
+                        <img src="<%= user.photo %>" style="border-radius: 50px; margin-bottom: 6px; height: 40px;">
+                        <p style="margin-top: -11px;"> <a href=""><b>deneme kişisi beğendi </b> </a> </p>
+                        <p style="line-height: 1.2;"> <small> Deneme </small> </p>
                     </div>
                 </div>
                 <hr>
