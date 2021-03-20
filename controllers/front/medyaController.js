@@ -1,6 +1,8 @@
 const async = require("async")
 const Medya = require("../../models/medya")
 const Etiket = require("../../models/etiket")
+const moment = require("moment")
+moment.locale("tr")
 
 exports.list = async (req, res, next) => {
     let medya = await Medya.find({})
@@ -18,6 +20,7 @@ exports.msingle = async (req, res, next) => {
     res.render("front/medya/medyaic", {
         user: req.user,
         medya,
+        moment:moment,
         title:""
     })
 }
