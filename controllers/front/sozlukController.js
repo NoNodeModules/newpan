@@ -4,6 +4,7 @@ const Etiket = require("../../models/etiket")
 const User = require("../../models/user")
 const Yorum = require("../../models/yorum")
 const Begen = require("../../models/begen")
+const Bildirim = require("../../models/bildirim")
 const moment = require("moment")
 const cloudinary = require("cloudinary")
 cloudinary.config({
@@ -64,7 +65,17 @@ exports.ekle = async (req, res, next) => {
         if (err) {
             res.json({ status: false })
         } else {
-            res.json({ status: true })
+            new Bildirim({
+                text:"Eklediğiniz konuya yoruk yapıldı",
+                url:"/sozluk/"+data.konu._id,
+                user:data.user
+            }).save((err,data)=>{
+                if (err) {
+                    res.json({status:false})
+                } else {
+                    res.json({status:true})
+                }
+            })
         }
     })
 }
