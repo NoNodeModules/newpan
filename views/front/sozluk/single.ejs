@@ -17,7 +17,7 @@
         crossorigin="anonymous" />
 
     <header
-        style="display: flex; height: 50px; padding-left: 2vw; padding-right: 7vw; padding-top: 10px; border-radius: 20px;">
+        style="display: flex; height: 50px; padding-left: 2vw; padding-top: 10px; border-radius: 20px;">
         <div style="flex: 1;">
             <a href="/">
                 <ion-icon name="chevron-back-outline" style="color: gray; float: left;" class="text-3xl"></ion-icon>
@@ -26,6 +26,7 @@
         <div style="flex: 15;">
             <h3 style="margin-top: 0px;" class="text-lg font-semibold">
                 <%= konu.title.substring(0,40) %>
+                <ion-icon class="text-2xl" style="text-align: right; float: right; margin-top: 0px;"name="share-outline"></ion-icon>
             </h3>
             <!-- <h2 class="text-2xl font-semibold" style="margin-top: 0px;"> <%= konu.title.substring(0,40) %> <a> </h2> -->
         </div>
@@ -60,13 +61,11 @@
                                     </div>
                                     <div style="flex:4">
                                         
-                                        <h3 class="text-lg font-semibold" style="float: right; text-align: right;"> <ion-icon
-                                                style="margin-top: -2px;" class="text-2xl" name="chatbubble-outline">
-                                            </ion-icon> | <span style="
+                                        <h3 class="text-lg font-semibold" style="float: right; text-align: right;">
+                                        <span style="
                                             text-transform: lowercase; 
                                             display: inline-block;
                                             text-align: center;
-                                            margin: 5px;
                                             border-radius: 100px;
                                             padding: 5px;
                                             text-transform: capitalize;
