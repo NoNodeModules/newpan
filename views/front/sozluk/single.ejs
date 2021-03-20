@@ -55,9 +55,13 @@
                         <div class=" py-4 space-y-4 dark:border-" style="width: 100%;">
                             <% yorum.forEach(element=> { %>
                                 <div style="display: flex; flex-direction: row; width: 100%;">
-                                    <div style="flex:8">
+                                    <div style="flex:2">
                                         <a href="/profil/<%= element.user._id %>"><img src="<%= element.user.photo %>"
                                                 style="border-radius: 75px; height: 45px; width: 45px;"></a>
+                                                
+                                    </div>
+                                    <div style="flex:12;">
+                                        <span style="margin-top: 20px;"><b>Abdullah Bektaş</b></span>
                                     </div>
                                     <div style="flex:4">
                                         
