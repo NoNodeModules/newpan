@@ -66,7 +66,7 @@ exports.ekle = async (req, res, next) => {
             res.json({ status: false })
         } else {
             new Bildirim({
-                text:"Eklediğiniz konuya yoruk yapıldı",
+                title:"Eklediğiniz konuya yorum yapıldı",
                 url:"/sozluk/"+data.konu._id,
                 user:data.user
             }).save((err,data)=>{
