@@ -10,6 +10,86 @@
     </div>
 </header>
 
+<div class="main_content">
+    <div class="container">
+        <nav class="cd-secondary-nav pl-2 is_ligh -mb-0.5 border-transparent" style="display: flex; margin-top: -10px;">
+            <ul>
+                <li><a>Sözlük</a></li>
+                <li style="padding-left: 20vw;"><a>Medya </a></li>
+                <li style="padding-left: 20vw;"><a>Kişiler </a></li>
+            </ul>
+        </nav>
+        <div class="lg:flex lg:space-y-10">
+            <div class="lg:w-3/4 lg:px-20 space-y-12">
 
+                <br>
+                <div class="flex justify-between relative md:mb-4 mb-3" style="margin-top: -5px;">
 
-    <%- include ./part/footerflex.ejs %>
+                </div>
+                <hr style="background-color: steelblue; height: 1px; border: 0; margin-bottom: 10px;">
+                <ul class="space-y-6" >
+                    <% sozluk.forEach(element => { %>
+                        <li style="margin-top: 4px;">
+                        <div class="flex items-start pl-3 space-x-4" style="margin-left: -2vw;">
+                                    <!-- <a href="/profil">
+                                    <img src="../../../front/images/avatars/avatar-2.jpg" style="width: 40px; height: 40px;" class="rounded-full">
+                                    </a> -->
+                            <a href="/single/<%= element._id %>">
+                                    
+                                    <div class="flex-1">
+                                        <!-- <h3 class="text-lg font-semibold line-clamp-1"> -->
+                                        <h3 class="text-lg font-semibold">
+                                            <%= element.title %>
+                                        </h3>
+                                        <p class="text-sm text-gray-400 mb-2"> Yazar: <span data-href="%40tag-dev.html"> <%= element.user.item.name %> </span> |
+                                            <%= moment(element.createdAt,"ddd MMM DD YYYY HH:mm:ss GMT Z'").fromNow(true) %> önce </span> <span style="float: right; text-align: right;" class="text-sm"> <b> 123 </b> </span>
+                                        </p>
+                                        <!-- <div class="row" style="margin-top: -9px; margin-left: 1px;">
+                                            <table>
+                                                <tr>
+                                                    <td>
+                                                        <div class="flex items-center">
+                                                            <ion-icon name="logo-facebook"></ion-icon>
+                                                            <span class="text-sm"></span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="flex items-center">
+                                                            <ion-icon style="padding-left: 16vw;" name="logo-twitter"></ion-icon>
+                                                            <span class="text-sm"></span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="flex items-center">
+                                                            <ion-icon style="padding-left: 16vw;" name="logo-whatsapp"></ion-icon>
+                                                            <span class="text-sm"></span>
+                                                        </div>
+                                                    </td>
+
+                                                    <td>
+                                                        <div class="flex items-center">
+                                                            <ion-icon style="padding-left: 16vw;" name="chatbubble-ellipses-outline"></ion-icon>
+                                                            <span class="text-sm"><%= element.comment.length %></span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                    </div> -->
+                            </a>
+
+                                </div>
+                                </div>
+                                
+                        </li>
+                        <hr style="margin-top: -0px;">
+                        <% }) %>
+                </ul>
+                <!-- <div class="flex flex-wrap gap-1 responsive-tab">
+                    <img src="../../../banner.png" style="width: 100%;" class="img-responsive">
+                </div> -->
+        </div>
+        
+    </div>
+</div>
+
+<%- include ./part/footerflex.ejs %>

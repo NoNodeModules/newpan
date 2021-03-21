@@ -117,7 +117,7 @@
                     <!-- <div class="flex flex-wrap gap-1 responsive-tab">
                         <img src="../../../banner.png" style="width: 100%;" class="img-responsive">
                     </div> -->
-                </div>
+            </div>
                 
                 <!-- <div id="son" class="lg:w-1/4 w-full flex-shrink-0">
 
@@ -157,7 +157,7 @@
                         </div>
                     </div>
                 </div> -->
-            </div>
+        </div>
 
         </div>
         <a @click="konuEkle()" style="color: white;" hidden class="bg-blue-600 flex h-9 items-center justify-center rounded-lg text-white px-12 font-semibold">
@@ -207,51 +207,51 @@
         </div>
     </div>
     <style>
-        footer {
-            display: flex;
-            position: fixed;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            background-color: white;
-            color: white;
-            text-align: center;
-            border-top: 1px solid lightgray;
-            border-radius: 20px;
-            padding-top: 10px;
-        }
-    </style>
-    <footer>
-        <% if (user) { %>
-            <div style="flex: 2; align-items: center; justify-content: center;">
-                <a href="/profil"><img src="<%= user.photo %>" style="height: 33px; top: 0px; bottom: 0px; left: 0px; right: 0px; margin:auto; border-radius: 20px;">            </a>
+    footer {
+        display: flex;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: white;
+        color: white;
+        text-align: center;
+        border-top: 1px solid lightgray;
+        border-radius: 20px;
+        padding-top: 10px;
+    }
+</style>
+<footer>
+    <% if (user) { %>
+        <div style="flex: 2; align-items: center; justify-content: center;">
+            <a href="/profil"><img src="<%= user.photo %>" style="height: 33px; top: 0px; bottom: 0px; left: 0px; right: 0px; margin:auto; border-radius: 20px;">            </a>
+        </div>
+    <% }else{ %>
+        <div style="flex: 2; align-items: center; justify-content: center;">
+            <a href="/users/login"><ion-icon name="person-outline" style="color: gray;" class="text-3xl"></ion-icon></a>
+        </div>
+    <% } %> 
+    <div style="flex: 2; align-items: center; justify-content: center;">
+        <a href="/medya"><ion-icon name="camera-outline" style="color: gray;" class="text-4xl"></ion-icon></a>
+    </div>
+    <% if (user) { %>
+        <% if (user.type == 1 && title == 1) { %>
+            <div style="flex: 2; align-items: center; justify-content: center;" uk-toggle="target: #create-post-modal">
+                <img src="../../../paylas.png" style="height: 40px; top: 0px; bottom: 0px; left: 0px; right: 0px; margin:auto; margin-bottom: 4px;">
             </div>
         <% }else{ %>
-            <div style="flex: 2; align-items: center; justify-content: center;">
-                <a href="/users/login"><ion-icon name="person-outline" style="color: gray;" class="text-3xl"></ion-icon></a>
+            <div style="flex: 2; align-items: center; justify-content: center;" uk-toggle="target: #create-post-modal">
+                <img src="../../../paylas.png" style="height: 40px; top: 0px; bottom: 0px; left: 0px; right: 0px; margin:auto; margin-bottom: 4px;">
             </div>
         <% } %> 
-        <div style="flex: 2; align-items: center; justify-content: center;">
-            <a href="/medya"><ion-icon name="camera-outline" style="color: gray;" class="text-4xl"></ion-icon></a>
-        </div>
-        <% if (user) { %>
-            <% if (user.type == 1 && title == 1) { %>
-                <div style="flex: 2; align-items: center; justify-content: center;" uk-toggle="target: #create-post-modal">
-                    <img src="../../../paylas.png" style="height: 40px; top: 0px; bottom: 0px; left: 0px; right: 0px; margin:auto; margin-bottom: 4px;">
-                </div>
-            <% }else{ %>
-                <div style="flex: 2; align-items: center; justify-content: center;" uk-toggle="target: #create-post-modal">
-                    <img src="../../../paylas.png" style="height: 40px; top: 0px; bottom: 0px; left: 0px; right: 0px; margin:auto; margin-bottom: 4px;">
-                </div>
-            <% } %> 
-        <% }else{ %>
-    
-        <% } %> 
-        <div style="flex: 2; align-items: center; justify-content: center;">
-            <a href="/bildirim"><ion-icon name="notifications-outline" style="color: gray;" class="text-4xl"></ion-icon></a>
-        </div>
-        <div style="flex: 2; align-items: center; justify-content: center;">
-            <a href="/mesaj"><ion-icon name="chatbubble-outline" style="color: gray;" class="text-4xl"></ion-icon></a>
-        </div>
-    </footer>
+    <% }else{ %>
+
+    <% } %> 
+    <div style="flex: 2; align-items: center; justify-content: center;">
+        <a href="/bildirim"><ion-icon name="notifications-outline" style="color: gray;" class="text-4xl"></ion-icon></a>
+    </div>
+    <div style="flex: 2; align-items: center; justify-content: center;">
+        <a href="/mesaj"><ion-icon name="chatbubble-outline" style="color: gray;" class="text-4xl"></ion-icon></a>
+    </div>
+</footer>
     

@@ -1,10 +1,13 @@
 const express = require('express');
 const router = express.Router();
+const async = require("async")
 const mainController = require("../controllers/front/mainController")
 const sozlukController = require("../controllers/front/sozlukController")
 const userController = require("../controllers/front/userController")
 const medyaController = require("../controllers/front/medyaController");
 const mesajController = require("../controllers/front/mesajController");
+const moment = require("moment")
+const Sozluk = require("../models/sozluk")
 const medya = require('../models/medya');
 const mesaj = require('../models/mesaj');
 
@@ -68,9 +71,12 @@ router.post("/createmessage",mesajController.createmessage)
 router.post("/sendmessage",mesajController.sendmessage)
 router.post("/chatgetir",mesajController.chatgetir)
 
-router.get("/arama",function (req,res,next) {
+router.get("/arama",async function (req,res,next) {
+    let sozluk = await Sozluk.find({})
     res.render("front/arama",{
-        user:req.user
+        user:req.user,
+        sozluk:sozluk,
+        moment:moment
     })
 })
 
