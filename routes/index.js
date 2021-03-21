@@ -8,7 +8,7 @@ const medyaController = require("../controllers/front/medyaController");
 const mesajController = require("../controllers/front/mesajController");
 const moment = require("moment")
 const Sozluk = require("../models/sozluk")
-const medya = require('../models/medya');
+const Medya = require('../models/medya');
 const mesaj = require('../models/mesaj');
 
 function checkAuthentication(req, res, next) {
@@ -73,9 +73,11 @@ router.post("/chatgetir",mesajController.chatgetir)
 
 router.get("/arama",async function (req,res,next) {
     let sozluk = await Sozluk.find({})
+    let medya = await Medya.find({})
     res.render("front/arama",{
         user:req.user,
         sozluk:sozluk,
+        medya:medya,
         moment:moment
     })
 })
