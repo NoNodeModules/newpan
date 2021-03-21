@@ -12,7 +12,23 @@
 		background:#2d2d2d;
 	}
 </style>
-<%- include ../part/headerflex.ejs %>
+<header style="display: flex; height: 50px; padding-left: 7vw; padding-right: 7vw; padding-top: 10px; border-radius: 20px;">
+    <% if (user) { %>
+        <div style="flex: 2;">
+            <a href="/"><ion-icon name="home-outline" style="color: gray; float: left;"  class="text-3xl"></ion-icon></a>
+        </div>
+    <% }else{ %>
+        <div style="flex: 2;">
+            <a href="/users/login"><ion-icon name="person-outline" style="color: gray; float: left;" class="text-3xl"></ion-icon></a>
+        </div>
+    <% } %> 
+    <div style="flex: 6;">
+        <a href="/"><img src="../../../newpan.png" style="height: 34px; width: auto; top: 0px; bottom: 0px; left: 0px; right: 0px; margin:auto"></a>
+    </div>
+    <div style="flex: 2;">
+        <ion-icon name="search-outline" style="color: gray; float: right;" class="text-3xl" uk-toggle="target: #wrapper ; cls: show-searchbox"></ion-icon>
+    </div>
+</header>
     
     <div class="main_content">
         <div class="mcontainer">
@@ -46,6 +62,8 @@
                             </div>
                         </div>
                         <div style="flex:4">
+            <a href="/setting"><ion-icon name="settings-outline" style="color: gray; float: left;" class="text-3xl"></ion-icon></a>
+
                             <h3 class="text-lg font-semibold" style=" text-align: right;"> 
                                 <span style="text-transform: lowercase; display: inline-block;
                                     text-align: center;
