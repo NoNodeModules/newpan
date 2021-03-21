@@ -68,6 +68,12 @@ router.post("/createmessage",mesajController.createmessage)
 router.post("/sendmessage",mesajController.sendmessage)
 router.post("/chatgetir",mesajController.chatgetir)
 
+router.get("/arama",function (req,res,next) {
+    res.render("front/arama",{
+        user:req.user
+    })
+})
+
 //KİŞİLER
 router.get("/profil/:id",userController.kisi)
 
