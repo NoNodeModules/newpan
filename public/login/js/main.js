@@ -48,9 +48,9 @@
         bodyTag: "fieldset",
         transitionEffect: "fade",
         labels: {
-            previous : 'Previous',
-            next : 'Next',
-            finish : 'Finish',
+            previous : 'Geri',
+            next : 'İleri',
+            finish : 'Kayıt Ol',
             current : ''
         },
         titleTemplate : '<h3 class="title">#title#</h3>',
