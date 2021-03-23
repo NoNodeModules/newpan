@@ -164,7 +164,8 @@
             ekle() {
                 axios.post("/sozluk/yorumekle", {
                     sid: document.getElementById("sid").value,
-                    yorum: this.yorum
+                    yorum: this.yorum,
+                    isim: document.getElementById("input").value
                 }).then(response => {
                     if (response.data.status == true) {
                         this.yyy = true

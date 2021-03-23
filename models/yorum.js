@@ -3,6 +3,7 @@ const Schema = mongoose.Schema
 
 const yorumSchema = new Schema({
     user:Object,
+    isim:String,
     yorum:String,
     konu:Object,
     createdAt:{

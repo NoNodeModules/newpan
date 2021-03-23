@@ -60,6 +60,7 @@ exports.ekle = async (req, res, next) => {
     new Yorum({
         user: req.user,
         yorum: req.body.yorum,
+        isim : req.body.isim,
         konu: sozluk
     }).save((err, data) => {
         if (err) {
