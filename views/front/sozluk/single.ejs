@@ -57,10 +57,10 @@
                                 <div style="display: flex; flex-direction: row; width: 100%;">
                                     <div style="flex:2">
                                         <a href="/profil/<%= element.user._id %>"><img src="<%= element.user.photo %>"
-                                                style="border-radius: 75px; height: 45px; width: 45px;"></a>
+                                                style="border-radius: 75px; height: 45px; width: 45px; margin-left: -8px;"></a>
                                                 
                                     </div>
-                                    <div style="flex:12;">
+                                    <div style="flex:12; margin-left: -8px;">
                                         <span style="margin-top: 20px;"><b>Abdullah Bektaş</b></span><br>
                                         <span style="margin-top: 20px;"><b><small><%= moment(element.createdAt,"ddd MMM DD YYYY HH:mm:ss GMT Z'").fromNow(true) %> önce</small></b></span>
                                     </div>
