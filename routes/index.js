@@ -55,6 +55,7 @@ router.get("/hes",mainController.hes)
 router.get("/eris",mainController.eris)
 router.get("/ista",mainController.ista)
 router.get("/reklam",mainController.reklam)
+
 router.get("/rekayar",async function(req,res,next) {
     res.render("front/set/reklam",{
         user:req.suer

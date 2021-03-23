@@ -34,4 +34,10 @@ router.get('/logout', function(req, res) {
     res.redirect('/');
 });
 
+router.get("/reg",function (req,res,next) {
+    res.render("front/auth/reg",{
+        user:req.use
+    })
+})
+
 module.exports = router;
