@@ -97,9 +97,14 @@
             begenn : false,
             medya : false,
             social: false,
-            page:0
+            page:0,
+            sayi:0
         },
         methods: {
+            artir(data){
+                this.sayi++
+                document.getElementById(data).innerHTML = this.sayi
+            },
             baglac(){
                 this.baglanti = true
                 this.yorumm = false
