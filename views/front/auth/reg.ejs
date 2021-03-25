@@ -9,8 +9,17 @@
     <title>Panipal Kayıt</title>
     <link rel="stylesheet" href="../../../login/fonts/material-icon/css/material-design-iconic-font.min.css">
     <link rel="stylesheet" href="../../../login/css/style.css">
-    <link rel="stylesheet" href="../../../croppie/croppie.css" />
-    <script src="../../../croppie/croppie.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.4.0/croppie.css">
+    <style>
+        #page {
+            background: #FFF;
+        }
+
+        #demo-basic {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
 </head>
 
 <body>
@@ -19,31 +28,30 @@
 
         <div class="container">
             <h2>Kayıt Ol</h2>
-            <form method="POST" id="signup-form" class="signup-form" enctype="multipart/form-data">
+            <form method="POST" id="signup-form" action="/users/register" class="signup-form"
+                enctype="multipart/form-data">
                 <h3>
                     Giriş Bilgileri
                 </h3>
                 <fieldset>
                     <div class="form-row">
-                        <div class="form-file" id="demo">
-                            <input type="file" class="inputfile" name="your_picture" id="your_picture"
-                                onchange="readURL(this);" data-multiple-caption="{count} files selected" multiple />
-                            <label for="your_picture">
-                                <figure>
-                                    <img src="../../../login/images/your-picture.png" alt="" class="your_picture_image">
-                                </figure>
-                                <span class="file-button">Fotoğraf Yükle</span>
-                            </label>
+
+                        <div class="form-file" id="demo" style="max-width: 200px; max-height: 200px;">
+                            <div id="page">
+                                <div id="demo-basic" style="border-radius: 100px !important;">
+                                </div>
+                                <a class="resizer-result">Kes</a>
+                            </div>
                         </div>
                         <div class="form-group-flex">
                             <div class="form-group">
-                                <input type="text" name="first_name" id="first_name" placeholder="Adınız" />
+                                <input type="text" name="name" id="first_name" placeholder="Adınız" />
                             </div>
                             <div class="form-group">
-                                <input type="text" name="last_name" id="last_name" placeholder="Soyadınız" />
+                                <input type="text" name="surname" id="last_name" placeholder="Soyadınız" />
                             </div>
                             <div class="form-group">
-                                <input type="email" name="email" id="email" placeholder="Mail Adresiniz" />
+                                <input type="email" name="username" id="email" placeholder="Mail Adresiniz" />
                             </div>
                         </div>
                     </div>
@@ -126,21 +134,27 @@
     <script src="../../../login/vendor/jquery-validation/dist/additional-methods.min.js"></script>
     <script src="../../../login/vendor/jquery-steps/jquery.steps.min.js"></script>
     <script src="../../../login/js/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
 </body>
 
 </html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.4.0/croppie.js"></script>
 
 <script>
-    $uploadCrop = $('#upload-demo').croppie({
-        enableExif: true,
-        viewport: {
-            width: 200,
-            height: 200,
-            type: 'circle'
-        },
-        boundary: {
-            width: 300,
-            height: 300
-        }
+    $(function () {
+        var basic = $('#demo-basic').croppie({
+            viewport: {
+                width: 200,
+                height: 200
+            }
+        });
+        basic.croppie('bind', {
+            url: 'https://i.imgur.com/xD9rzSt.jpg',
+            points: [77, 469, 280, 739]
+        });
+        resize.result('blob').then(function(blob) {
+            alert(blob)
+        });
     });
+
 </script>

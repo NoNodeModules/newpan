@@ -23,11 +23,22 @@ router.get("/flex",(req,res,next)=>{
     res.render("flex")
 })
 
+router.get("/kaynak",async(req,res,next)=>{
+    res.render("front/kaynak",{
+        user:req.user
+    })
+})
+
 router.get("/loader",function(req,res,next) {
     res.render("front/loader")
 })
 
 router.get('/', mainController.index);
+
+router.get("/cropper",async(req,res,next)=>{
+    res.render("cropper")
+})
+
 //SÖZLÜK
 router.get('/single/:id', sozlukController.single)
 router.get("/sozluk", sozlukController.list)

@@ -117,11 +117,11 @@
                                                             <span class="text-sm"></span>
                                                         </div>
                                                     </td> -->
-                                                    <td>
+                                                    <td id="<%= element._id %>asd" onclick="changeColor('<%= element._id %>asd')">
                                                         <div class="flex items-center"
                                                             @click="sayi++">
                                                             <ion-icon id="<%= element._id %>"
-                                                                class="text-2xl" name="heart-outline"></ion-icon>
+                                                                class="text-2xl"  name="heart"></ion-icon>
                                                             <span class="text-md"> {{sayi}} </span>
                                                         </div>
                                                     </td>
@@ -243,4 +243,9 @@
             document.getElementById(id).style.display = "block"
             document.getElementById("off" + id).style.display = "none"
         }
+
+        function changeColor(id) {
+            document.getElementById(id).style.color = "#e5383b";
+            return false;
+        }   
     </script>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="body">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -54,21 +55,21 @@
         }
     </style>
 
-<style>
-    footer {
-        display: flex;
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        background-color: white;
-        color: white;
-        text-align: center;
-        border-top: 1px solid lightgray;
-        border-radius: 20px;
-        padding-top: 10px;
-    }
-</style>
+    <style>
+        footer {
+            display: flex;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: white;
+            color: white;
+            text-align: center;
+            border-top: 1px solid lightgray;
+            border-radius: 20px;
+            padding-top: 10px;
+        }
+    </style>
 </head>
 
 <body>
@@ -77,8 +78,6 @@
             <%- body %>
         </div>
     </div>
-    
-
 </body>
 
 <script>
@@ -92,47 +91,47 @@
             title: "",
             tag: "",
             yyy: null,
-            baglanti : true,
-            yorumm : false,
-            begenn : false,
-            medya : false,
+            baglanti: true,
+            yorumm: false,
+            begenn: false,
+            medya: false,
             social: false,
-            page:0,
-            sayi:0
+            page: 0,
+            sayi: 0
         },
         methods: {
-            artir(data){
+            artir(data) {
                 this.sayi++
                 document.getElementById(data).innerHTML = this.sayi
             },
-            baglac(){
+            baglac() {
                 this.baglanti = true
                 this.yorumm = false
                 this.begenn = false
                 this.medya = false
             },
-            yorac(){
+            yorac() {
                 this.yorumm = true
                 this.baglanti = false
                 this.begenn = false
                 this.medya = false
             },
-            begac(){
+            begac() {
                 this.begenn = true
                 this.baglanti = false
                 this.yorumm = false
                 this.medya = false
             },
-            medac(){
+            medac() {
                 this.begenn = false
                 this.baglanti = false
                 this.yorumm = false
                 this.medya = true
             },
-            begen(yorid){
-                axios.post("/begen",{
-                    yorid:yorid
-                }).then(response=>{
+            begen(yorid) {
+                axios.post("/begen", {
+                    yorid: yorid
+                }).then(response => {
                     console.log(response)
                 })
             },
@@ -150,10 +149,10 @@
                     this.social = false
                 }
             },
-            mesajEkle(data){
-                axios.post("/createmessage",{
-                    user2:data
-                }).then(response=>{
+            mesajEkle(data) {
+                axios.post("/createmessage", {
+                    user2: data
+                }).then(response => {
                     if (response.data.status == true) {
                         window.location = "/mesaj"
                     } else {
