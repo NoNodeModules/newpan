@@ -23,8 +23,14 @@ router.get("/flex",(req,res,next)=>{
     res.render("flex")
 })
 
-router.get("/kaynak",async(req,res,next)=>{
+router.get("/yorumic",async(req,res,next)=>{
     res.render("front/kaynak",{
+        user:req.user
+    })
+})
+
+router.get("/kaynak",async(req,res,next)=>{
+    res.render("front/kaynakk",{
         user:req.user
     })
 })
