@@ -149,9 +149,32 @@
                                                     </td>
                                                     <td>
                                                         <div class="flex items-center">
-                                                            <ion-icon class="text-2xl" style="padding-left: 23vw;"
+                                                            <a class="is_avatar">
+                                                                <ion-icon class="text-2xl " style="padding-left: 23vw;"
                                                                 name="share-outline"></ion-icon>
                                                             <span class="text-sm"></span>
+                                                            </a>
+
+                                                            <div uk-drop="mode: click;offset:5" class="header_dropdown profile_dropdown">
+
+                                                                <a href="timeline.html" class="user">
+                                                                    <div class="user_name" style="display: flex; flex-direction: row;">
+                                                                        <div style="flex:2; margin-left: 10vw;">
+                                                                            <ion-icon name="logo-twitter" class="text-3xl"></ion-icon>
+                                                                        </div>
+                                                                        <div style="flex:2;">
+                                                                            <ion-icon name="logo-facebook" class="text-3xl"></ion-icon>
+                                                                        </div>
+                                                                        <div style="flex:2;">
+                                                                            <ion-icon name="logo-whatsapp" class="text-3xl"></ion-icon>
+                                                                        </div>
+                                                                        <div style="flex:2;">
+                                                                            <ion-icon name="clipboard-outline" class="text-3xl"></ion-icon>
+                                                                        </div>
+                                                                    </div>
+                                                                </a>
+                                                                <hr class="border-gray-100">
+                                                            </div>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -179,6 +202,7 @@
         </footer> -->
 
         <% include ../part/footerflex.ejs %> 
+        
 
         <div id="create-post-modal" class="create-post" uk-modal>
             <div
