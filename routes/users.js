@@ -40,4 +40,10 @@ router.get("/reg",function (req,res,next) {
     })
 })
 
+router.get("/log",function (req,res,next) {
+    res.render("front/auth/log",{
+        user:req.use
+    })
+})
+
 module.exports = router;
