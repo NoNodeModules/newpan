@@ -1,6 +1,22 @@
 <% layout("layout") %>
 
-<% include part/headerflex.ejs %> 
+<header style="display: flex; height: 50px; padding-left: 7vw; padding-right: 7vw; padding-top: 10px; border-radius: 20px;">
+    <% if (user) { %>
+        <div style="flex: 2;">
+            <a href="/setting"><ion-icon name="settings-outline" style="color: gray; float: left;" class="text-3xl"></ion-icon></a>
+        </div>
+    <% }else{ %>
+        <div style="flex: 2;">
+            <a href="/users/login"><ion-icon name="settings-outline" style="color: gray; float: left;" class="text-3xl"></ion-icon></a>
+        </div>
+    <% } %> 
+    <div style="flex: 6;">
+        <!-- <a href="/"><img src="../../../newpan.png" style="height: 34px; width: auto; top: 0px; bottom: 0px; left: 0px; right: 0px; margin:auto"></a> -->
+    </div>
+    <div style="flex: 2;">
+        <ion-icon name="arrow-forward-outline" style="color: #0091EA; text-align: right; float: right;" class="text-4xl"></ion-icon>
+    </div>
+</header>
 
 <style>
     .slidecontainer {
@@ -42,7 +58,7 @@
       background: #4CAF50;
       cursor: pointer;
     }
-    </style>
+</style>
 <div class="main_content" id="app">
     <div class="container">
         <h2 class="text-2xl font-semibold text-center" style="margin-top: 20px;"> Reklam Ayarları</h2>
