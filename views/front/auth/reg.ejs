@@ -10,6 +10,10 @@
     <link rel="stylesheet" href="../../../login/fonts/material-icon/css/material-design-iconic-font.min.css">
     <link rel="stylesheet" href="../../../login/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.4.0/croppie.css">
+    <script>
+        var locales = Metro.utils.getLocales();
+        console.log(locales);
+    </script>
     <style>
         #page {
             background: #FFF;
@@ -35,13 +39,14 @@
                 </h3>
                 <fieldset>
                     <div class="form-row">
-
-                        <div class="form-file" id="demo" style="max-width: 200px; max-height: 200px;">
-                            <div id="page">
-                                <div id="demo-basic" style="border-radius: 100px !important;">
-                                </div>
-                                <a class="resizer-result">Kes</a>
-                            </div>
+                        <div class="form-file">
+                            <input type="file" class="inputfile" name="your_picture" id="your_picture"  onchange="readURL(this);" data-multiple-caption="{count} files selected" multiple />
+                            <label for="your_picture">
+                                <figure>
+                                    <img src="../../../login/images/your-picture.png" alt="" class="your_picture_image">
+                                </figure>
+                                <span class="file-button">Fotoğraf Yükle</span>
+                            </label>
                         </div>
                         <div class="form-group-flex">
                             <div class="form-group">
@@ -50,78 +55,33 @@
                             <div class="form-group">
                                 <input type="text" name="surname" id="last_name" placeholder="Soyadınız" />
                             </div>
-                            <div class="form-group">
-                                <input type="email" name="username" id="email" placeholder="Mail Adresiniz" />
+                            <!-- <div class="form-group">
+                                <input name="dt" data-role="datepicker" data-locale="tr-TR" placeholder="Doğum Tarihiniz">
+                            </div> -->
+                            <div class="uk-form-group">
+                                <div class="uk-position-relative">
+                                    <select name="cinsiyet" class="selectpicker uk-input bg-secondary">
+                                        <option>Erkek</option>
+                                        <option>Kadın</option>
+                                        <option>Belirtmek istemiyorum</option>
+                                    </select>
+                                </div>
                             </div>
+                            
                         </div>
                     </div>
                 </fieldset>
-
-                <h3>
-                    Kişisel
-                </h3>
-                <fieldset>
-                    <div class="form-radio">
-                        <label for="job" class="label-radio">What are you doing ?</label>
-                        <div class="form-flex">
-                            <div class="form-radio">
-                                <input type="radio" name="job" value="designer" id="designer" />
-                                <label for="designer">
-                                    <figure>
-                                        <img src="images/icon-1.png" alt="">
-                                    </figure>
-                                    <span>Designer</span>
-                                </label>
-                            </div>
-
-                            <div class="form-radio">
-                                <input type="radio" name="job" value="coder" id="coder" checked="checked" />
-                                <label for="coder">
-                                    <figure>
-                                        <img src="images/icon-2.png" alt="">
-                                    </figure>
-                                    <span>Coder</span>
-                                </label>
-                            </div>
-
-                            <div class="form-radio">
-                                <input type="radio" name="job" value="developer" id="developer" />
-                                <label for="developer">
-                                    <figure>
-                                        <img src="images/icon-3.png" alt="">
-                                    </figure>
-                                    <span>Developer</span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </fieldset>
-
                 <h3>
                     Onay
                 </h3>
                 <fieldset>
-                    <div class="form-row form-input-flex">
-                        <div class="form-input">
-                            <input type="text" name="street_name" id="street_name" placeholder="Street Name" />
-                        </div>
-                        <div class="form-input">
-                            <input type="text" name="street_number" id="street_number" placeholder="Street Number" />
-                        </div>
+                    <div class="form-group">
+                        <input type="email" name="username" id="email" placeholder="Mail Adresiniz" />
                     </div>
-                    <div class="form-row form-input-flex">
-                        <div class="form-input">
-                            <input type="text" name="city" id="city" placeholder="City" />
-                        </div>
-                        <div class="form-input">
-                            <select name="country" id="country">
-                                <option value="">Country</option>
-                                <option value="Viet Nam">Viet Nam</option>
-                                <option value="USA">USA</option>
-                            </select>
-                            <span class="select-icon"><i class="zmdi zmdi-caret-down"></i></span>
-                        </div>
+                    <div class="form-group">
+                        <input type="email" name="password" id="password" placeholder="Şifreniz" />
                     </div>
+                    
                 </fieldset>
             </form>
         </div>

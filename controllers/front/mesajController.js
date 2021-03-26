@@ -2,6 +2,7 @@ const async = require("async")
 const Mesaj = require("../../models/mesaj")
 const Chat = require("../../models/chat")
 const User = require("../../models/user")
+const Bildirim = require("../../models/bildirim")
 
 exports.mesajlar = async (req, res, next) => {
     let mesaj = await Mesaj.find({ "userid": req.user._id })
@@ -58,6 +59,7 @@ exports.sendmessage = async (req, res, next) => {
         if (err) {
             res.json({ status: false })
         } else {
+            new Bildirim({title:"",url:"",user:req.user,desc:""})
             res.json({ status: true })
         }
     })
