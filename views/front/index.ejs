@@ -176,7 +176,7 @@
                 <div class="flex flex-1 items-start space-x-4 p-5">
                     <!-- <img src="../../../front/images/avatars/avatar-2.jpg" class="bg-gray-200 border border-white rounded-full w-11 h-11"> -->
                     <div class="flex-1 pt-2" style="border: 1px solid cornflowerblue; border-radius: 20px;">
-                        <textarea v-model="title" class="uk-textare text-black shadow-none focus:shadow-none text-xl font-medium resize-none" rows="14"  placeholder=""></textarea>
+                        <textarea v-model="title" class="uk-textare text-black shadow-none focus:shadow-none text-xl font-medium resize-none" rows="14"  placeholder="Sözlüğe konu ekliyorsunuz"></textarea>
                         
                     </div>
                 </div>
@@ -234,8 +234,8 @@
     <div style="flex: 2; align-items: center; justify-content: center;">
         <a href="/medya"><ion-icon name="camera-outline" style="color: gray;" class="text-4xl"></ion-icon></a>
     </div>
-    <% if (user) { %>
-        <% if (user.type == 1 && title == 1) { %>
+    <% if (!user) { %>
+        <% if (true) { %>
             <div style="flex: 2; align-items: center; justify-content: center;" uk-toggle="target: #create-post-modal">
                 <img src="../../../paylas.png" style="height: 40px; top: 0px; bottom: 0px; left: 0px; right: 0px; margin:auto; margin-bottom: 4px;">
             </div>
