@@ -45,6 +45,10 @@ router.get("/cropper",async(req,res,next)=>{
     res.render("cropper")
 })
 
+router.get("/mesdemo",(req,res,next)=>{
+    res.render("front/mesdemo")
+})
+
 //SÖZLÜK
 router.get('/single/:id', sozlukController.single)
 router.get("/sozluk", sozlukController.list)
