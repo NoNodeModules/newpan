@@ -86,7 +86,7 @@
                                 <div class="flex">
                                     <div style="width: 100%;">
                                         <br>
-                                        <p class="leading-6" id="<%= element._id %>"
+                                        <p class="leading-6" id="on<%= element._id %>"
                                             style="font-size: 15pt; margin-left: -1vw; margin-right: -3vw;">
                                             <%= element.yorum.substring(0,150) %> <small><a
                                                         onclick="seeMore('<%=element._id%>')">Devamını gör</a></small>
@@ -119,7 +119,7 @@
                                                             <span class="text-sm"></span>
                                                         </div>
                                                     </td> -->
-                                                    <td id="<%= element._id %>asd" onclick="changeColor('<%= element._id %>asd')">
+                                                    <td id="<%= element._id %>asd" onclick="changeColor('<%= element._id %>')">
                                                         <div class="flex items-center"
                                                             @click="sayi++">
                                                             <ion-icon id="<%= element._id %>"
@@ -264,17 +264,24 @@
 
     <script>
         function seeMore(id) {
-            document.getElementById(id).style.display = "none"
+            document.getElementById("on"+id).style.display = "none"
             document.getElementById("off" + id).style.display = "block"
         }
 
         function geriAl(id) {
-            document.getElementById(id).style.display = "block"
+            document.getElementById("on"+id).style.display = "block"
             document.getElementById("off" + id).style.display = "none"
         }
 
         function changeColor(id) {
+            alert(id)
+            axios.post("/bildirimekle",{
+                type:0,
+                user:id,
+            })
+
             document.getElementById(id).style.color = "#e5383b";
             return false;
-        }   
+        } 
+
     </script>

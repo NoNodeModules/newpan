@@ -95,7 +95,7 @@ exports.guvenlik = async (req, res, next) => {
 }
 
 exports.bildirim = async (req, res, next) => {
-    let bildirim = await Bildirim.find({}).sort({createdAt:-1})
+    let bildirim = await Bildirim.find({"own._id":req.user._id}).sort({createdAt:-1})
     res.render("front/bildirim", {
         title: "Bildirimler",
         bildirim:bildirim,

@@ -6,6 +6,7 @@ const sozlukController = require("../controllers/front/sozlukController")
 const userController = require("../controllers/front/userController")
 const medyaController = require("../controllers/front/medyaController");
 const mesajController = require("../controllers/front/mesajController");
+const bildirimController = require("../controllers/front/bildirimController")
 const moment = require("moment")
 const Sozluk = require("../models/sozluk")
 const Medya = require('../models/medya');
@@ -18,6 +19,9 @@ function checkAuthentication(req, res, next) {
         res.redirect("/users/login");
     }
 }
+
+router.post("/bildirimekle",bildirimController.insert)
+
 
 router.get("/flex",(req,res,next)=>{
     res.render("flex")
