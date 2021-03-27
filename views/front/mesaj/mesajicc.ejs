@@ -16,6 +16,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
         integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
         crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+    
 </head>
 
 <style>
@@ -26,59 +28,75 @@
 </style>
 
 <body>
-    <div class="container bootstrap snippets bootdeys" id="app">
-        <div class="col-md-7 col-xs-12 col-md-offset-2">
-            <div class="panel" id="chat">
-                <div class="panel-heading">
-                    <h3 class="panel-title">
-                        <h3 class="text-center">
-                            <a href="/mesaj"><i style="float: left;" class="fa fa-chevron-left"
-                                    aria-hidden="true"></i></a>
-                            Ad Soyad
-                        </h3>
-                    </h3>
-                </div>
-                <hr>
-                <div class="panel-body" id="scrollChat" style="width: 100%; height: 70vh; overflow: scroll;">
-                    <div class="chats" v-for="item in messages">
-                        <div class="chat" v-if="item.user._id == '<%= user._id %>'">
-                            <div class="chat-body">
-                                <div class="chat-content" style="border-radius: 10px !important;">
-                                    <p>
-                                        {{item.text}}
-                                    </p>
-                                <span style="margin-top: -22px;" class="chat-time"><small>1 saniye önce</small></span>
+    <div id="app">
+        <div class="panel-heading fixed-top" style="border-bottom:1px solid #f2f2f2; border-radius:10px; background-color: white;">
+            <table>
+                <tr>
+                    <td>
+                        <ion-icon name="chevron-back-outline"
+                            style="color: gray; float: left; font-size: 24pt; padding-left: 20px;"></ion-icon>
+                    </td>
+                    <td>
+                        <h3 class="panel-title" style="padding-top: 7px; padding-left: 5vw;"><%= mesaj.user1.item.name %> </h3>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="container bootstrap snippets bootdeys">
+            <div class="col-md-7 col-xs-12 col-md-offset-2">
+                <div class="panel" id="chat">
+                    <div class="panel-body" id="scrollChat" style="width: 100%; height: 88vh; overflow: scroll;">
+                        <div class="chats" v-for="item in messages">
+                            <div class="chat" v-if="item.user._id == '<%= user._id %>'" style="margin-top: 10px; margin-bottom: 10px;">
+                                <div class="chat-body">
+                                    <div class="chat-content" style="border-radius: 10px !important;">
+                                        <p>
+                                            {{item.text}}
+                                        </p>
+                                    <span style="margin-top: -22px;" class="chat-time"><small>1 saniye önce</small></span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="chat chat-left" v-else>
-                            <div class="chat-body">
-                                <div class="chat-content" style="border-radius: 10px !important;">
-                                    <p>
-                                        {{item.text}}
-                                    </p>
-                                <span style="margin-top: -22px;" class="chat-time"><small>1 saniye önce</small></span>
+                            <div class="chat chat-left" v-else>
+                                <div class="chat-body">
+                                    <div class="chat-content" style="border-radius: 10px !important;">
+                                        <p>
+                                            {{item.text}}
+                                        </p>
+                                    <span style="margin-top: -22px;" class="chat-time"><small>1 saniye önce</small></span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <!-- <div class="panel-footer fixed-bottom">
+                        <hr>
+                        <form>
+                            <div class="input-group">
+                                <textarea type="text" v-model="text" style="border-radius: 30px;"
+                                    class="form-control" placeholder="Mesajınız giriniz.." data-autoresize rows="1"></textarea>
+                                <span class="input-group-btn">
+                                    <button class="btn" @click="mesajGonder()" style="border-radius: 100px;" type="button">
+                                        <i class="fa fa-chevron-right fa-2x" style="color: #62a8ea;"></i>
+                                    </button>
+                                </span>
+                            </div>
+                        </form>
+                    </div> -->
                 </div>
-                <div class="panel-footer fixed-bottom">
-                    <hr>
-                    <form>
-                        <div class="input-group">
-                            <textarea type="text" v-model="text" style="border-radius: 30px;"
-                                class="form-control" placeholder="Mesajınız giriniz.." data-autoresize rows="1"></textarea>
-                            <span class="input-group-btn">
-                                <button class="btn" @click="mesajGonder()" style="border-radius: 100px;" type="button">
-                                    <i class="fa fa-chevron-right fa-2x" style="color: #62a8ea;"></i>
-                                </button>
-                            </span>
-                        </div>
-                    </form>
-                </div>
+                <!-- End Panel Chat -->
             </div>
-            <!-- End Panel Chat -->
+        </div>
+        <div class="panel-footer fixed-bottom">
+            <div class="input-group">
+                <textarea type="text" v-model="text" style="border-radius: 30px;" class="form-control"
+                    placeholder="Mesajınız giriniz.." data-autoresize rows="1"></textarea>
+                <span class="input-group-btn">
+                    <button class="btn" @click="mesajGonder()" style="border-radius: 100px;" type="button">
+                        <i class="fa fa-chevron-right fa-2x" style="color: #62a8ea;"></i>
+                    </button>
+                </span>
+            </div>
         </div>
     </div>
 
@@ -211,9 +229,11 @@
     }
 
     .panel-footer {
-        padding: 0 30px 15px;
+        padding: 3px 15px 0;
+        padding-bottom: 2px;
         background-color: transparent;
-        border-top: 1px solid transparent;
+        border-top: 1px solid #f2f2f2;
+        border-radius: 10px;
         border-bottom-right-radius: 3px;
         border-bottom-left-radius: 3px;
     }
