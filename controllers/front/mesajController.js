@@ -66,17 +66,16 @@ exports.sendmessage = async (req, res, next) => {
 }
 
 exports.mesaj = async (req, res, next) => {
-    let mesaj = []
-    let mesaj1 = await Mesaj.find({ "user1._id": req.user._id })
-    let mesaj2 = await Mesaj.find({ "user2._id": req.user._id })
-    mesaj1.forEach(element => {mesaj.push(element)});
-    mesaj2.forEach(element => {mesaj.push(element)});
+    let mesaj = await Mesaj.find({$or:[{"user1._id": req.user._id},{"user2._id": req.user._id}]})
     res.render("front/mesaj/mesaj", {
         title: "",
         mesaj: mesaj,
         user: req.user
     })
 }
+
+
+
 
 exports.mesajic = async (req, res, next) => {
     let mesaj = await Mesaj.findById({ "_id": req.params.id })
