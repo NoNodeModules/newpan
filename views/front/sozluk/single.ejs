@@ -274,12 +274,10 @@
         }
 
         function changeColor(id) {
-            alert(id)
             axios.post("/bildirimekle",{
                 type:0,
                 user:id,
             })
-
             document.getElementById(id).style.color = "#e5383b";
             return false;
         } 
