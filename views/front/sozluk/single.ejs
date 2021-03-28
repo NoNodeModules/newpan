@@ -15,7 +15,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
         integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
         crossorigin="anonymous" />
-
+        <style>
+            textarea {
+                box-sizing: border-box;
+                resize: none;
+            }
+        </style>
  
 
     <header
@@ -204,11 +209,14 @@
         </footer> -->
 
         
-        <footer style="max-height: 40vw;">
-            <div style="flex: 10; align-items: center; justify-content: center; margin-top: -10px;">
-                <textarea type="text" v-model="text" style="border-radius: 30px; padding:20px; margin-bottom: -4vh;"
-                        placeholder="Mesajınız giriniz.." data-autoresize style="resize: none;"></textarea>
-                <button class="btn" @click="mesajGonder()" style="border-radius: 10 vh; position: relative; margin-top: -100px; margin-left: 92vw;" type="button">
+        
+        <footer>
+            <div style="flex: 10; align-items: center; justify-content: center;">
+                <textarea style="border-radius: 80px; padding:18px;" class="form-control"
+                    placeholder="Mesajınız giriniz.." data-autoresize></textarea>
+            </div>
+            <div style="flex: 1; align-items: center; justify-content: center;">
+                <button class="btn" @click="mesajGonder()" style="border-radius: 100px;" type="button">
                     <i class="fa fa-chevron-right fa-2x" style="color: #62a8ea;"></i>
                 </button>
             </div>
@@ -269,6 +277,16 @@
             </div>
         </div>
     </div>
+    <script>
+        jQuery.each(jQuery('textarea[data-autoresize]'), function () {
+            var offset = this.offsetHeight - this.clientHeight;
+
+            var resizeTextarea = function (el) {
+                jQuery(el).css('height', 'auto').css('height', el.scrollHeight + offset);
+            };
+            jQuery(this).on('keyup input', function () { resizeTextarea(this); }).removeAttr('data-autoresize');
+        });
+    </script>
 
     <script>
         function seeMore(id) {
