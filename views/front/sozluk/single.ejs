@@ -197,29 +197,8 @@
             </div>
 
         </div>
-        <!-- <footer>
-            <div style="flex: 10">
-                <input type="text" class="uk-input" style="padding-top: -20px;" placeholder="Lütfen yorumunuzu yazınız . . . ">
-            </div>
-            <div style="flex: 1; align-items: center; justify-content: center;">
-                <i class="fa fa-chevron-right fa-2x" style="color: #62a8ea; padding-top: 10px;"></i>
-            </div>
-        </footer> -->
 
-        
-        
-        <footer>
-            <div style="flex: 10; align-items: center; justify-content: center;">
-                <textarea style="border-radius: 40px; padding:18px;" rows="1"
-                    placeholder="Mesajınız giriniz.." data-autoresize></textarea>
-            </div>
-            <div style="flex: 1; align-items: center; justify-content: center;">
-                <button class="btn" @click="mesajGonder()" style="border-radius: 100px;" type="button">
-                    <i class="fa fa-chevron-right fa-2x" style="color: #62a8ea;"></i>
-                </button>
-            </div>
-        </footer>
-
+        <%- include ../part/footerflex.ejs %> 
         <div id="create-post-modal" class="create-post" uk-modal>
             <div
                 class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical rounded-lg p-0 lg:w-5/12 relative shadow-2xl uk-animation-slide-bottom-small">
@@ -244,23 +223,10 @@
                             class="uk-textare text-black shadow-none focus:shadow-none text-xl font-medium resize-none"
                             rows="5" placeholder="Eklemek istediğiniz içeriği giriniz."></textarea>
                     </div>
-                    
-                    
-
                 </div>
                 <div class="bsolute bottom-0 p-4 space-x-4 w-full">
-
                 </div>
                 <div class="flex items-center w-full justify-between p-3 border-t">
-
-                    <select class="selectpicker mt-2 col-4 story">
-                        <% etiket.forEach(element=> { %>
-                            <option value="">
-                                <%= element.tag %>
-                            </option>
-
-                            <% }) %>
-                    </select>
 
                     <div class="flex space-x-2">
                         <button @click="ekle()" style="color: white;"
