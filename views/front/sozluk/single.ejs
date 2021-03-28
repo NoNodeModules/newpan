@@ -203,8 +203,18 @@
             </div>
         </footer> -->
 
-        <% include ../part/footerflex.ejs %> 
         
+        <footer style="max-height: 200px;">
+            <div style="flex: 10; align-items: center; justify-content: center;">
+                <textarea type="text" v-model="text" style="margin-left: 2vw;"
+                        placeholder="Mesajınız giriniz.." data-autoresize style="resize: none;"></textarea>
+            </div>
+            <div style="flex: 1; align-items: center; justify-content: center;">
+                <button class="btn" @click="mesajGonder()" style="border-radius: 100px; position: relative;" type="button">
+                    <i class="fa fa-chevron-right fa-2x" style="color: #62a8ea;"></i>
+                </button>
+            </div>
+        </footer>
 
         <div id="create-post-modal" class="create-post" uk-modal>
             <div
