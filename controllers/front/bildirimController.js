@@ -26,7 +26,8 @@ exports.insertsozluk = async(req,res,next)=>{
         type:1,
         sozluk:sozluk,
         user:req.user,
-        own:sozluk.user
+        own:sozluk.user,
+        title:req.body.yorum
     }).save((err,data)=>{
         if (err) {
             console.lof(err)

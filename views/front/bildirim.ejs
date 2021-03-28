@@ -44,10 +44,11 @@
                                 <div style="flex:12">
                                     <img src="<%= element.user.photo %>"
                                         style="border-radius: 50px; margin-bottom: 6px; height: 40px; width: 40px;">
-                                    <p style="margin-top: -11px;"> <a href=""><b><%= element.user.item.name %> </b> konunuza yorum ekledi. </a> </p>
+                                    <p style="margin-top: -11px;"> <a href=""><b><%= element.user.item.name %> </b> "<i><%= element.sozluk.title %></i>" başlıklı konunuza yorum ekledi. </a> </p>
                                     <p style="line-height: 1.2;"> <small> 
-                                        <%= element.sozluk.title %>   
-                                    </small> </p>
+                                        <%= element.title %>
+                                    </small> 
+                                    </p>
                                 </div>
                             </div>
                             <hr>
