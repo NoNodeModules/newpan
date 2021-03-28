@@ -1,0 +1,85 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.0.0-rc.1/cropper.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<style>
+    .cropper-container {
+        margin: 0 auto 20px auto;
+    }
+</style>
+
+<div>
+    <input type="file" name="photo" accept="image/*" class="js-photo-upload">
+</div>
+
+<img id="avatar-crop" src="" style="width:271px; height:271px;">
+
+<div class="modal fade remove-modal" tabindex="-1" role="dialog" id="cropperModal">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content text-center">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                    aria-hidden="true">&times;</span></button>
+            <div class="modal-positioner">
+                <h1>Crop Photo</h1>
+                <hr>
+                <img style="width: 271px; height: 271px;" class="js-avatar-preview" src="">
+                <button class="btn btn-primary js-save-cropped-avatar">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.0.0-rc.1/cropper.min.js"></script>
+
+<script>
+
+    let cropper;
+    let cropperModalId = '#cropperModal';
+    let $jsPhotoUploadInput = $('.js-photo-upload');
+
+    $jsPhotoUploadInput.on('change', function () {
+        var files = this.files;
+        if (files.length > 0) {
+            var photo = files[0];
+
+            var reader = new FileReader();
+            reader.onload = function (event) {
+                var image = $('.js-avatar-preview')[0];
+                image.src = event.target.result;
+
+                cropper = new Cropper(image, {
+                    viewMode: 1,
+                    aspectRatio: 1,
+                    minContainerWidth: 400,
+                    minContainerHeight: 400,
+                    minCropBoxWidth: 271,
+                    minCropBoxHeight: 271,
+                    movable: true,
+                    ready: function () {
+                        console.log('ready');
+                        console.log(cropper.ready);
+                    }
+                });
+
+                $(cropperModalId).modal();
+            };
+            reader.readAsDataURL(photo);
+        }
+    });
+
+    $('.js-save-cropped-avatar').on('click', function (event) {
+        event.preventDefault();
+
+        console.log(cropper.ready);
+
+        var $button = $(this);
+        $button.text('uploading...');
+        $button.prop('disabled', true);
+
+        const canvas = cropper.getCroppedCanvas();
+        const base64encodedImage = canvas.toDataURL();
+        $('#avatar-crop').attr('src', base64encodedImage);
+        $(cropperModalId).modal('hide');
+    });
+</script>

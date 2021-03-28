@@ -23,6 +23,10 @@ function checkAuthentication(req, res, next) {
 router.post("/bildirimekle",bildirimController.insert)
 router.post("/bildirimsozluk",bildirimController.insertsozluk)
 
+router.get("/test",async(req,res,next)=>{
+    res.render("front/medya/test")
+})
+
 
 router.get("/flex",(req,res,next)=>{
     res.render("flex")
