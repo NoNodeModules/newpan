@@ -24,8 +24,10 @@
                                     <ion-icon class="text-2xl" name="heart-outline"></ion-icon>
                                 </div>
                                 <div style="flex:12">
-                                    <img src="https://picsum.photos/200"
-                                        style="border-radius: 50px; margin-bottom: 6px; height: 40px;">
+                                    <!-- <img src="https://picsum.photos/200"
+                                        style="border-radius: 50px; margin-bottom: 6px; height: 40px;"> -->
+                                    <img src="<%= element.user.photo %>"
+                                        style="border-radius: 50px; margin-bottom: 6px; height: 40px; width: 40px;">
                                     <p style="margin-top: -11px;"> <a href=""><b><%= element.user.item.name %> </b> yorumunuzu beğendi. </a> </p>
                                     <p style="line-height: 1.2;"> <small> 
                                         <%= element.yorum.yorum %>   
@@ -40,8 +42,8 @@
                                     <ion-icon class="text-2xl" name="heart-outline"></ion-icon>
                                 </div>
                                 <div style="flex:12">
-                                    <img src="https://picsum.photos/200"
-                                        style="border-radius: 50px; margin-bottom: 6px; height: 40px;">
+                                    <img src="<%= element.user.photo %>"
+                                        style="border-radius: 50px; margin-bottom: 6px; height: 40px; width: 40px;">
                                     <p style="margin-top: -11px;"> <a href=""><b><%= element.user.item.name %> </b> konunuza yorum ekledi. </a> </p>
                                     <p style="line-height: 1.2;"> <small> 
                                         <%= element.sozluk.title %>   
