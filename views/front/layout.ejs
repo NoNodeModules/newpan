@@ -167,6 +167,10 @@
                     isim: document.getElementById("input").value
                 }).then(response => {
                     if (response.data.status == true) {
+                        axios.post("/bildirimsozluk",{
+                            type:1,
+                            sozluk:document.getElementById("sid").value,
+                        })
                         this.yyy = true
                         setTimeout(() => {
                             window.location.reload()
