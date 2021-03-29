@@ -67,15 +67,16 @@ exports.sendmessage = async (req, res, next) => {
 
 exports.mesaj = async (req, res, next) => {
     let mesaj = await Mesaj.find({$or:[{"user1._id": req.user._id},{"user2._id": req.user._id}]})
+
+    console.log(mesaj[0].user1._id.toString() == req.user._id.toString())
+    console.log(mesaj[0].user2._id.toString() == req.user._id.toString())
+
     res.render("front/mesaj/mesaj", {
         title: "",
         mesaj: mesaj,
         user: req.user
     })
 }
-
-
-
 
 exports.mesajic = async (req, res, next) => {
     let mesaj = await Mesaj.findById({ "_id": req.params.id })
