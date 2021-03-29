@@ -112,6 +112,7 @@
         }
     </style>
     <%- include ../part/headerflex.ejs %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.0.0-rc.1/cropper.min.js"></script>
 
         <div class="main_content">
             <div class="mcontainer">
@@ -290,7 +291,7 @@
                         <!-- <img src="../../../front/images/avatars/avatar-2.jpg" class="bg-gray-200 border border-white rounded-full w-11 h-11"> -->
                         <div class="flex-1 pt-1" style="border-radius: 20px;">
                             <input type="file" onchange="readURL(this);"
-                                class="uk-textare text-black shadow-none focus:shadow-none text-xl font-medium resize-none"
+                                class="uk-textare text-black shadow-none focus:shadow-none text-xl font-medium resize-none js-photo-upload"
                                 placeholder="Başlık">
                             <hr>
                             <input id="title"
@@ -371,6 +372,21 @@
                                                     </a>
                                                 </div>
         </footer>
+
+        <div class="modal fade remove-modal" tabindex="-1" role="dialog" id="cropperModal">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content text-center">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <div class="modal-positioner">
+                        <h1>Kırp</h1>
+                        <hr>
+                        <img style="width: 271px; height: 271px;" class="js-avatar-preview" src="">
+                        <button class="btn btn-primary js-save-cropped-avatar">Kaydet</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <script>
             window.a = ""
             function readURL(input) {
@@ -430,3 +446,4 @@
                 dots[slideIndex - 1].className += " active";
             }
         </script>
+        
